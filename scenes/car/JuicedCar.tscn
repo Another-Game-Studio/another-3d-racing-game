@@ -1,20 +1,15 @@
-[gd_scene load_steps=18 format=4 uid="uid://bvguu1katamg7"]
+[gd_scene load_steps=18 format=4 uid="uid://do6fg2odu8phq"]
 
-[ext_resource type="Script" uid="uid://bivxyc3f6r7b8" path="res://scenes/car/car.gd" id="1_yhfra"]
-[ext_resource type="Texture2D" uid="uid://chxrhanhk661j" path="res://assets/meshes/Textures/colormap.png" id="1_yr3gr"]
-[ext_resource type="Script" uid="uid://bhacn2rp1y0dv" path="res://scenes/carcontroller/player_controller.gd" id="3_rytg7"]
-[ext_resource type="Script" uid="uid://c68vx1knfo2rq" path="res://scenes/car/camera.gd" id="3_x7uf8"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yr3gr"]
-size = Vector3(1.31738, 1.08453, 2.02722)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yhfra"]
-size = Vector3(1.28387, 0.738708, 1)
+[ext_resource type="Script" uid="uid://ceycdlfofckt2" path="res://scenes/car/juiced_car.gd" id="1_rpq6q"]
+[ext_resource type="Script" uid="uid://c68vx1knfo2rq" path="res://scenes/car/camera.gd" id="2_evb7t"]
+[ext_resource type="Texture2D" uid="uid://chxrhanhk661j" path="res://assets/meshes/Textures/colormap.png" id="3_evb7t"]
+[ext_resource type="Script" uid="uid://bhacn2rp1y0dv" path="res://scenes/carcontroller/player_controller.gd" id="4_6w732"]
+[ext_resource type="Script" uid="uid://cputwvht2h7" path="res://scenes/car/raycast_wheel.gd" id="4_dt3tk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4shf"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("1_yr3gr")
+albedo_texture = ExtResource("3_evb7t")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2f7rl"]
@@ -50,6 +45,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2f7rl")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6w732"]
+size = Vector3(1.45, 0.5, 2.6)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qp5c4"]
 _surfaces = [{
@@ -187,76 +185,87 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_586en")
 
-[node name="Car" type="VehicleBody3D" node_paths=PackedStringArray("controls")]
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-script = ExtResource("1_yhfra")
-controls = NodePath("PlayerController")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00244141, 0.554901, -0.437561)
-shape = SubResource("BoxShape3D_yr3gr")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00979614, 0.380695, 0.831385)
-shape = SubResource("BoxShape3D_yhfra")
-
-[node name="CarBody" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
-mesh = SubResource("ArrayMesh_rhjej")
-skeleton = NodePath("")
-
-[node name="wheel_front_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.3, 0.81)
-use_as_steering = true
-wheel_radius = 0.3
-
-[node name="wheel-front-left" type="MeshInstance3D" parent="wheel_front_left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-mesh = SubResource("ArrayMesh_t8ycg")
-skeleton = NodePath("")
-
-[node name="wheel_front_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.3, 0.81)
-use_as_steering = true
-wheel_radius = 0.3
-
-[node name="wheel-front-right" type="MeshInstance3D" parent="wheel_front_right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
-mesh = SubResource("ArrayMesh_hx3bu")
-skeleton = NodePath("")
-
-[node name="wheel_back_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.3, -0.81)
-use_as_traction = true
-wheel_radius = 0.3
-
-[node name="wheel-back-left" type="MeshInstance3D" parent="wheel_back_left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-mesh = SubResource("ArrayMesh_3gon3")
-skeleton = NodePath("")
-
-[node name="wheel_back_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.3, -0.81)
-use_as_traction = true
-wheel_radius = 0.3
-
-[node name="wheel-back-right" type="MeshInstance3D" parent="wheel_back_right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
-mesh = SubResource("ArrayMesh_nckhn")
-skeleton = NodePath("")
+[node name="JuicedCar" type="RigidBody3D" node_paths=PackedStringArray("wheels")]
+script = ExtResource("1_rpq6q")
+wheels = [NodePath("Wheel_FrontLeft"), NodePath("Wheel_FrontRight"), NodePath("Wheel_BackLeft"), NodePath("Wheel_BackRight")]
 
 [node name="CameraArm" type="SpringArm3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 collision_mask = 0
 spring_length = 20.0
-script = ExtResource("3_x7uf8")
+script = ExtResource("2_evb7t")
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm"]
 current = true
 fov = 37.8493
 
+[node name="body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
+mesh = SubResource("ArrayMesh_rhjej")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.467766, 0)
+shape = SubResource("BoxShape3D_6w732")
+
+[node name="Wheel_FrontLeft" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548831, 0.440468, 0.832301)
+target_position = Vector3(0, -0.75, 0)
+script = ExtResource("4_dt3tk")
+spring_strength = 5000.0
+spring_damp = 100.0
+rest_position = 0.3
+overextend = 0.2
+
+[node name="Wheel" type="MeshInstance3D" parent="Wheel_FrontLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.248831, -0.22532, -0.0223007)
+mesh = SubResource("ArrayMesh_t8ycg")
+skeleton = NodePath("")
+
+[node name="Wheel_FrontRight" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.549, 0.440637, 0.832)
+target_position = Vector3(0, -0.75, 0)
+script = ExtResource("4_dt3tk")
+spring_strength = 5000.0
+spring_damp = 100.0
+rest_position = 0.3
+overextend = 0.2
+
+[node name="Wheel" type="MeshInstance3D" parent="Wheel_FrontRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249, -0.225489, -0.0220001)
+mesh = SubResource("ArrayMesh_hx3bu")
+skeleton = NodePath("")
+
+[node name="Wheel_BackLeft" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.549, 0.440637, -0.832)
+target_position = Vector3(0, -0.75, 0)
+script = ExtResource("4_dt3tk")
+spring_strength = 5000.0
+spring_damp = 100.0
+rest_position = 0.3
+overextend = 0.2
+is_motor = true
+
+[node name="Wheel" type="MeshInstance3D" parent="Wheel_BackLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249, -0.225489, 0.0220001)
+mesh = SubResource("ArrayMesh_3gon3")
+skeleton = NodePath("")
+
+[node name="Wheel_BackRight" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.549, 0.440637, -0.832)
+target_position = Vector3(0, -0.75, 0)
+script = ExtResource("4_dt3tk")
+spring_strength = 5000.0
+spring_damp = 100.0
+rest_position = 0.3
+overextend = 0.2
+is_motor = true
+
+[node name="Wheel" type="MeshInstance3D" parent="Wheel_BackRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249, -0.225489, 0.0220001)
+mesh = SubResource("ArrayMesh_nckhn")
+skeleton = NodePath("")
+
 [node name="PlayerController" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("3_rytg7")
+script = ExtResource("4_6w732")
 metadata/_custom_type_script = "uid://bhacn2rp1y0dv"

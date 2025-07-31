@@ -1,4 +1,5 @@
 ##Based on https://www.youtube.com/watch?v=QUQ8_vcu64o
+##Deprecated, utiliser la Car qui extend de RigidBody
 extends VehicleBody3D
 class_name Car
 

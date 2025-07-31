@@ -1,20 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcfa0gy8knvwp"]
+[gd_scene load_steps=7 format=3 uid="uid://dcfa0gy8knvwp"]
 
 [ext_resource type="PackedScene" uid="uid://bvguu1katamg7" path="res://scenes/car/car.tscn" id="1_2gju5"]
 [ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
+albedo_color = Color(0, 0.341176, 0, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n77mx"]
+sky_horizon_color = Color(0.895706, 0.556711, 0.412507, 1)
+ground_horizon_color = Color(0.895706, 0.556711, 0.412507, 1)
+
+[sub_resource type="Sky" id="Sky_nb1wl"]
+sky_material = SubResource("ProceduralSkyMaterial_n77mx")
+
+[sub_resource type="Environment" id="Environment_m5dm6"]
+background_mode = 2
+sky = SubResource("Sky_nb1wl")
+
 [node name="TestScene" type="Node3D"]
 
-[node name="Car" parent="." instance=ExtResource("1_2gju5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22672, 0)
-
-[node name="GUI" type="Control" parent="." node_paths=PackedStringArray("car")]
+[node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_rlkm5")
-car = NodePath("../Car")
 
 [node name="Label" type="Label" parent="GUI"]
 layout_mode = 0
@@ -34,3 +44,14 @@ sides = 20
 operation = 2
 radius = 30.0
 sides = 20
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.6652, 0)
+use_collision = true
+size = Vector3(1000, 1, 1000)
+material = SubResource("StandardMaterial3D_rlkm5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m5dm6")
+
+[node name="Car" parent="." instance=ExtResource("1_2gju5")]
