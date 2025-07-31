@@ -1,3 +1,5 @@
 extends Node
 
-signal player_entered_start_area(player: Node3D)
+
+@warning_ignore("unused_signal")
+signal player_entered_start_area(player: Car)

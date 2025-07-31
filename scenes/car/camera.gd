@@ -16,7 +16,7 @@ func _input(event : InputEvent) -> void:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity
 		rotation_degrees.y = wrapf(rotation_degrees.y, 0.0, 360.0)
 
-func get_joystick_controls(delta: float) -> void:
+func get_joystick_controls(_delta: float) -> void:
 	rotation_degrees.x -= (Input.get_action_strength("cam_down") - Input.get_action_strength("cam_up")) * joystick_sensitivity
 	rotation_degrees.x = clamp(rotation_degrees.x, -90.0, -10.0)
 	

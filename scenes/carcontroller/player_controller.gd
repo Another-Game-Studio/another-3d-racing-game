@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	power = Input.get_action_strength("gas") - Input.get_action_strength("brake")
 	steering = Input.get_action_strength("left") - Input.get_action_strength("right")
 	jump = Input.is_action_pressed("jump")
