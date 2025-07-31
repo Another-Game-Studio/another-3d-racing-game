@@ -97,6 +97,13 @@ cam_down={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Solide"
+3d_physics/layer_2="Joueur"
+3d_physics/layer_3="Hors-Zone"
+3d_physics/layer_4="Objet Ramassable"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

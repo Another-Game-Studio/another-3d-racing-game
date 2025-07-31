@@ -1,5 +1,5 @@
 ##Based on https://www.youtube.com/watch?v=QUQ8_vcu64o
-##Deprecated, utiliser la Car qui extend de RigidBody
+##Destiné à être remplacé par la JuicedCar à terme
 extends VehicleBody3D
 class_name Car
 
@@ -16,6 +16,8 @@ const jump_force : float = 50.0
 func _ready() -> void:
 	pass # Replace with function body.
 
+func die() -> void:
+	print("U are ded")
 
 # Called every physics frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
