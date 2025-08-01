@@ -19,6 +19,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926611, 0)
 center_of_mass_mode = 1
 linear_damp_mode = 1
 angular_damp_mode = 1
+steering_speed = 30.0
+countersteer_speed = 30.0
+steering_speed_decay = 0.0
+steering_slip_assist = 1.0
+countersteer_assist = 1.0
+throttle_steering_adjust = 1.0
+brake_force_multiplier = 10.0
+max_torque = 1000.0
+motor_brake = 1000.0
+motor_moment = 0.01
 
 [node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("4_r1tsm")]
 max_db = -24.0
@@ -54,7 +64,7 @@ layout_mode = 2
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
 transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 4.05282, 1.58316, 5.80061)
 script = ExtResource("6_vitqy")
-follow_distance = 3
+follow_distance = 8
 follow_this = NodePath("../VehicleController/VehicleRigidBody")
 
 [node name="Demo" parent="." instance=ExtResource("6_3l0qk")]
