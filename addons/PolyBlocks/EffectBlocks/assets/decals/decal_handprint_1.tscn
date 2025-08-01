@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://u3usa4ad6vc2"]
+
+[ext_resource type="Texture2D" uid="uid://cbom05kvryu2m" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_handprint_1.png" id="1_h1jxr"]
+
+[node name="Decal_Handprint_1" type="Decal"]
+size = Vector3(0.15, 1, 0.15)
+texture_albedo = ExtResource("1_h1jxr")
+modulate = Color(0.364084, 0.364084, 0.364084, 1)

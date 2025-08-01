@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwt5gp78i8a5i"]
+
+[ext_resource type="PackedScene" uid="uid://dy55uu2dsjqa5" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_1.tscn" id="1_wa5tw"]
+[ext_resource type="PackedScene" uid="uid://b82knjqmqtsq" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_2.tscn" id="2_jqwfk"]
+[ext_resource type="PackedScene" uid="uid://bt54qs0k6qjdm" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_3.tscn" id="3_bh42j"]
+[ext_resource type="PackedScene" uid="uid://d2j0uv6bcok6k" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_4.tscn" id="4_h5tbe"]
+[ext_resource type="PackedScene" uid="uid://cqaq6i2s7kwfa" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_5.tscn" id="5_i6yte"]
+[ext_resource type="PackedScene" uid="uid://bdfdt8mjkoc66" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_6.tscn" id="6_vb0y6"]
+[ext_resource type="PackedScene" uid="uid://2rki6j6j0bnu" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_7.tscn" id="7_io3qb"]
+[ext_resource type="PackedScene" uid="uid://7frx18ejffbl" path="res://addons/PolyBlocks/EffectBlocks/assets/impacts/impact_8.tscn" id="8_ewyed"]
+
+[node name="ImpactsShowcase" type="Node3D"]
+
+[node name="Impact_1" parent="." instance=ExtResource("1_wa5tw")]
+auto_animate = true
+
+[node name="Impact_2" parent="." instance=ExtResource("2_jqwfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+auto_animate = true
+
+[node name="Impact_3" parent="." instance=ExtResource("3_bh42j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+auto_animate = true
+
+[node name="Impact_4" parent="." instance=ExtResource("4_h5tbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+auto_animate = true
+
+[node name="Impact_5" parent="." instance=ExtResource("5_i6yte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+auto_animate = true
+
+[node name="Impact_6" parent="." instance=ExtResource("6_vb0y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+auto_animate = true
+
+[node name="Impact_7" parent="." instance=ExtResource("7_io3qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+auto_animate = true
+
+[node name="Impact_8" parent="." instance=ExtResource("8_ewyed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+auto_animate = true

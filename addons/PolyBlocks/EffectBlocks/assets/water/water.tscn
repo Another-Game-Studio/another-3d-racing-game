@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvgfebuvxk1jv"]
+
+[ext_resource type="Shader" uid="uid://csfpwyptvt7ea" path="res://addons/PolyBlocks/EffectBlocks/source_files/shaders/water.gdshader" id="1_pukwu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5dcae"]
+noise_type = 2
+fractal_type = 0
+cellular_distance_function = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bm1at"]
+seamless = true
+noise = SubResource("FastNoiseLite_5dcae")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnykk"]
+render_priority = 0
+shader = ExtResource("1_pukwu")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_bm1at")
+shader_parameter/water_color = Color(0.1, 0.4, 0.4, 1)
+shader_parameter/ripple_color = Color(1, 1, 1, 1)
+shader_parameter/wave_strength = 0.5
+shader_parameter/wave_speed = 0.05
+shader_parameter/water_transparency = 0.8
+shader_parameter/water_roughness = 1.0
+shader_parameter/water_depth_fade = 0.5
+shader_parameter/edge_size = 2.0
+shader_parameter/edge_intensity = 2.0
+shader_parameter/ripple_intensity = 0.6
+
+[sub_resource type="QuadMesh" id="QuadMesh_tj7r8"]
+material = SubResource("ShaderMaterial_mnykk")
+size = Vector2(10, 10)
+subdivide_width = 20
+subdivide_depth = 20
+orientation = 1
+
+[node name="Water" type="MeshInstance3D"]
+mesh = SubResource("QuadMesh_tj7r8")

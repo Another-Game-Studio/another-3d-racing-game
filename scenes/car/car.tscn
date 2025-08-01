@@ -1,10 +1,8 @@
 [gd_scene load_steps=17 format=4 uid="uid://bvguu1katamg7"]
 
-
 [ext_resource type="Script" uid="uid://bivxyc3f6r7b8" path="res://scenes/car/car.gd" id="1_yhfra"]
 [ext_resource type="Texture2D" uid="uid://chxrhanhk661j" path="res://assets/meshes/Textures/colormap.png" id="1_yr3gr"]
 [ext_resource type="Script" uid="uid://bhacn2rp1y0dv" path="res://scenes/carcontroller/player_controller.gd" id="3_rytg7"]
-
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4shf"]
 resource_name = "colormap"
@@ -192,9 +190,7 @@ shadow_mesh = SubResource("ArrayMesh_586en")
 [node name="Car" type="VehicleBody3D" node_paths=PackedStringArray("controls", "camera_controller")]
 script = ExtResource("1_yhfra")
 controls = NodePath("PlayerController")
-
 camera_controller = NodePath("CameraController")
-
 
 [node name="CarBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)

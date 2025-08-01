@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://cu66ry02txxkw"]
+
+[ext_resource type="PackedScene" uid="uid://ba6pjbml0igrx" path="res://addons/PolyBlocks/EffectBlocks/assets/other/dust.tscn" id="1_735at"]
+[ext_resource type="PackedScene" uid="uid://dftx2rlgbrpiq" path="res://addons/PolyBlocks/EffectBlocks/assets/other/fireflies.tscn" id="2_02qlj"]
+[ext_resource type="ArrayMesh" uid="uid://dvtakusqvh0em" path="res://addons/PolyBlocks/EffectBlocks/source_files/meshes/tree.mesh" id="3_3371v"]
+[ext_resource type="Shader" uid="uid://bj1j05v04m5" path="res://addons/PolyBlocks/EffectBlocks/source_files/shaders/vegetation.gdshader" id="4_r801v"]
+[ext_resource type="Texture2D" uid="uid://cue203ti8uyi2" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/EffectsBlocks_tree_leaves.png" id="5_djn2u"]
+[ext_resource type="PackedScene" uid="uid://2y25hpxtk3ow" path="res://addons/PolyBlocks/EffectBlocks/assets/other/falling_leaves.tscn" id="6_2eq5o"]
+[ext_resource type="ArrayMesh" uid="uid://b2ug0foj4qt16" path="res://addons/PolyBlocks/EffectBlocks/source_files/meshes/bush.mesh" id="7_5b734"]
+[ext_resource type="Shader" uid="uid://bkb5hcbhku43n" path="res://addons/PolyBlocks/EffectBlocks/source_files/shaders/vegetation_sway.gdshader" id="8_u1vnx"]
+[ext_resource type="Script" uid="uid://d1kl4ta05kwg7" path="res://addons/PolyBlocks/EffectBlocks/source_files/scripts/tree_night.gd" id="9_sfsgn"]
+[ext_resource type="PackedScene" uid="uid://uch8qkb3b6nc" path="res://addons/PolyBlocks/EffectBlocks/assets/other/god_rays.tscn" id="10_wdwhj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ajdeb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ryosw"]
+noise = SubResource("FastNoiseLite_ajdeb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hj4w"]
+render_priority = 0
+shader = ExtResource("4_r801v")
+shader_parameter/windSpeed = 0.5
+shader_parameter/windStrength = 0.1
+shader_parameter/windNoise = SubResource("NoiseTexture2D_ryosw")
+shader_parameter/albedo = ExtResource("5_djn2u")
+shader_parameter/nightColor = Color(0.1, 0.2, 0.4, 1)
+shader_parameter/nightTime = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3o8p"]
+render_priority = 0
+shader = ExtResource("8_u1vnx")
+shader_parameter/windSpeed = 1.0
+shader_parameter/albedo = ExtResource("5_djn2u")
+shader_parameter/nightColor = Color(0.1, 0.2, 0.4, 1)
+shader_parameter/nightTime = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kk76e"]
+render_priority = 0
+shader = ExtResource("4_r801v")
+shader_parameter/windSpeed = 0.5
+shader_parameter/windStrength = 0.1
+shader_parameter/windNoise = SubResource("NoiseTexture2D_ryosw")
+shader_parameter/albedo = ExtResource("5_djn2u")
+shader_parameter/nightColor = Color(0.1, 0.2, 0.4, 1)
+shader_parameter/nightTime = 0.9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdraa"]
+render_priority = 0
+shader = ExtResource("8_u1vnx")
+shader_parameter/windSpeed = 1.0
+shader_parameter/albedo = ExtResource("5_djn2u")
+shader_parameter/nightColor = Color(0.1, 0.2, 0.4, 1)
+shader_parameter/nightTime = 0.8
+
+[node name="VegetationShowcase" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27525, 0, -4.1929)
+
+[node name="Dust" parent="." instance=ExtResource("1_735at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2753, 4, 5.84833)
+
+[node name="Fireflies" parent="." instance=ExtResource("2_02qlj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2753, 4, 6.09899)
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4.64179)
+mesh = ExtResource("3_3371v")
+surface_material_override/1 = SubResource("ShaderMaterial_4hj4w")
+
+[node name="FallingLeaves" parent="Tree" instance=ExtResource("6_2eq5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94282, 6.1074, 0)
+
+[node name="Bush" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5.64179)
+mesh = ExtResource("7_5b734")
+surface_material_override/0 = SubResource("ShaderMaterial_j3o8p")
+
+[node name="Tree_night" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 4.64179)
+mesh = ExtResource("3_3371v")
+surface_material_override/1 = SubResource("ShaderMaterial_kk76e")
+script = ExtResource("9_sfsgn")
+day_duration = 2.0
+night_duration = 2.0
+
+[node name="FallingLeaves2" parent="Tree_night" instance=ExtResource("6_2eq5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9428, 6.1074, 0)
+
+[node name="Bush_night" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 5.64179)
+mesh = ExtResource("7_5b734")
+surface_material_override/0 = SubResource("ShaderMaterial_fdraa")
+
+[node name="GodRays" parent="." instance=ExtResource("10_wdwhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9517, 7, 3.55059)

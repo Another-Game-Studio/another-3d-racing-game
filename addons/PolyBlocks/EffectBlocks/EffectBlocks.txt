@@ -1,0 +1,70 @@
+EffectBlocks - Stylized VFX, Shaders & Particles for Godot Engine
+
+Version: 1.0
+Author: bukkbeek | 2025
+Website: https://bukkbeek.github.io/ | https://bukkbeek.itch.io 
+
+This pack contains over 60 stylized 3D visual effects, including shaders and particle systems for use in Godot 4+. All assets are low poly, optimized for real-time performance, and organized into folders for easy integration.
+
+Included Effects:
+
+🔥 FIRE & SMOKE
+Fire ×3 (small / big / magic)
+Smoke ×3 (small / big / poison)
+Fireballs
+Flamethrower
+
+💥 COMBAT VFX
+Muzzle Flash ×3 (texture / smoke / sparks)
+Bullets ×2 (single / burst)
+Explosion ×3 (small / big / electric)
+Impact ×8 (dust / sci-fi / sword)
+
+⚡ ENERGY & ELECTRICITY
+Energy Beams ×3 (laser / plasma / electric)
+Electric Sparks ×2
+Lightning / Lightning Ball
+
+✨ MAGIC & STYLIZED
+Sparkles
+Fireworks
+Sci-fi Portal
+Stylized Shader
+Hologram Shader
+
+🌿 NATURE & AMBIENCE
+Vegetation Shader & Grass (day-night cycle)
+Falling Leaves
+Rain
+Dust
+Fireflies
+Godrays
+Birds
+
+💧 WATER
+Water Shader & Effects ×2 (ripples / long ripples)
+
+📦 GROUND EFFECTS ×10
+Pickup / Loot / Heal / Arrows / Power Up, etc.
+
+🩸 DECALS
+Blood Splash ×2
+Bullet Holes ×3
+Slime ×2
+Cracks ×3
+Footprints ×2 (blood / mud)
+Handprints ×2 (blood / dust)
+Tire Skid
+Claw Mark
+
+
+Instructions:
+‘Assets’ directory contains all the ready-made effect scenes
+All effects are customizable in size, color, and timing
+Combine and tweak for your unique use case
+
+License:
+For use in commercial and non-commercial projects
+Do not resell or redistribute as-is or modified
+
+Enjoy and happy developing! 🚀  

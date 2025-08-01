@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=4 uid="uid://b3w0etcxx56n6"]
+
+[sub_resource type="Curve" id="Curve_drb5a"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.11194, 1), 0.0, 0.0, 0, 0, Vector2(0.630597, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_n0wlt"]
+curve = SubResource("Curve_drb5a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fg7oc"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 0.05
+direction = Vector3(0.1, 0.1, 0.1)
+spread = 180.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+gravity = Vector3(0, 1, 0)
+scale_min = 0.01
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_n0wlt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu5eu"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.266667)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_udcdq"]
+_surfaces = [{
+"aabb": AABB(-1.15811, -1.02635, -4.7252e-08, 2.17129, 2.09224, 1.00998e-05),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("BAABAAcAAAAHAAEAAQADAAIABAADAAEABAAGAAUABgAEAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("apP+/4cCAAAnQ/fuugIAAAAAzYBJAQAAFSTpJFoAAADqoQAAAAAAAPbrpTbZAAAA///keh8BAAAa8Oq7TgEAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m58u5"]
+resource_name = "particle_circle_particle_circle"
+_surfaces = [{
+"aabb": AABB(-1.15811, -1.02635, -4.7252e-08, 2.17129, 2.09224, 1.00998e-05),
+"attribute_data": PackedByteArray("AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("BAABAAcAAAAHAAEAAQADAAIABAADAAEABAAGAAUABgAEAAcA"),
+"material": SubResource("StandardMaterial3D_xu5eu"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("apP+/4cC/n8nQ/fuugL+fwAAzYBJAf5/FSTpJFoA/n/qoQAAAAD+f/brpTbZAP5////keh8B/n8a8Oq7TgH+f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_udcdq")
+
+[node name="WaterFoam" type="GPUParticles3D"]
+lifetime = 0.5
+explosiveness = 0.4
+randomness = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_fg7oc")
+draw_pass_1 = SubResource("ArrayMesh_m58u5")

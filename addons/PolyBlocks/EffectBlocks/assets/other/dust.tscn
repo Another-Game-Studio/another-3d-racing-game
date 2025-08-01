@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=4 uid="uid://ba6pjbml0igrx"]
+
+[ext_resource type="Material" uid="uid://ks1kly3dfqvc" path="res://addons/PolyBlocks/EffectBlocks/source_files/materials/smoke_billboard.material" id="1_qptov"]
+
+[sub_resource type="Curve" id="Curve_c4glq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.151119, 0.997144), 0.0, 0.0, 0, 0, Vector2(0.873134, 0.997144), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_feykl"]
+curve = SubResource("Curve_c4glq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ymmok"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+angle_max = 90.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.5
+angular_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_feykl")
+turbulence_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_udcdq"]
+_surfaces = [{
+"aabb": AABB(-1.15811, -1.02635, -4.7252e-08, 2.17129, 2.09224, 1.00998e-05),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("BAABAAcAAAAHAAEAAQADAAIABAADAAEABAAGAAUABgAEAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("apP+/4cCAAAnQ/fuugIAAAAAzYBJAQAAFSTpJFoAAADqoQAAAAAAAPbrpTbZAAAA///keh8BAAAa8Oq7TgEAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qjrni"]
+resource_name = "particle_circle_particle_circle"
+_surfaces = [{
+"aabb": AABB(-1.15811, -1.02635, -4.7252e-08, 2.17129, 2.09224, 1.00998e-05),
+"attribute_data": PackedByteArray("AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("BAABAAcAAAAHAAEAAQADAAIABAADAAEABAAGAAUABgAEAAcA"),
+"material": ExtResource("1_qptov"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("apP+/4cC/n8nQ/fuugL+fwAAzYBJAf5/FSTpJFoA/n/qoQAAAAD+f/brpTbZAP5////keh8B/n8a8Oq7TgH+f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_udcdq")
+
+[node name="Dust" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+amount = 16
+lifetime = 4.0
+speed_scale = 0.5
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ymmok")
+draw_pass_1 = SubResource("ArrayMesh_qjrni")

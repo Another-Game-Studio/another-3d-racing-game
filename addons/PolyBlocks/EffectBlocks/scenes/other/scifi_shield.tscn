@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy0uk2foyrhgk"]
+
+[ext_resource type="Shader" uid="uid://dt2qr8qxvsxai" path="res://addons/PolyBlocks/EffectBlocks/source_files/shaders/scifi_shield.gdshader" id="1_7sqwv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x0tv5"]
+noise_type = 0
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cy2ey"]
+invert = true
+seamless = true
+noise = SubResource("FastNoiseLite_x0tv5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8m2j"]
+render_priority = 0
+shader = ExtResource("1_7sqwv")
+shader_parameter/density = 50.0
+shader_parameter/line_width = 0.02
+shader_parameter/hex_line_color = Color(0.2, 1, 1, 1)
+shader_parameter/hex_color = Color(0.01, 0.18, 0.7, 0.05)
+shader_parameter/rim_color = Color(0.5, 1, 1, 1)
+shader_parameter/rim_power = 5.0
+shader_parameter/rim_intensity = 1.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_cy2ey")
+shader_parameter/noise_strength = 0.01
+shader_parameter/noise_speed = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_4q3dj"]
+material = SubResource("ShaderMaterial_o8m2j")
+
+[node name="ScifiShield" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_4q3dj")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://dr62sfawl8e0l"]
+
+[ext_resource type="PackedScene" uid="uid://wtaqabmkefhp" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/gears.tscn" id="2_1o64v"]
+[ext_resource type="PackedScene" uid="uid://ibwc13r4vgpd" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/down_arrow.tscn" id="4_ttlgq"]
+[ext_resource type="PackedScene" uid="uid://cujbal2tq1i4j" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/power_up.tscn" id="6_4q85s"]
+[ext_resource type="PackedScene" uid="uid://ca4o3laju8os4" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/pheonix.tscn" id="7_y1sko"]
+[ext_resource type="PackedScene" uid="uid://bbhsu60brcpyg" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/healing.tscn" id="8_mwhcr"]
+[ext_resource type="PackedScene" uid="uid://dmjeklvbs6v2k" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/skull.tscn" id="9_7tu4j"]
+[ext_resource type="PackedScene" uid="uid://pd8uivmhygol" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/money.tscn" id="10_jiwxv"]
+[ext_resource type="PackedScene" uid="uid://iq6yhdppml6q" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/ammo.tscn" id="10_jumqs"]
+[ext_resource type="PackedScene" uid="uid://cxhfl4b4in2in" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/loot_gun.tscn" id="10_t53iy"]
+[ext_resource type="PackedScene" uid="uid://c5i1wn7aidmpt" path="res://addons/PolyBlocks/EffectBlocks/assets/loot/potion.tscn" id="10_tuijk"]
+
+[node name="LootdropShowcase" type="Node3D"]
+
+[node name="Gears" parent="." instance=ExtResource("2_1o64v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+
+[node name="DownArrow" parent="." instance=ExtResource("4_ttlgq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 0)
+
+[node name="PowerUp" parent="." instance=ExtResource("6_4q85s")]
+
+[node name="Pheonix" parent="." instance=ExtResource("7_y1sko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+
+[node name="Healing" parent="." instance=ExtResource("8_mwhcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Skull" parent="." instance=ExtResource("9_7tu4j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
+
+[node name="LootGun" parent="." instance=ExtResource("10_t53iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.4, 0)
+
+[node name="Money" parent="." instance=ExtResource("10_jiwxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Ammo" parent="." instance=ExtResource("10_jumqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+
+[node name="potion" parent="." instance=ExtResource("10_tuijk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)

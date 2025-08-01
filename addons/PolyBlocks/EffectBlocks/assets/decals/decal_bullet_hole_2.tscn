@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dem2slf4mkyfs"]
+
+[ext_resource type="Texture2D" uid="uid://crkrhrrwer1iv" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_bullethole_2.png" id="1_tr0x6"]
+
+[node name="Decal_BulletHole_2" type="Decal"]
+size = Vector3(0.05, 1, 0.05)
+texture_albedo = ExtResource("1_tr0x6")

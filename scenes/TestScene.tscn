@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcfa0gy8knvwp"]
+[gd_scene load_steps=12 format=3 uid="uid://dcfa0gy8knvwp"]
 
-[ext_resource type="PackedScene" uid="uid://bvguu1katamg7" path="res://scenes/car/car.tscn" id="1_2gju5"]
 [ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
+[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="3_m5dm6"]
+[ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="3_n77mx"]
+[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="4_fws1a"]
+[ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="5_xpysu"]
+[ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="6_fws1a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
 albedo_color = Color(0, 0.341176, 0, 1)
@@ -40,6 +44,7 @@ transform = Transform3D(0.912357, 0.40939, 0.00220324, 0.000732022, -0.00701299,
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9974, 0, 0)
 use_collision = true
+collision_layer = 2
 radius = 40.0
 sides = 20
 
@@ -51,17 +56,64 @@ sides = 20
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.6652, 0)
 use_collision = true
+collision_layer = 2
+collision_mask = 13
 size = Vector3(1000, 1, 1000)
 material = SubResource("StandardMaterial3D_rlkm5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m5dm6")
 
-[node name="Car" parent="." instance=ExtResource("1_2gju5")]
-
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.57909, 0)
-
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(3.68113, 0, 14.5413, 0, 15, 0, -14.5413, 0, 3.68113, 0, 1.9524, 12.2706)
 use_collision = true
+collision_layer = 2
+collision_mask = 13
 mesh = SubResource("PrismMesh_rlkm5")
+
+[node name="ExplosiveBarrel" parent="." instance=ExtResource("3_n77mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3168, 2.32151, 31.4773)
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 5
+
+[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("3_m5dm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38673, 1.37856, 0)
+vehicle_node = NodePath("VehicleRigidBody")
+string_brake_input = "brake"
+string_steer_left = "left"
+string_steer_right = "right"
+string_throttle_input = "gas"
+string_handbrake_input = "handbrake"
+string_clutch_input = "clutch"
+string_toggle_transmission = "toggle-transmission"
+string_shift_up = "shift-up"
+string_shift_down = "shift-down"
+
+[node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("4_fws1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926611, 0)
+collision_mask = 14
+center_of_mass_mode = 1
+linear_damp_mode = 1
+angular_damp_mode = 1
+steering_speed = 30.0
+countersteer_speed = 30.0
+steering_speed_decay = 0.0
+steering_slip_assist = 1.0
+countersteer_assist = 1.0
+throttle_steering_adjust = 1.0
+brake_force_multiplier = 10.0
+max_torque = 1000.0
+motor_brake = 1000.0
+motor_moment = 0.01
+
+[node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("5_xpysu")]
+max_db = -24.0
+vehicle = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
+transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 4.05282, 1.58316, 5.80061)
+current = true
+script = ExtResource("6_fws1a")
+follow_distance = 3
+follow_this = NodePath("../VehicleController/VehicleRigidBody")

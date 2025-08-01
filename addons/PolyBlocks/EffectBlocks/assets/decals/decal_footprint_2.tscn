@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://h40e5cfvfvm6"]
+
+[ext_resource type="Texture2D" uid="uid://d10s53r4dhkd3" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_footprint_2.png" id="1_twt77"]
+
+[node name="Decal_Footprint_2" type="Decal"]
+size = Vector3(0.2, 1, 0.2)
+texture_albedo = ExtResource("1_twt77")
+modulate = Color(0.582376, 0.582376, 0.582376, 1)

@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://c154pj3x82jy"]
+
+[ext_resource type="ArrayMesh" uid="uid://qa3rlphxjnjn" path="res://addons/PolyBlocks/EffectBlocks/source_files/meshes/props/atm.tres" id="1_hercl"]
+[ext_resource type="PackedScene" uid="uid://bxkwa8bv1dpk5" path="res://addons/PolyBlocks/EffectBlocks/assets/other/coin_emitter.tscn" id="2_g2rpq"]
+[ext_resource type="Texture2D" uid="uid://vykn2ffymw4o" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/icons/money.png" id="3_7sr6j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cgsjh"]
+particle_flag_align_y = true
+angle_min = 720.0
+angle_max = 720.0
+direction = Vector3(0, 0, 1)
+spread = 30.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_symyj"]
+_data = [Vector2(0.223762, 0), 0.0, 0.0, 0, 0, Vector2(0.584158, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_36r8g"]
+curve = SubResource("Curve_symyj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cp44g"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 0, 1)
+spread = 30.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+turbulence_enabled = true
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 2.0
+turbulence_influence_over_life = SubResource("CurveTexture_36r8g")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5clg7"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.196078, 0.560784, 0.458824, 1)
+albedo_texture = ExtResource("3_7sr6j")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tckcl"]
+material = SubResource("StandardMaterial3D_5clg7")
+size = Vector2(0.4, 0.4)
+orientation = 1
+
+[node name="MoneyEmitterShowcase" type="Node3D"]
+
+[node name="ATM" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_hercl")
+
+[node name="CoinEmitter" parent="." instance=ExtResource("2_g2rpq")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.264053, 2.03621, 0)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_cgsjh")
+
+[node name="MoneyEmitter" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.189812, 2.00271, 0)
+amount = 16
+lifetime = 2.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_cp44g")
+draw_pass_1 = SubResource("QuadMesh_tckcl")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341758, -0.420543, 2.30951)
+size = Vector3(8.98535, 0.989258, 6.61902)
