@@ -76,6 +76,11 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed(string_shift_down):
 			vehicle_node.manual_shift(-1)
 	
+	if Input.is_action_just_pressed("jump"):
+		print("Jumping")
+		vehicle_node.jump()
+	
+	
 	# Reverse gear logic
 
 	if vehicle_node.current_gear == -1:

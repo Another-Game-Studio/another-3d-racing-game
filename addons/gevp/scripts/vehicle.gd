@@ -629,6 +629,22 @@ func _physics_process(delta : float) -> void:
 	process_drive(delta)
 	process_forces(delta)
 	process_stability()
+	
+	#if controls.jump and $wheel_back_left.is_in_contact() and $wheel_back_right.is_in_contact():
+	
+
+func jump()-> void:
+	print("Trying to jump")
+	var wheels : Array[Wheel] = []
+	for child : Node in get_children():
+		if child is Wheel:
+			wheels.append(child)
+	var can_jump : bool = true
+	for wheel in wheels:
+		can_jump = can_jump and wheel.is_colliding()
+	print(can_jump)
+	if can_jump:
+		apply_central_impulse(global_transform.basis.y*9000)
 
 func process_drag() -> void:
 	var drag := 0.5 * air_density * pow(speed, 2.0) * frontal_area * coefficient_of_drag
