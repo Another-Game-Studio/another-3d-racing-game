@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Menu template"
+config/name="KartingJam"
 config/tags=PackedStringArray("template")
 run/main_scene="uid://dfkbo2qg82rgl"
 config/features=PackedStringArray("4.4", "Forward Plus")
