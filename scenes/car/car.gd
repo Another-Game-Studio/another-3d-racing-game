@@ -41,4 +41,3 @@ func _physics_process(delta: float) -> void:
 	camera_controller.rotation = rotation
 	if controls.brake or controls.rearview:
 		camera_controller.rotation.y +=PI
-
