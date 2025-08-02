@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=28 format=4 uid="uid://drpbxmnfxylel"]
+
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -17,8 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
 [ext_resource type="PackedScene" uid="uid://ecv31aag7yq6" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
 [ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="16_f0sam"]
+
 [ext_resource type="PackedScene" uid="uid://be20iuksu23mo" path="res://scenes/obstacles/obstacle.tscn" id="17_oew8k"]
 [ext_resource type="PackedScene" uid="uid://dcmig0wmlgi73" path="res://scenes/obstacles/ramp.glb" id="18_t0ww0"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -89,6 +93,7 @@ specular_mode = 2
 albedo_color = Color(0.796936, 0.377167, 0.133551, 1)
 emission_enabled = true
 emission = Color(0.656989, 0.338815, 0.413919, 1)
+
 
 [node name="ArtTests" type="Node3D"]
 
@@ -278,3 +283,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 19.7673, 0)
 [editable path="Circuit/Obstacle"]
 [editable path="Circuit/Obstacle2"]
 [editable path="Circuit/Birds"]
+
