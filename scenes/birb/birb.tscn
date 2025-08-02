@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://di6rq2k5rmx4x"]
+[gd_scene load_steps=9 format=4 uid="uid://di6rq2k5rmx4x"]
 
 [ext_resource type="Script" uid="uid://b5asruwewoml7" path="res://scenes/birb/birb.gd" id="1_f43j4"]
 
@@ -48,6 +48,11 @@ bind/4/name = &"wing.r"
 bind/4/bone = -1
 bind/4/pose = Transform3D(0.00802024, 0.012093, 0.999895, -0.833376, 0.552707, -7.45059e-08, -0.552648, -0.833289, 0.014511, 0.00332567, -0.576293, -0.229156)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f43j4"]
+albedo_color = Color(0.372549, 1, 0.592157, 1)
+emission_enabled = true
+emission = Color(3.60981e-07, 0.456201, 0.220265, 1)
+
 [sub_resource type="Animation" id="Animation_y2prg"]
 resource_name = "fly"
 length = 0.833333
@@ -71,6 +76,9 @@ tracks/1/keys = PackedFloat32Array(0, 1, -0.387443, 0.0617002, -0.149386, 0.9076
 _data = {
 &"fly": SubResource("Animation_y2prg")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f43j4"]
+size = Vector3(10, 6.979, 1)
 
 [node name="Birb" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
@@ -99,7 +107,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.947754, -0.22336, -0.227757, 0.318981, 0.655144, 0.684863, -0.00375712, -0.721732, 0.692163, -1.00263e-07, 0.654714, 2.44383e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(-1.00263e-07, 0.654714, 2.44383e-08)
-bones/2/rotation = Quaternion(-0.280303, -0.0528252, 0.162066, 0.944656)
+bones/2/rotation = Quaternion(-0.387443, -0.0617002, 0.149386, 0.907615)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "shoulder.r"
 bones/3/parent = 0
@@ -113,18 +121,20 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(0.947754, 0.22336, 0.227757, -0.318981, 0.655144, 0.684863, 0.00375713, -0.721732, 0.692163, 9.18128e-08, 0.654714, -2.51845e-08)
 bones/4/enabled = true
 bones/4/position = Vector3(9.18128e-08, 0.654714, -2.51845e-08)
-bones/4/rotation = Quaternion(-0.279543, 0.0399386, -0.164691, 0.94506)
+bones/4/rotation = Quaternion(-0.387443, 0.0617002, -0.149386, 0.907615)
 bones/4/scale = Vector3(1, 1, 1)
 
 [node name="bird_mesh" type="MeshInstance3D" parent="Armature/Skeleton3D"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ytciq")
 skin = SubResource("Skin_2lwe0")
+surface_material_override/0 = SubResource("StandardMaterial3D_f43j4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tco10")
 }
+autoplay = "fly"
 
 [node name="Droppoints" type="Node3D" parent="."]
 
@@ -142,3 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.942586, -0.62509, -2.60965
 
 [node name="Marker3D5" type="Marker3D" parent="Droppoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57051, -0.62509, -2.60965)
+
+[node name="BirdCaughtYa" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0147e-07, -2.9895, 5.97016)
+shape = SubResource("BoxShape3D_f43j4")

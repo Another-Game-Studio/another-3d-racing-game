@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=30 format=4 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="16_f0sam"]
 [ext_resource type="PackedScene" uid="uid://be20iuksu23mo" path="res://scenes/obstacles/obstacle.tscn" id="17_oew8k"]
 [ext_resource type="PackedScene" uid="uid://dcmig0wmlgi73" path="res://scenes/obstacles/ramp.glb" id="18_t0ww0"]
+[ext_resource type="PackedScene" uid="uid://di6rq2k5rmx4x" path="res://scenes/birb/birb.tscn" id="20_47cvh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -89,6 +90,14 @@ specular_mode = 2
 albedo_color = Color(0.796936, 0.377167, 0.133551, 1)
 emission_enabled = true
 emission = Color(0.656989, 0.338815, 0.413919, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_pud53"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -59.9618, 0, -0.151494, 0, 0, 0, 0, 0, 0, -169.719, 0, -1.39169, 0, 0, 0, 0, 0, 0, -312.34, 0, -1.39169, 0, 0, 0, 0, 0, 0, -437.6, 0, -2.01178, 0, 0, 0, 0, 0, 0, -567.662, 0, -3.30128, 0, 0, 0, 0, 0, 0, -637.733, 0, 11.581, 0, 0, 0, 0, 0, 0, -689.821, 0, 46.3063, 0, 0, 0, 0, 0, 0, -724.547, 0, 103.355, 0, 0, 0, 0, 0, 0, -734.468, 0, 154.203, 0, 0, 0, 0, 0, 0, -730.127, 0, 201.33, 0, 0, 0, 0, 0, 0, -715.604, 0, 245.186, 0, 0, 0, 0, 0, 0, -676.538, 0, 294.793, 0, 0, 0, 0, 0, 0, -626.311, 0, 323.938, 0, 0, 0, 0, 0, 0, -553.139, 0, 337.58, 0, 0, 0, 0, 0, 0, -468.806, 0, 336.34, 0, 0, 0, 0, 0, 0, -375.792, 0, 336.96, 0, 0, 0, 0, 0, 0, -287.119, 0, 335.719, 0, 0, 0, 0, 0, 0, -195.345, 0, 336.96, 0, 0, 0, 0, 0, 0, -108.531, 0, 337.58, 0, 0, 0, 0, 0, 0, -16.834, 0, 336.693, 0, 0, 0, 0, 0, 0, 94.783, 0, 336.693, 0, 0, 0, 0, 0, 0, 203.92, 0, 337.314, 0, 0, 0, 0, 0, 0, 313.056, 0, 337.314, 0, 0, 0, 0, 0, 0, 442.036, 0, 336.073, 0, 0, 0, 0, 0, 0, 585.989, 0, 336.618, 0, 0, 0, 0, 0, 0, 758.995, 0, 337.238, 0, 0, 0, 0, 0, 0, 932.002, 0, 337.858, 0, 0, 0, 0, 0, 0, 1116.16, 0, 337.742, 0, 0, 0, 0, 0, 0, 1229.64, 0, 335.262, 0, 0, 0, 0, 0, 0, 1299.71, 0, 318.52, 0, 0, 0, 0, 0, 0, 1341.25, 0, 292.476, 0, 0, 0, 0, 0, 0, 1375.98, 0, 250.929, 0, 0, 0, 0, 0, 0, 1393.96, 0, 199.461, 0, 0, 0, 0, 0, 0, 1397.49, 0, 148.074, 0, 0, 0, 0, 0, 0, 1379.51, 0, 89.1654, 0, 0, 0, 0, 0, 0, 1345.4, 0, 46.3788, 0, 0, 0, 0, 0, 0, 1287.73, 0, 8.55302, 0, 0, 0, 0, 0, 0, 1200.3, 0, -1.9886, 0, 0, 0, 0, 0, 0, 1075.04, 0, -3.22879, 0, 0, 0, 0, 0, 0, 964.043, 0, -1.9886, 0, 0, 0, 0, 0, 0, 890.732, 0, -2.27879, 0, 0, 0, 0, 0, 0, 731.988, 0, -0.418506, 0, 0, 0, 0, 0, 0, 559.602, 0, -3.51898, 0, 0, 0, 0, 0, 0, 441.508, 0, -0.221961, 0, 0, 0, 0, 0, 0, 337.332, 0, -2.08224, 0, 0, 0, 0, 0, 0, 238.117, 0, -2.70234, 0, 0, 0, 0, 0, 0, 127.74, 0, -1.46215),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 47
 
 [node name="ArtTests" type="Node3D"]
 
@@ -198,82 +207,101 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -597, 1, 5)
 [node name="road_turn3" parent="Circuit" instance=ExtResource("13_25v2h")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2, 1, 328)
 
-[node name="Obstacle" parent="Circuit" instance=ExtResource("17_oew8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 20, -10)
+[node name="Coins" type="Node" parent="."]
 
-[node name="Obstacle2" parent="Circuit" instance=ExtResource("17_oew8k")]
-transform = Transform3D(1, 0, 0, 0, 4.62, 0, 0, 0, 0.3, -79, 23.69, -10)
+[node name="Coin" parent="Coins" instance=ExtResource("9_28rqt")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 14.64, 8.324, 4.72)
 
-[node name="CollisionShape3D" parent="Circuit/Obstacle2/Area3D" index="1"]
+[node name="Coin2" parent="Coins" instance=ExtResource("9_28rqt")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -17.76, 8.324, 4.72)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("9_28rqt")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -41.52, 8.324, 0.4)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("9_28rqt")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -73.92, 8.324, 3.64)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("9_28rqt")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -98.76, 8.324, -7.16)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("9_28rqt")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -126.84, 8.324, 0.4)
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("17_oew8k")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -9.2, 8, -4)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("17_oew8k")]
+transform = Transform3D(0.4, 0, 0, 0, 1.848, 0, 0, 0, 0.12, -31.6, 9.476, -4)
+
+[node name="CollisionShape3D" parent="Obstacles/Obstacle2/Area3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.0999985, -1.5)
 
-[node name="end" parent="Circuit/Obstacle2" index="1"]
+[node name="end" parent="Obstacles/Obstacle2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 73.6)
 
-[node name="ramp2" parent="Circuit" instance=ExtResource("18_t0ww0")]
-transform = Transform3D(3.38, 0, 0, 0, 1.2, 0, 0, 0, 10.7, -2, 19, -7)
+[node name="ramp2" parent="Obstacles" instance=ExtResource("18_t0ww0")]
+transform = Transform3D(1.352, 0, 0, 0, 0.48, 0, 0, 0, 4.28, -0.8, 7.6, -2.8)
 
-[node name="Coin" parent="Circuit" instance=ExtResource("9_28rqt")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 36.6, 20.81, 11.8)
+[node name="ExplosiveBarrel" parent="Obstacles" instance=ExtResource("16_f0sam")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 22.4, 7.90692, 0)
 
-[node name="Coin2" parent="Circuit" instance=ExtResource("9_28rqt")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -44.4, 20.81, 11.8)
+[node name="Decoration" type="Node" parent="."]
 
-[node name="Coin3" parent="Circuit" instance=ExtResource("9_28rqt")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -103.8, 20.81, 1)
+[node name="cloud" parent="Decoration" instance=ExtResource("1_rfc7w")]
+transform = Transform3D(17.4865, 0, 0, 0, 17.4865, 0, 0, 0, 17.4865, -175.364, -0.937232, -286.194)
 
-[node name="Coin4" parent="Circuit" instance=ExtResource("9_28rqt")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -184.8, 20.81, 9.1)
+[node name="cloud3" parent="Decoration" instance=ExtResource("1_rfc7w")]
+transform = Transform3D(8.74324, 0, -15.1437, 0, 17.4865, 0, 15.1437, 0, 8.74324, 296.771, -0.937232, 238.401)
 
-[node name="Coin5" parent="Circuit" instance=ExtResource("9_28rqt")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -246.9, 20.81, -17.9)
+[node name="cloud2" type="Node3D" parent="Decoration"]
+transform = Transform3D(4.52584, 0, -25.7348, 0, 17.4865, 0, 16.8906, 0, 6.8956, 454.476, -0.937232, 1.61757)
 
-[node name="Coin6" parent="Circuit" instance=ExtResource("9_28rqt")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -317.1, 20.81, 1)
-
-[node name="cloud" parent="Circuit" instance=ExtResource("1_rfc7w")]
-transform = Transform3D(43.7162, 0, 0, 0, 43.7162, 0, 0, 0, 43.7162, -438.41, -2.34308, -715.484)
-
-[node name="cloud3" parent="Circuit" instance=ExtResource("1_rfc7w")]
-transform = Transform3D(21.8581, 0, -37.8593, 0, 43.7162, 0, 37.8593, 0, 21.8581, 741.927, -2.34308, 596.002)
-
-[node name="cloud2" type="Node3D" parent="Circuit"]
-transform = Transform3D(11.3146, 0, -64.3369, 0, 43.7162, 0, 42.2266, 0, 17.239, 1136.19, -2.34308, 4.04392)
-
-[node name="Mball_010" type="MeshInstance3D" parent="Circuit/cloud2"]
+[node name="Mball_010" type="MeshInstance3D" parent="Decoration/cloud2"]
 transform = Transform3D(1.76962, 0, 0, 0, 1.76962, 0, 0, 0, 1.76962, -0.0734029, 0.0145264, -8.85238)
 mesh = SubResource("ArrayMesh_xtctt")
 skeleton = NodePath("")
 
-[node name="cloud22" parent="Circuit" instance=ExtResource("2_1xm3q")]
-transform = Transform3D(-24.0304, 0, 56.4779, 0, 79.6682, 0, -56.4779, 0, -24.0304, -1108.51, -1.37101, 229.185)
+[node name="cloud22" parent="Decoration" instance=ExtResource("2_1xm3q")]
+transform = Transform3D(-9.61216, 0, 22.5912, 0, 31.8673, 0, -22.5912, 0, -9.61216, -443.404, -0.548404, 91.674)
 
-[node name="cloud23" parent="Circuit" instance=ExtResource("2_1xm3q")]
-transform = Transform3D(75.9039, 0, -30.5917, 0, 106.224, 0, 30.5917, 0, 75.9039, -490.859, -1.37101, 841.646)
+[node name="cloud23" parent="Decoration" instance=ExtResource("2_1xm3q")]
+transform = Transform3D(30.3616, 0, -12.2367, 0, 42.4896, 0, 12.2367, 0, 30.3616, -196.344, -0.548404, 336.658)
 
-[node name="cloud24" parent="Circuit" instance=ExtResource("2_1xm3q")]
-transform = Transform3D(-81.2353, -6.42765, -8.57705, 0, -91.9929, 40.9184, -9.90392, 52.7217, 70.3518, 1255.84, -57.8194, -1004.04)
+[node name="cloud24" parent="Decoration" instance=ExtResource("2_1xm3q")]
+transform = Transform3D(-32.4941, -2.57106, -3.43082, 0, -36.7972, 16.3674, -3.96157, 21.0887, 28.1407, 502.336, -23.1278, -401.616)
 
-[node name="sun" type="MeshInstance3D" parent="Circuit"]
-transform = Transform3D(1210.07, 0, 0, 0, 1210.07, 0, 0, 0, 1210.07, -1070.11, 49.9721, -932.897)
+[node name="sun" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(484.028, 0, 0, 0, 484.028, 0, 0, 0, 484.028, -428.044, 19.9888, -373.159)
 mesh = SubResource("SphereMesh_cw1k8")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_cg5j4")
 
-[node name="island" parent="Circuit" instance=ExtResource("5_1xm3q")]
-transform = Transform3D(-2.61347, 0, 2.61347, 0, 3.696, 0, -2.61347, 0, -2.61347, 56.4562, 0, 140.33)
+[node name="island" parent="Decoration" instance=ExtResource("5_1xm3q")]
+transform = Transform3D(-1.04539, 0, 1.04539, 0, 1.4784, 0, -1.04539, 0, -1.04539, 22.5825, 0, 56.132)
 
-[node name="Birds" parent="Circuit" instance=ExtResource("6_ggja7")]
-transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 61, 90.8, 56)
+[node name="Birds" parent="Decoration" instance=ExtResource("6_ggja7")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
-[node name="PathFollow3D" parent="Circuit/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
+[node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
+transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
 
-[node name="ExplosiveBarrel" parent="Circuit" instance=ExtResource("16_f0sam")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 19.7673, 0)
+[node name="Dreamchaser" type="Node" parent="."]
+
+[node name="BirdPath3D" type="Path3D" parent="Dreamchaser"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 15.975, 0)
+curve = SubResource("Curve3D_pud53")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Dreamchaser/BirdPath3D"]
+transform = Transform3D(0.0112987, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0112987, -59.9618, 0, -0.151494)
+
+[node name="Birb" parent="Dreamchaser/BirdPath3D/PathFollow3D" instance=ExtResource("20_47cvh")]
+transform = Transform3D(-2.49984, 0, -0.0282469, 0, 2.5, 0, 0.0282469, 0, -2.49984, 0, 0, 0)
+motion_mode = 1
 
 [editable path="VehicleController"]
-[editable path="Circuit/Obstacle"]
-[editable path="Circuit/Obstacle2"]
-[editable path="Circuit/Birds"]
+[editable path="Obstacles/Obstacle"]
+[editable path="Obstacles/Obstacle2"]
+[editable path="Decoration/Birds"]
