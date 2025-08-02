@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcfa0gy8knvwp"]
+[gd_scene load_steps=13 format=3 uid="uid://dcfa0gy8knvwp"]
 
 [ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="3_m5dm6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="4_fws1a"]
 [ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="5_xpysu"]
 [ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="6_fws1a"]
+[ext_resource type="PackedScene" uid="uid://bcxj4kh4dvprq" path="res://scenes/collectibles/coin/Coin.tscn" id="7_xpysu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
 albedo_color = Color(0, 0.341176, 0, 1)
@@ -101,9 +102,10 @@ countersteer_speed = 30.0
 steering_speed_decay = 0.0
 steering_slip_assist = 1.0
 countersteer_assist = 1.0
+throttle_speed = 25.0
 throttle_steering_adjust = 1.0
 brake_force_multiplier = 10.0
-max_torque = 1000.0
+max_rpm = 900000.0
 motor_brake = 1000.0
 motor_moment = 0.01
 
@@ -117,3 +119,8 @@ current = true
 script = ExtResource("6_fws1a")
 follow_distance = 3
 follow_this = NodePath("../VehicleController/VehicleRigidBody")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("7_xpysu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12314, -13.1301)
