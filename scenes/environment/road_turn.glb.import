@@ -35,7 +35,9 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Cube_025": {
-"generate/physics": true
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 3
 }
 }
 }

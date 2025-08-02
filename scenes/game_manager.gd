@@ -34,4 +34,3 @@ func _update_hearts() -> void:
 	for i: int in heart_sprites.size():
 		if i >= life:
 			heart_sprites[i].texture = heart_empty
-
