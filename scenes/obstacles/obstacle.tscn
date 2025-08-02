@@ -1,6 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://be20iuksu23mo"]
 
+
 [ext_resource type="Script" path="res://scenes/obstacles/obstacle.gd" id="1_hof70"]
+
 
 [sub_resource type="BoxMesh" id="BoxMesh_t0ww0"]
 
@@ -11,7 +13,9 @@ albedo_color = Color(1, 0.106883, 0.405223, 1)
 size = Vector3(15, 2.6, 21.8)
 
 [node name="Obstacle" type="Node3D"]
-script = ExtResource("1_hof70")
+
+script = ExtResource("1_7ukg5")
+
 
 [node name="Area3D" type="Area3D" parent="."]
 
