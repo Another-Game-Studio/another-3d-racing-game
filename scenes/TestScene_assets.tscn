@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcfa0gy8knvwp"]
+[gd_scene load_steps=12 format=3 uid="uid://cjopwfsfpsx6q"]
 
-[ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
-[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="3_m5dm6"]
-[ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="3_n77mx"]
-[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="4_fws1a"]
-[ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="5_xpysu"]
-[ext_resource type="Script" uid="uid://bri3gu3sjj2r5" path="res://addons/gevp/scripts/camera.gd" id="6_fws1a"]
+[ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="1_eee57"]
+[ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="2_tg420"]
+[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="3_ssg0v"]
+[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="4_hdhrf"]
+[ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="5_16b86"]
+[ext_resource type="Script" uid="uid://bri3gu3sjj2r5" path="res://addons/gevp/scripts/camera.gd" id="6_td3pe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
 albedo_color = Color(0, 0.341176, 0, 1)
@@ -31,7 +31,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_rlkm5")
+script = ExtResource("1_eee57")
 
 [node name="Label" type="Label" parent="GUI"]
 layout_mode = 0
@@ -71,13 +71,13 @@ collision_layer = 2
 collision_mask = 13
 mesh = SubResource("PrismMesh_rlkm5")
 
-[node name="ExplosiveBarrel" parent="." instance=ExtResource("3_n77mx")]
+[node name="ExplosiveBarrel" parent="." instance=ExtResource("2_tg420")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3168, 2.32151, 31.4773)
 collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 5
 
-[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("3_m5dm6")]
+[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("3_ssg0v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 270.376, 8.39135, 0)
 vehicle_node = NodePath("VehicleRigidBody")
 string_brake_input = "brake"
@@ -90,7 +90,7 @@ string_toggle_transmission = "toggle-transmission"
 string_shift_up = "shift-up"
 string_shift_down = "shift-down"
 
-[node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("4_fws1a")]
+[node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("4_hdhrf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926611, 0)
 collision_mask = 14
 center_of_mass_mode = 1
@@ -105,14 +105,14 @@ throttle_steering_adjust = 4.0
 max_torque = 1000.0
 motor_brake = 1000.0
 
-[node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("5_xpysu")]
+[node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("5_16b86")]
 max_db = -24.0
 vehicle = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
 transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 4.05282, 1.58316, 5.80061)
 current = true
-script = ExtResource("6_fws1a")
+script = ExtResource("6_td3pe")
 follow_distance = 6
 follow_this = NodePath("../VehicleController/VehicleRigidBody")
 
