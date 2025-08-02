@@ -430,7 +430,7 @@ func _ready():
 	SignalBus.coin_collected.connect(_on_coin_collected)
 
 func _on_coin_collected() -> void:
-	print("J'ai ramassé une coin!")
+	pass
 
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
@@ -642,7 +642,6 @@ func _physics_process(delta : float) -> void:
 	
 
 func jump()-> void:
-	print("Trying to jump")
 	var wheels : Array[Wheel] = []
 	for child : Node in get_children():
 		if child is Wheel:
@@ -650,7 +649,6 @@ func jump()-> void:
 	var can_jump : bool = true
 	for wheel in wheels:
 		can_jump = can_jump and wheel.is_colliding()
-	print(can_jump)
 	if can_jump:
 		apply_central_impulse(global_transform.basis.y*jump_force)
 
