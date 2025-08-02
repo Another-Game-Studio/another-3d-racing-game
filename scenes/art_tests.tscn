@@ -1,10 +1,9 @@
-[gd_scene load_steps=27 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=28 format=4 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
 [ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="5_1xm3q"]
 [ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="6_ggja7"]
-[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="6_oftd3"]
 [ext_resource type="Texture2D" uid="uid://cvwuclqun7hbs" path="res://assets/ui/life_full.png" id="8_25v2h"]
 [ext_resource type="PackedScene" uid="uid://bcxj4kh4dvprq" path="res://scenes/collectibles/coin/Coin.tscn" id="9_28rqt"]
 [ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
@@ -12,11 +11,14 @@
 [ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
 [ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
 [ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
+[ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
+[ext_resource type="AudioStream" uid="uid://co50njnn1clyh" path="res://assets/sounds/degat.wav" id="13_0ijw1"]
 [ext_resource type="PackedScene" uid="uid://bvgwkkh5srraj" path="res://scenes/environment/road_turn.glb" id="13_25v2h"]
-[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="13_f0sam"]
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
+[ext_resource type="PackedScene" uid="uid://ecv31aag7yq6" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
 [ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="16_f0sam"]
 [ext_resource type="PackedScene" uid="uid://be20iuksu23mo" path="res://scenes/obstacles/obstacle.tscn" id="17_oew8k"]
+[ext_resource type="PackedScene" uid="uid://dcmig0wmlgi73" path="res://scenes/obstacles/ramp.glb" id="18_t0ww0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -88,9 +90,6 @@ albedo_color = Color(0.796936, 0.377167, 0.133551, 1)
 emission_enabled = true
 emission = Color(0.656989, 0.338815, 0.413919, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oew8k"]
-size = Vector3(15, 2.6, 21.8)
-
 [node name="ArtTests" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -101,77 +100,13 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ao6v7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-
-[node name="cloud" parent="." instance=ExtResource("1_rfc7w")]
-transform = Transform3D(43.7162, 0, 0, 0, 43.7162, 0, 0, 0, 43.7162, -438.41, -2.34308, -715.484)
-
-[node name="cloud3" parent="." instance=ExtResource("1_rfc7w")]
-transform = Transform3D(21.8581, 0, -37.8593, 0, 43.7162, 0, 37.8593, 0, 21.8581, 741.927, -2.34308, 596.002)
-
-[node name="cloud2" type="Node3D" parent="."]
-transform = Transform3D(11.3146, 0, -64.3369, 0, 43.7162, 0, 42.2266, 0, 17.239, 1136.19, -2.34308, 4.04392)
-
-[node name="Mball_010" type="MeshInstance3D" parent="cloud2"]
-transform = Transform3D(1.76962, 0, 0, 0, 1.76962, 0, 0, 0, 1.76962, -0.0734029, 0.0145264, -8.85238)
-mesh = SubResource("ArrayMesh_xtctt")
-skeleton = NodePath("")
-
-[node name="cloud22" parent="." instance=ExtResource("2_1xm3q")]
-transform = Transform3D(-24.0304, 0, 56.4779, 0, 79.6682, 0, -56.4779, 0, -24.0304, -1108.51, -1.37101, 229.185)
-
-[node name="cloud23" parent="." instance=ExtResource("2_1xm3q")]
-transform = Transform3D(-81.2353, 0, 9.90392, 0, 106.224, 0, -9.90392, 0, -81.2353, 189.22, -1.37101, 1188.94)
-
-[node name="cloud24" parent="." instance=ExtResource("2_1xm3q")]
-transform = Transform3D(-81.2353, -6.42765, -8.57705, 0, -91.9929, 40.9184, -9.90392, 52.7217, 70.3518, 1255.84, -57.8194, -1004.04)
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1210.07, 0, 0, 0, 1210.07, 0, 0, 0, 1210.07, -1070.11, 49.9721, -932.897)
-mesh = SubResource("SphereMesh_cw1k8")
-surface_material_override/0 = SubResource("StandardMaterial3D_cg5j4")
-
-[node name="island" parent="." instance=ExtResource("5_1xm3q")]
-transform = Transform3D(-2.61347, 0, 2.61347, 0, 3.696, 0, -2.61347, 0, -2.61347, 56.4562, 0, 140.33)
-
-[node name="Birds" parent="." instance=ExtResource("6_ggja7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 70, 56)
-bird_count = 20
-
-[node name="PathFollow3D" parent="Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
-
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
 transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 545.053, 1.58316, 5.80061)
 current = true
 script = ExtResource("10_ao6v7")
-follow_distance = 10
-camera_y_offset = 4.0
-follow_this = NodePath("../VehicleController/VehicleRigidBody2")
-
-[node name="Coin" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 181.6, 22.8, 5.4)
-
-[node name="Coin2" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 80.8, 22.8, 5.4)
-
-[node name="Coin3" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, -34.3999, 22.8, 15)
-
-[node name="Coin4" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 335.2, 22.8, 15)
-
-[node name="Coin5" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 335.2, 22.8, 322.2)
-
-[node name="Coin6" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 503.2, 22.8, 336.6)
-
-[node name="Coin7" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 709.6, 22.8, 303)
-
-[node name="Coin8" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 709.6, 22.8, 19.8)
+follow_height = 1
+camera_y_offset = 2.0
+follow_this = NodePath("../VehicleController/MyVehicleRigidBody")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -227,88 +162,119 @@ script = ExtResource("11_cg5j4")
 script = ExtResource("11_cw1k8")
 coin_label = NodePath("../UI/Label")
 heart_sprites = [NodePath("../UI/1"), NodePath("../UI/2"), NodePath("../UI/3"), NodePath("../UI/4")]
+heart_full = ExtResource("8_25v2h")
 heart_empty = ExtResource("11_f0sam")
+coin_sound = ExtResource("12_pud53")
+damage_sound = ExtResource("13_0ijw1")
 
-[node name="Coin9" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 181.6, 22.8, 5.4)
+[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("14_s25y7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 109, 8.2465, -1.99999)
+vehicle_node = NodePath("MyVehicleRigidBody")
 
-[node name="Coin10" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 80.8, 22.8, 5.4)
+[node name="Circuit" type="Node3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
-[node name="Coin11" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, -34.3999, 22.8, 15)
-
-[node name="Coin12" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 335.2, 22.8, 15)
-
-[node name="Coin13" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 335.2, 22.8, 322.2)
-
-[node name="Coin14" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 503.2, 22.8, 336.6)
-
-[node name="Coin15" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 709.6, 22.8, 303)
-
-[node name="Coin16" parent="." instance=ExtResource("9_28rqt")]
-transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 709.6, 22.8, 19.8)
-
-[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("6_oftd3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 20.2465, -1.99999)
-vehicle_node = NodePath("VehicleRigidBody2")
-string_brake_input = "brake"
-string_steer_left = "left"
-string_steer_right = "right"
-string_throttle_input = "gas"
-string_handbrake_input = "handbrake"
-string_clutch_input = "clutch"
-string_toggle_transmission = "toggle-transmission"
-string_shift_up = "shift-up"
-string_shift_down = "shift-down"
-metadata/_edit_group_ = true
-
-[node name="VehicleRigidBody2" parent="VehicleController" instance=ExtResource("13_f0sam")]
-
-[node name="road_droit2" parent="." instance=ExtResource("14_f0sam")]
+[node name="road_droit2" parent="Circuit" instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
 
-[node name="road_droit6" parent="." instance=ExtResource("14_f0sam")]
+[node name="road_droit6" parent="Circuit" instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -598, 1, 4)
 
-[node name="road_droit4" parent="." instance=ExtResource("14_f0sam")]
+[node name="road_droit4" parent="Circuit" instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, 4)
 
-[node name="road_droit3" parent="." instance=ExtResource("14_f0sam")]
+[node name="road_droit3" parent="Circuit" instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -335)
 
-[node name="road_droit7" parent="." instance=ExtResource("14_f0sam")]
+[node name="road_droit7" parent="Circuit" instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -598, 1, -335)
 
-[node name="road_droit5" parent="." instance=ExtResource("14_f0sam")]
+[node name="road_droit5" parent="Circuit" instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, -335)
 
-[node name="road_turn2" parent="." instance=ExtResource("13_25v2h")]
+[node name="road_turn2" parent="Circuit" instance=ExtResource("13_25v2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -597, 1, 5)
 
-[node name="road_turn3" parent="." instance=ExtResource("13_25v2h")]
+[node name="road_turn3" parent="Circuit" instance=ExtResource("13_25v2h")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2, 1, 328)
 
-[node name="ExplosiveBarrel" parent="." instance=ExtResource("16_f0sam")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.1873, 0)
-
-[node name="Obstacle" parent="." instance=ExtResource("17_oew8k")]
+[node name="Obstacle" parent="Circuit" instance=ExtResource("17_oew8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 20, -10)
 
-[node name="CollisionShape3D" parent="Obstacle" index="1"]
-shape = SubResource("BoxShape3D_oew8k")
+[node name="Obstacle2" parent="Circuit" instance=ExtResource("17_oew8k")]
+transform = Transform3D(1, 0, 0, 0, 4.62, 0, 0, 0, 0.3, -79, 23.69, -10)
+speed = 5.0
 
-[node name="Obstacle2" parent="." instance=ExtResource("17_oew8k")]
-transform = Transform3D(1, 0, 0, 0, 4.62, 0, 0, 0, 0.3, -79, 26, -10)
+[node name="CollisionShape3D" parent="Circuit/Obstacle2/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.0999985, -1.5)
 
-[node name="CollisionShape3D" parent="Obstacle2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -9.98378e-07, 0.2)
-shape = SubResource("BoxShape3D_oew8k")
+[node name="end" parent="Circuit/Obstacle2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 73.6)
 
-[editable path="Birds"]
-[editable path="Obstacle"]
-[editable path="Obstacle2"]
+[node name="ramp2" parent="Circuit" instance=ExtResource("18_t0ww0")]
+transform = Transform3D(3.38, 0, 0, 0, 1.2, 0, 0, 0, 10.7, -2, 19, -7)
+
+[node name="Coin" parent="Circuit" instance=ExtResource("9_28rqt")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 36.6, 20.81, 11.8)
+
+[node name="Coin2" parent="Circuit" instance=ExtResource("9_28rqt")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -44.4, 20.81, 11.8)
+
+[node name="Coin3" parent="Circuit" instance=ExtResource("9_28rqt")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -103.8, 20.81, 1)
+
+[node name="Coin4" parent="Circuit" instance=ExtResource("9_28rqt")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -184.8, 20.81, 9.1)
+
+[node name="Coin5" parent="Circuit" instance=ExtResource("9_28rqt")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -246.9, 20.81, -17.9)
+
+[node name="Coin6" parent="Circuit" instance=ExtResource("9_28rqt")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -317.1, 20.81, 1)
+
+[node name="cloud" parent="Circuit" instance=ExtResource("1_rfc7w")]
+transform = Transform3D(43.7162, 0, 0, 0, 43.7162, 0, 0, 0, 43.7162, -438.41, -2.34308, -715.484)
+
+[node name="cloud3" parent="Circuit" instance=ExtResource("1_rfc7w")]
+transform = Transform3D(21.8581, 0, -37.8593, 0, 43.7162, 0, 37.8593, 0, 21.8581, 741.927, -2.34308, 596.002)
+
+[node name="cloud2" type="Node3D" parent="Circuit"]
+transform = Transform3D(11.3146, 0, -64.3369, 0, 43.7162, 0, 42.2266, 0, 17.239, 1136.19, -2.34308, 4.04392)
+
+[node name="Mball_010" type="MeshInstance3D" parent="Circuit/cloud2"]
+transform = Transform3D(1.76962, 0, 0, 0, 1.76962, 0, 0, 0, 1.76962, -0.0734029, 0.0145264, -8.85238)
+mesh = SubResource("ArrayMesh_xtctt")
+skeleton = NodePath("")
+
+[node name="cloud22" parent="Circuit" instance=ExtResource("2_1xm3q")]
+transform = Transform3D(-24.0304, 0, 56.4779, 0, 79.6682, 0, -56.4779, 0, -24.0304, -1108.51, -1.37101, 229.185)
+
+[node name="cloud23" parent="Circuit" instance=ExtResource("2_1xm3q")]
+transform = Transform3D(75.9039, 0, -30.5917, 0, 106.224, 0, 30.5917, 0, 75.9039, -490.859, -1.37101, 841.646)
+
+[node name="cloud24" parent="Circuit" instance=ExtResource("2_1xm3q")]
+transform = Transform3D(-81.2353, -6.42765, -8.57705, 0, -91.9929, 40.9184, -9.90392, 52.7217, 70.3518, 1255.84, -57.8194, -1004.04)
+
+[node name="sun" type="MeshInstance3D" parent="Circuit"]
+transform = Transform3D(1210.07, 0, 0, 0, 1210.07, 0, 0, 0, 1210.07, -1070.11, 49.9721, -932.897)
+mesh = SubResource("SphereMesh_cw1k8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_cg5j4")
+
+[node name="island" parent="Circuit" instance=ExtResource("5_1xm3q")]
+transform = Transform3D(-2.61347, 0, 2.61347, 0, 3.696, 0, -2.61347, 0, -2.61347, 56.4562, 0, 140.33)
+
+[node name="Birds" parent="Circuit" instance=ExtResource("6_ggja7")]
+transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 61, 90.8, 56)
+bird_count = 20
+
+[node name="PathFollow3D" parent="Circuit/Birds/Path3D" index="0"]
+transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
+
+[node name="ExplosiveBarrel" parent="Circuit" instance=ExtResource("16_f0sam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 19.7673, 0)
+
+[editable path="VehicleController"]
+[editable path="Circuit/Obstacle"]
+[editable path="Circuit/Obstacle2"]
+[editable path="Circuit/Birds"]
