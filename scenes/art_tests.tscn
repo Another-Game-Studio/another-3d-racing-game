@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=14 format=3 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
-[ext_resource type="PackedScene" uid="uid://cpnxjv5h8rq1" path="res://assets/meshes/car.glb" id="3_ggja7"]
 [ext_resource type="PackedScene" uid="uid://bp4adj8qc2fow" path="res://assets/meshes/environments/road.glb" id="4_5fs3g"]
 [ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="5_1xm3q"]
 [ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="6_ggja7"]
+[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="6_oftd3"]
+[ext_resource type="PackedScene" uid="uid://bx8fhhfwam6q0" path="res://addons/gevp/scenes/monster_truck.tscn" id="8_oftd3"]
+[ext_resource type="Script" uid="uid://bri3gu3sjj2r5" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -55,28 +57,33 @@ environment = SubResource("Environment_ao6v7")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
 [node name="cloud" parent="." instance=ExtResource("1_rfc7w")]
-transform = Transform3D(5.8444, 0, 0, 0, 5.8444, 0, 0, 0, 5.8444, -9.95428, 0, -70.5203)
+transform = Transform3D(19.871, 0, 0, 0, 19.871, 0, 0, 0, 19.871, -438.41, -2.34308, -715.484)
 
 [node name="cloud22" parent="." instance=ExtResource("2_1xm3q")]
-transform = Transform3D(-4.71185, 0, 11.0741, 0, 15.6212, 0, -11.0741, 0, -4.71185, -134.789, 0.285904, 87.7558)
+transform = Transform3D(-16.0203, 0, 37.6519, 0, 53.1121, 0, -37.6519, 0, -16.0203, -1334.42, -1.37101, 325.307)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(211.55, 0, 0, 0, 211.55, 0, 0, 0, 211.55, -96.9782, 49.9721, -171.317)
+transform = Transform3D(550.03, 0, 0, 0, 550.03, 0, 0, 0, 550.03, -1070.11, 49.9721, -932.897)
 mesh = SubResource("SphereMesh_cw1k8")
 surface_material_override/0 = SubResource("StandardMaterial3D_cg5j4")
 
-[node name="car" parent="." instance=ExtResource("3_ggja7")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 81.0259, 4.19729, 35.5189)
-metadata/_edit_group_ = true
-
-[node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -18, 6.8, 1.7)
-
-[node name="road" parent="." instance=ExtResource("4_5fs3g")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 73.173, -14.0467, 41.5534)
-
 [node name="road2" parent="." instance=ExtResource("4_5fs3g")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 15.5265, -14.0467, 26.1658)
+
+[node name="road5" parent="." instance=ExtResource("4_5fs3g")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 72.5161, -14.0467, 41.4361)
+
+[node name="road6" parent="." instance=ExtResource("4_5fs3g")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 130.472, -14.0467, 56.9653)
+
+[node name="road7" parent="." instance=ExtResource("4_5fs3g")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 186.495, -14.0467, 71.9768)
+
+[node name="road8" parent="." instance=ExtResource("4_5fs3g")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 242.519, -14.0467, 86.9883)
+
+[node name="road9" parent="." instance=ExtResource("4_5fs3g")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 300.475, -14.0467, 102.517)
 
 [node name="road3" parent="." instance=ExtResource("4_5fs3g")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -42.3964, -14.0467, 10.6784)
@@ -97,6 +104,28 @@ bird_count = 20
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 0)
 
 [node name="PathFollow3D" parent="Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.0890062, -0.93769, 7.45057e-09, 0.995521, 0.0944959, 0.941906, -0.0317387, 0.33437, 23.2, -6.6, -7.6)
+transform = Transform3D(0.335873, 0.0890062, -0.93769, 0, 0.995521, 0.0944959, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
+transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 4.05282, 1.58316, 5.80061)
+current = true
+script = ExtResource("10_ao6v7")
+follow_distance = 10
+follow_this = NodePath("../VehicleController/VehicleRigidBody")
+
+[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("6_oftd3")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 284.376, 4.49135, 93)
+vehicle_node = NodePath("VehicleRigidBody")
+string_brake_input = "brake"
+string_steer_left = "left"
+string_steer_right = "right"
+string_throttle_input = "gas"
+string_handbrake_input = "handbrake"
+string_clutch_input = "clutch"
+string_toggle_transmission = "toggle-transmission"
+string_shift_up = "shift-up"
+string_shift_down = "shift-down"
+
+[node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("8_oftd3")]
 
 [editable path="Birds"]

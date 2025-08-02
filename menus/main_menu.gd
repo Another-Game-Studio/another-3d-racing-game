@@ -15,7 +15,7 @@ func _ready() -> void:
 	exit_button.button_down.connect(_on_exit_button_down)
 
 func _on_new_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://level/level.tscn")
+	get_tree().change_scene_to_file("res://scenes/TestScene.tscn")
 
 func _on_options_button_down() -> void:
 	get_tree().change_scene_to_packed(options_scene)
