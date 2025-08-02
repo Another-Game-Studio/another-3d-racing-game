@@ -1,10 +1,13 @@
+
 [gd_scene load_steps=24 format=4 uid="uid://drpbxmnfxylel"]
+
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
 [ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="5_1xm3q"]
 [ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="6_ggja7"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="6_oftd3"]
+
 [ext_resource type="Texture2D" uid="uid://cvwuclqun7hbs" path="res://assets/ui/life_full.png" id="8_25v2h"]
 [ext_resource type="PackedScene" uid="uid://bcxj4kh4dvprq" path="res://scenes/collectibles/coin/Coin.tscn" id="9_28rqt"]
 [ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
@@ -15,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bvgwkkh5srraj" path="res://scenes/environment/road_turn.glb" id="13_25v2h"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="13_f0sam"]
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -86,6 +90,9 @@ albedo_color = Color(0.796936, 0.377167, 0.133551, 1)
 emission_enabled = true
 emission = Color(0.656989, 0.338815, 0.413919, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f0sam"]
+size = Vector3(3086.96, 1, 1435.26)
+
 [node name="ArtTests" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -100,6 +107,7 @@ environment = SubResource("Environment_ao6v7")
 
 [node name="cloud" parent="." instance=ExtResource("1_rfc7w")]
 transform = Transform3D(43.7162, 0, 0, 0, 43.7162, 0, 0, 0, 43.7162, -438.41, -2.34308, -715.484)
+
 
 [node name="cloud3" parent="." instance=ExtResource("1_rfc7w")]
 transform = Transform3D(21.8581, 0, -37.8593, 0, 43.7162, 0, 37.8593, 0, 21.8581, 741.927, -2.34308, 596.002)
@@ -224,9 +232,74 @@ coin_label = NodePath("../UI/Label")
 heart_sprites = [NodePath("../UI/1"), NodePath("../UI/2"), NodePath("../UI/3"), NodePath("../UI/4")]
 heart_empty = ExtResource("11_f0sam")
 
+
+[node name="Coin" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 181.6, 22.8, 5.4)
+
+[node name="Coin2" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 80.8, 22.8, 5.4)
+
+[node name="Coin3" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, -34.3999, 22.8, 15)
+
+[node name="Coin4" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 335.2, 22.8, 15)
+
+[node name="Coin5" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 335.2, 22.8, 322.2)
+
+[node name="Coin6" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 503.2, 22.8, 336.6)
+
+[node name="Coin7" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 709.6, 22.8, 303)
+
+[node name="Coin8" parent="." instance=ExtResource("9_28rqt")]
+transform = Transform3D(4.8, 0, -1.19209e-07, 0, 4.8, 0, 1.19209e-07, 0, 4.8, 709.6, 22.8, 19.8)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 930.0
+offset_top = 68.0
+offset_right = -838.0
+offset_bottom = -676.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "8
+
+"
+horizontal_alignment = 1
+
+[node name="Coin" type="Sprite2D" parent="UI"]
+position = Vector2(899, 141)
+texture = ExtResource("10_cw1k8")
+
+[node name="FPS" type="Label" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1682.0
+offset_top = 95.0
+offset_right = -136.0
+offset_bottom = -902.0
+theme_override_font_sizes/font_size = 60
+text = "FPS"
+script = ExtResource("11_cg5j4")
+
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("coin_label")]
+script = ExtResource("11_cw1k8")
+coin_label = NodePath("../UI/Label")
+
 [node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("6_oftd3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 564, 20.2465, -2.00001)
+
 vehicle_node = NodePath("VehicleRigidBody2")
+
 string_brake_input = "brake"
 string_steer_left = "left"
 string_steer_right = "right"
@@ -238,7 +311,13 @@ string_shift_up = "shift-up"
 string_shift_down = "shift-down"
 metadata/_edit_group_ = true
 
+
 [node name="VehicleRigidBody2" parent="VehicleController" instance=ExtResource("13_f0sam")]
+
+
+[node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("13_xbung")]
+vehicle = NodePath("..")
+
 
 [node name="road_droit2" parent="." instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
@@ -261,7 +340,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, -335)
 [node name="road_turn2" parent="." instance=ExtResource("13_25v2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -597, 1, 5)
 
+
 [node name="road_turn3" parent="." instance=ExtResource("13_25v2h")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2, 1, 328)
+
 
 [editable path="Birds"]
