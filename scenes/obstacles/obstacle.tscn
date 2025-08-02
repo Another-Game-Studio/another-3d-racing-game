@@ -13,6 +13,7 @@ size = Vector3(15, 2.6, 21.8)
 [node name="Obstacle" type="Node3D"]
 script = ExtResource("1_7ukg5")
 
+
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
