@@ -392,6 +392,9 @@ var delta_time := 0.0
 var vehicle_inertia : Vector3
 var current_gravity : Vector3
 
+@onready var start_position : Vector3 = global_position
+@onready var start_rotation : Vector3 = global_rotation
+
 class Axle:
 	var wheels : Array[Wheel] = []
 	var is_drive_axle := false
@@ -428,9 +431,14 @@ func _ready():
 	set_deferred("continuous_cd", true)
 	initialize()
 	SignalBus.coin_collected.connect(_on_coin_collected)
+	SignalBus.car_fell.connect(_on_car_fell)
 
 func _on_coin_collected() -> void:
-	print("J'ai ramassé une coin!")
+	pass
+
+func _on_car_fell() -> void:
+	global_position = start_position
+	global_rotation = start_rotation
 
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
@@ -642,7 +650,6 @@ func _physics_process(delta : float) -> void:
 	
 
 func jump()-> void:
-	print("Trying to jump")
 	var wheels : Array[Wheel] = []
 	for child : Node in get_children():
 		if child is Wheel:
@@ -650,7 +657,6 @@ func jump()-> void:
 	var can_jump : bool = true
 	for wheel in wheels:
 		can_jump = can_jump and wheel.is_colliding()
-	print(can_jump)
 	if can_jump:
 		apply_central_impulse(global_transform.basis.y*jump_force)
 
