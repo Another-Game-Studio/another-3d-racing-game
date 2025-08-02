@@ -245,8 +245,13 @@ jump_force = 50000.0
 steering_speed = 5.0
 countersteer_speed = 5.0
 rear_steering_ratio = -1.0
-stability_yaw_strength = 20.0
+throttle_speed = 50.0
+braking_speed = 50.0
+stability_yaw_strength = 50.0
 stability_yaw_ground_multiplier = 6.0
+stability_upright_spring = 5.0
+stability_upright_damping = 5000.0
+motor_brake = 50.0
 wheel_to_body_torque_multiplier = 0.5
 coefficient_of_friction = {
 "Dirt": 2.2,
