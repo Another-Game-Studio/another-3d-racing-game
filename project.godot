@@ -142,6 +142,7 @@ shift-down={
 3d_physics/layer_1="Car"
 3d_physics/layer_2="Race"
 3d_physics/layer_3="Obstacle"
+3d_physics/layer_4="Coin_Fall"
 
 [maaacks_credits_scene]
 
