@@ -8,3 +8,6 @@ func _ready() -> void:
 	var delay: float = randf_range(flap_delay_range.x, flap_delay_range.y)
 	await get_tree().create_timer(delay).timeout
 	anim.play("fly")
+
+func _physics_process(delta: float) -> void:
+	pass
