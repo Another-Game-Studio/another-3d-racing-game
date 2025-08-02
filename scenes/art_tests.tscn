@@ -269,7 +269,7 @@ transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 61, 90.8, 56)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Circuit/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
+transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
 [node name="ExplosiveBarrel" parent="Circuit" instance=ExtResource("16_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 19.7673, 0)
