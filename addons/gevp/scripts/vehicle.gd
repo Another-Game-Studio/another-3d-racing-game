@@ -392,6 +392,9 @@ var delta_time := 0.0
 var vehicle_inertia : Vector3
 var current_gravity : Vector3
 
+@onready var start_position : Vector3 = global_position
+@onready var start_rotation : Vector3 = global_rotation
+
 class Axle:
 	var wheels : Array[Wheel] = []
 	var is_drive_axle := false
@@ -428,9 +431,14 @@ func _ready():
 	set_deferred("continuous_cd", true)
 	initialize()
 	SignalBus.coin_collected.connect(_on_coin_collected)
+	SignalBus.car_fell.connect(_on_car_fell)
 
 func _on_coin_collected() -> void:
 	pass
+
+func _on_car_fell() -> void:
+	global_position = start_position
+	global_rotation = start_rotation
 
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
