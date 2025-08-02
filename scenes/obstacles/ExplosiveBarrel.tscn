@@ -22,12 +22,12 @@ max_contacts_reported = 3
 script = ExtResource("1_6c56j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.75, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.75, 0)
 mesh = SubResource("CylinderMesh_5cq6a")
 surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, 0)
 shape = SubResource("CylinderShape3D_mr7jy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

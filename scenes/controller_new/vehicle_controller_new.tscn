@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ecv31aag7yq6"]
+
+[ext_resource type="Script" uid="uid://cyxl78ajdqtbv" path="res://addons/gevp/scripts/vehicle_controllergd.gd" id="1_m42q0"]
+[ext_resource type="PackedScene" uid="uid://ceiu348722pvh" path="res://scenes/controller_new/my_vehicle_rigid_body.tscn" id="2_a4rcr"]
+
+[node name="VehicleController" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_m42q0")
+string_brake_input = "brake"
+string_steer_left = "left"
+string_steer_right = "right"
+string_throttle_input = "gas"
+string_handbrake_input = "handbrake"
+string_clutch_input = "clutch"
+string_toggle_transmission = "toggle-transmission"
+string_shift_up = "shift-up"
+string_shift_down = "shift-down"
+metadata/_edit_group_ = true
+
+[node name="MyVehicleRigidBody" parent="." instance=ExtResource("2_a4rcr")]
