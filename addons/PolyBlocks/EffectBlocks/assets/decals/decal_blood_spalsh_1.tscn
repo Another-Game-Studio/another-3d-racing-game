@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wa1ywrnqlhc2"]
+
+[ext_resource type="Texture2D" uid="uid://dxj5pwx73pin6" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_bloodsplash_1.png" id="1_1q0am"]
+
+[node name="Decal_BloodSpalsh_1" type="Decal"]
+size = Vector3(0.4, 1, 0.4)
+texture_albedo = ExtResource("1_1q0am")

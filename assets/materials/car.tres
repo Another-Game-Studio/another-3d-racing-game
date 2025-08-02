@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bnj5ug65vpwjk"]
+
+[ext_resource type="Texture2D" uid="uid://bo4xxrrrc6781" path="res://assets/meshes/car_car.png" id="1_7lqad"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+diffuse_mode = 1
+specular_mode = 1
+albedo_texture = ExtResource("1_7lqad")
+metallic_specular = 0.0
+roughness = 0.0
+rim_enabled = true

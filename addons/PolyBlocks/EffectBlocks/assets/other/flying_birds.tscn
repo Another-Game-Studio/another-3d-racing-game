@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6go864c63tgt"]
+
+[ext_resource type="ArrayMesh" uid="uid://5r44knku251m" path="res://addons/PolyBlocks/EffectBlocks/source_files/meshes/bird.mesh" id="1_7r00c"]
+[ext_resource type="Script" uid="uid://dqeka2b4mp0o4" path="res://addons/PolyBlocks/EffectBlocks/source_files/scripts/flying_birds.gd" id="1_wvxg7"]
+
+[node name="FlyingBirds" type="Node3D"]
+
+[node name="bird" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7r00c")
+blend_shapes/Downstroke = 0.0
+blend_shapes/Upstroke = 0.0
+script = ExtResource("1_wvxg7")
+circle_center = Vector3(0, 0, -12)
+circle_radius = 6.0
+circle_height = 12.0
+
+[node name="bird2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7r00c")
+blend_shapes/Downstroke = 0.0
+blend_shapes/Upstroke = 0.0
+script = ExtResource("1_wvxg7")
+circle_center = Vector3(0, 0, -12)
+circle_radius = 8.0
+circle_height = 10.0
+flight_speed = 3.0
+
+[node name="bird3" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7r00c")
+blend_shapes/Downstroke = 0.0
+blend_shapes/Upstroke = 0.0
+script = ExtResource("1_wvxg7")
+wing_cycles_before_soar = 5
+circle_center = Vector3(0, 0, -12)
+circle_radius = 6.0
+circle_height = 12.0
+flight_speed = 3.0
+
+[node name="bird4" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7r00c")
+blend_shapes/Downstroke = 0.0
+blend_shapes/Upstroke = 0.0
+script = ExtResource("1_wvxg7")
+circle_center = Vector3(0, 0, -12)
+circle_radius = 4.0
+circle_height = 10.0

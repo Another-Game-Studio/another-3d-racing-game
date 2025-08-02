@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cphn5yxatclv7"]
+
+[ext_resource type="Texture2D" uid="uid://d0evwqu8yap5i" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_slime_2.png" id="1_var76"]
+
+[node name="Decal_Slime_2" type="Decal"]
+size = Vector3(0.3, 1, 0.3)
+texture_albedo = ExtResource("1_var76")

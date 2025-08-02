@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl4mhysys2y34"]
+
+[ext_resource type="Material" uid="uid://cgmjb14xh3alj" path="res://addons/PolyBlocks/EffectBlocks/source_files/materials/shockwave.material" id="1_ojmr8"]
+[ext_resource type="Texture2D" uid="uid://10fvhd41hy3r" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/checkerboard.png" id="2_ygjei"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4ng1"]
+albedo_texture = ExtResource("2_ygjei")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_15hae"]
+material = SubResource("StandardMaterial3D_p4ng1")
+
+[sub_resource type="Curve" id="Curve_wcuhi"]
+_data = [Vector2(0, 0), 0.0, 0.226867, 0, 0, Vector2(1, 1), 1.39194, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_337kd"]
+curve = SubResource("Curve_wcuhi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dm64c"]
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_337kd")
+
+[sub_resource type="TorusMesh" id="TorusMesh_vvak4"]
+material = ExtResource("1_ojmr8")
+inner_radius = 0.8
+rings = 12
+ring_segments = 3
+
+[node name="ShockwaveShowcase" type="Node3D"]
+
+[node name="checkerboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("PlaneMesh_15hae")
+
+[node name="Shockwave" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+amount = 1
+lifetime = 0.74
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_dm64c")
+draw_pass_1 = SubResource("TorusMesh_vvak4")

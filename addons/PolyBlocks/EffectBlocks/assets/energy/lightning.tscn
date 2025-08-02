@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://b465dgbgga41q"]
+
+[ext_resource type="Script" uid="uid://dpwrw7vxxdfxr" path="res://addons/PolyBlocks/EffectBlocks/source_files/scripts/lightning.gd" id="2_ktkax"]
+[ext_resource type="ArrayMesh" uid="uid://daded052qr3pn" path="res://addons/PolyBlocks/EffectBlocks/source_files/meshes/lightning.mesh" id="3_8vhnv"]
+
+[sub_resource type="Curve" id="Curve_ah8ft"]
+_data = [Vector2(0.152985, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3fpyw"]
+curve = SubResource("Curve_ah8ft")
+
+[sub_resource type="Gradient" id="Gradient_nc1tc"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8yexm"]
+gradient = SubResource("Gradient_nc1tc")
+
+[sub_resource type="Curve" id="Curve_nn4hh"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.214552, 5), 0.0, 0.0, 0, 0, Vector2(0.468284, 2.5725), 0.0, 0.0, 0, 0, Vector2(0.70709, 5), 0.0, 0.0, 0, 0, Vector2(1, 2.47254), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_egqge"]
+curve = SubResource("Curve_nn4hh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cjxqo"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0.5, 0, 0.5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+color = Color(0.333734, 0.620461, 1, 1)
+color_ramp = SubResource("GradientTexture1D_8yexm")
+alpha_curve = SubResource("CurveTexture_3fpyw")
+emission_curve = SubResource("CurveTexture_egqge")
+sub_emitter_mode = 1
+sub_emitter_frequency = 29.08
+
+[node name="lightning" type="GPUParticles3D"]
+emitting = false
+amount = 2
+sub_emitter = NodePath("lightning2")
+lifetime = 0.8
+one_shot = true
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_cjxqo")
+draw_pass_1 = ExtResource("3_8vhnv")
+script = ExtResource("2_ktkax")
+
+[node name="lightning2" type="GPUParticles3D" parent="."]
+amount = 1
+lifetime = 0.2
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_cjxqo")
+draw_pass_1 = ExtResource("3_8vhnv")

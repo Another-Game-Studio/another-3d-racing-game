@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d37vvymt438q7"]
+
+[ext_resource type="PackedScene" uid="uid://dgwbuuw8alf2q" path="res://addons/PolyBlocks/EffectBlocks/assets/splash/blood_splash.tscn" id="1_vfgoe"]
+[ext_resource type="PackedScene" uid="uid://c7nswcktmhieu" path="res://addons/PolyBlocks/EffectBlocks/assets/splash/slime_splash_2.tscn" id="2_o1806"]
+[ext_resource type="PackedScene" uid="uid://dvl13042jqtk0" path="res://addons/PolyBlocks/EffectBlocks/assets/splash/slime_splash_1.tscn" id="3_fj0l3"]
+
+[node name="SplashesShowcase" type="Node3D"]
+
+[node name="BloodSplash" parent="." instance=ExtResource("1_vfgoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+auto_animate = true
+
+[node name="SlimeSplash2" parent="." instance=ExtResource("2_o1806")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.1, 0)
+auto_animate = true
+
+[node name="SlimeSplash1" parent="." instance=ExtResource("3_fj0l3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, 0)
+auto_animate = true
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.5)
+text = "blood"
+font_size = 64
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.7, 0, 0.5)
+text = "slime"
+font_size = 64
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, 1)
+modulate = Color(0.968609, 0.398099, 0.421027, 1)
+text = "SPLASHES"
+font_size = 64

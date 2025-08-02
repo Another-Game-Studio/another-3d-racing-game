@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://1b06vhur3mw3"]
+
+[ext_resource type="Shader" uid="uid://b6rapjlksv1rq" path="res://addons/PolyBlocks/EffectBlocks/source_files/shaders/plasma_beam.gdshader" id="1_od604"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6lh4"]
+render_priority = 0
+shader = ExtResource("1_od604")
+shader_parameter/overall_speed = 1.0
+shader_parameter/scale = 5.0
+shader_parameter/reverse_direction = true
+shader_parameter/line_color = Color(0.2, 0.8, 0.4, 1)
+shader_parameter/line_min_width = 1.0
+shader_parameter/line_max_width = 2.0
+shader_parameter/line_speed = 2.0
+shader_parameter/line_amplitude = 1.0
+shader_parameter/line_frequency = 0.2
+shader_parameter/lines_per_group = 8
+shader_parameter/offset_frequency = 0.5
+shader_parameter/offset_speed = 1.33
+shader_parameter/min_offset_spread = 0.0
+shader_parameter/max_offset_spread = 2.0
+shader_parameter/emission_strength = 2.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_55khv"]
+material = SubResource("ShaderMaterial_u6lh4")
+
+[node name="PlasmaBeam" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_55khv")

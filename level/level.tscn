@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://b61r7nj3hajim"]
+
+[ext_resource type="Script" uid="uid://dw45pdeav47ru" path="res://level/start_area.gd" id="1_7lnir"]
+
+[ext_resource type="Script" uid="uid://dj6xjt6pc5skd" path="res://level/level.gd" id="1_qohg2"]
+
+
+[sub_resource type="Environment" id="Environment_yy828"]
+background_mode = 1
+background_color = Color(0.556835, 0.701453, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.34
+ambient_light_energy = 1.43
+reflected_light_source = 2
+
+[sub_resource type="Curve3D" id="Curve3D_yy828"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.27631, 0.0519214, 2.01284, 0, 0, 0, 0, 0, 0, -2.6591, -0.0068562, 1.24219, 0, 0, 0, 0, 0, 0, -3.42213, 0, 0.17463, 0, 0, 0, 0, 0, 0, -2.40499, 0, -0.536143, 0, 0, 0, 0, 0, 0, -1.98264, 0.301587, -0.970361, 0, 0, 0, 0, 0, 0, -0.860893, 0, -2.31308, 0, 0, 0, 0, 0, 0, 0.462615, 0, -2.01896, 0, 0, 0, 0, 0, 0, 1.56554, 0, -0.874791, 0, 0, 0, 0, 0, 0, 2.3593, 0, -1.20636, 0, 0, 0, 0, 0, 0, 2.71135, 0, -1.02633, 0, 0, 0, 0, 0, 0, 2.68684, 0, 0.854766, 0, 0, 0, 0, 0, 0, 2.50915, 0, 1.87191, 0, 0, 0, 0, 0, 0, 1.21015, 0, 2.20404, 0, 0, 0, 0, 0, 0, 0.621926, 0, 1.60769, 0, 0, 0, 0, 0, 0, -0.517295, 0.220968, 1.67499, 0, 0, 0, 0, 0, 0, -0.958931, 0, 2.02509),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 16
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yy828"]
+
+size = Vector3(0.285034, 4.50366, 16.3251)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_qohg2")
+
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yy828")
+
+
+[node name="Track2" type="Node3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Track" type="Path3D" parent="Track2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0506707, -0.0119669, -0.0096786)
+curve = SubResource("Curve3D_yy828")
+
+[node name="TrackPolygon" type="CSGPolygon3D" parent="Track2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523703, -0.0154364, -0.0123985)
+use_collision = true
+collision_mask = 6
+polygon = PackedVector2Array(-0.0542652, 0.0335808, -0.055318, 0.0458909, 0.1122, 0.0489211, 0.109175, 0.0242188)
+mode = 2
+path_node = NodePath("../Track")
+path_interval_type = 1
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+smooth_faces = true
+
+[node name="StartArea" type="Area3D" parent="Track2"]
+
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.727501, -20.8853)
+script = ExtResource("1_7lnir")
+
+[node name="StartAreaCollision" type="CollisionShape3D" parent="Track2/StartArea"]
+transform = Transform3D(0.10549, 0, -0.0186274, 0, 0.107122, 0, 0.0186274, 0, 0.10549, 0.089371, -0.18766, -0.2859)
+shape = SubResource("BoxShape3D_yy828")
+debug_color = Color(0.982746, 0, 0.359392, 0.42)
+
+[node name="PlayerSpawn" type="Marker3D" parent="Track2/StartArea"]
+unique_name_in_owner = true
+transform = Transform3D(-0.212792, 0, -0.977098, 0, 1, 0, 0.977098, 0, -0.212792, 0.0460178, -0.377568, 0.00803566)
+

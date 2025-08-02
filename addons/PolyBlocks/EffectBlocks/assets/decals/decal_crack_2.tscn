@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bclo8jx8wgqge"]
+
+[ext_resource type="Texture2D" uid="uid://b7qiperhrjs2n" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_crack_2.png" id="1_m5ch0"]
+
+[node name="Decal_Crack_2" type="Decal"]
+size = Vector3(0.8, 1, 0.8)
+texture_albedo = ExtResource("1_m5ch0")
+modulate = Color(0.0157743, 0.0140651, 0.0116658, 1)

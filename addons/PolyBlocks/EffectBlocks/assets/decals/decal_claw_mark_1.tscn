@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://drprirctx8ust"]
+
+[ext_resource type="Texture2D" uid="uid://brdafm3313but" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_clawmark_1.png" id="1_lr3hq"]
+
+[node name="Decal_ClawMark_3" type="Decal"]
+size = Vector3(0.3, 1, 0.3)
+texture_albedo = ExtResource("1_lr3hq")

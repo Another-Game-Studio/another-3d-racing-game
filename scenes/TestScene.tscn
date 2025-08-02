@@ -1,8 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcfa0gy8knvwp"]
 
-[ext_resource type="PackedScene" uid="uid://bvguu1katamg7" path="res://scenes/car/car.tscn" id="1_2gju5"]
+[gd_scene load_steps=13 format=3 uid="uid://dcfa0gy8knvwp"]
+
 [ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
-[ext_resource type="PackedScene" uid="uid://bs1v1yn5xxe25" path="res://scenes/death_zone/deadzone.tscn" id="3_n77mx"]
+[ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="3_m5dm6"]
+[ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="3_n77mx"]
+[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="4_fws1a"]
+[ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="5_xpysu"]
+
+[ext_resource type="Script" uid="uid://bri3gu3sjj2r5" path="res://addons/gevp/scripts/camera.gd" id="6_fws1a"]
+
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
+albedo_color = Color(0, 0.341176, 0, 1)
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n77mx"]
 sky_horizon_color = Color(0.895706, 0.556711, 0.412507, 1)
@@ -15,8 +25,10 @@ sky_material = SubResource("ProceduralSkyMaterial_n77mx")
 background_mode = 2
 sky = SubResource("Sky_nb1wl")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nb1wl"]
-size = Vector3(100, 1, 100)
+
+[sub_resource type="PrismMesh" id="PrismMesh_rlkm5"]
+size = Vector3(1, 0.2, 1)
+
 
 [node name="TestScene" type="Node3D"]
 
@@ -36,9 +48,11 @@ offset_bottom = 23.0
 transform = Transform3D(0.912357, 0.40939, 0.00220324, 0.000732022, -0.00701299, 0.999975, 0.409395, -0.912333, -0.00669804, 2.75838, 1.32126, 0)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9974, 0, 0)
+
+transform = Transform3D(8.25052, 0, 0, 0, 8.25052, 0, 0, 0, 8.25052, -31.9974, 0, 0)
 use_collision = true
-collision_mask = 2
+collision_layer = 2
+
 radius = 40.0
 sides = 20
 
@@ -46,18 +60,126 @@ sides = 20
 operation = 2
 radius = 30.0
 sides = 20
-smooth_faces = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.6652, 0)
+use_collision = true
+collision_layer = 2
+collision_mask = 13
+size = Vector3(1000, 1, 1000)
+material = SubResource("StandardMaterial3D_rlkm5")
+
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m5dm6")
 
-[node name="Car" parent="." instance=ExtResource("1_2gju5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.08335, 0)
-collision_layer = 3
-collision_mask = 7
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(3.68113, 0, 14.5413, 0, 15, 0, -14.5413, 0, 3.68113, 0, 1.9524, 12.2706)
+use_collision = true
+collision_layer = 2
+collision_mask = 13
+mesh = SubResource("PrismMesh_rlkm5")
 
-[node name="Deadzone" parent="." instance=ExtResource("3_n77mx")]
+[node name="ExplosiveBarrel" parent="." instance=ExtResource("3_n77mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3168, 2.32151, 31.4773)
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Deadzone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9266, 0, 0)
-shape = SubResource("BoxShape3D_nb1wl")
+[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("3_m5dm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 270.376, 8.39135, 0)
+vehicle_node = NodePath("VehicleRigidBody")
+string_brake_input = "brake"
+string_steer_left = "left"
+string_steer_right = "right"
+string_throttle_input = "gas"
+string_handbrake_input = "handbrake"
+string_clutch_input = "clutch"
+string_toggle_transmission = "toggle-transmission"
+string_shift_up = "shift-up"
+string_shift_down = "shift-down"
+
+[node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("4_fws1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926611, 0)
+collision_mask = 14
+center_of_mass_mode = 1
+linear_damp_mode = 1
+angular_damp_mode = 1
+steering_speed = 30.0
+countersteer_speed = 30.0
+steering_speed_decay = 0.0
+steering_slip_assist = 1.0
+countersteer_assist = 1.0
+
+throttle_steering_adjust = 4.0
+max_torque = 1000.0
+
+motor_brake = 1000.0
+
+[node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("5_xpysu")]
+max_db = -24.0
+vehicle = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
+transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 4.05282, 1.58316, 5.80061)
+current = true
+script = ExtResource("6_fws1a")
+follow_distance = 6
+follow_this = NodePath("../VehicleController/VehicleRigidBody")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.1, 28.6092, 1.99103)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.1, 28.6092, 1.99103)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.694, 28.6092, 160.628)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.7739, 28.6092, 281.143)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.756, 28.6092, 252.859)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.65, 28.6092, 117.587)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300.825, 28.6092, -38.5905)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -276.23, 28.6092, -200.917)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.04, 28.6092, -242.728)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1196, 28.6092, -312.824)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.341, 28.6092, -256.255)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.788, 28.6092, -247.647)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.37, 28.6092, -116.064)
+size = Vector3(7.72412, 42.2435, 4.98207)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.356, 28.6092, -189.849)
+size = Vector3(7.72412, 42.2435, 4.98207)
+

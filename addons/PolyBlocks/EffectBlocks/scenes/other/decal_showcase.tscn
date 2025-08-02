@@ -1,0 +1,227 @@
+[gd_scene load_steps=23 format=3 uid="uid://c203vjusolwn"]
+
+[ext_resource type="PackedScene" uid="uid://wa1ywrnqlhc2" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_blood_spalsh_1.tscn" id="1_sjijg"]
+[ext_resource type="PackedScene" uid="uid://dwhh5k3e3ucmj" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_blood_splash_2.tscn" id="2_deeqn"]
+[ext_resource type="PackedScene" uid="uid://dhj68kcbpfxnt" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_bullet_hole_1.tscn" id="3_618rs"]
+[ext_resource type="PackedScene" uid="uid://dem2slf4mkyfs" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_bullet_hole_2.tscn" id="4_34nja"]
+[ext_resource type="PackedScene" uid="uid://oixjnwqw7me8" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_bullet_hole_3.tscn" id="5_g75ie"]
+[ext_resource type="PackedScene" uid="uid://drprirctx8ust" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_claw_mark_1.tscn" id="6_4j32c"]
+[ext_resource type="PackedScene" uid="uid://jxxrhl6d3xyv" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_crack_1.tscn" id="7_sptx7"]
+[ext_resource type="PackedScene" uid="uid://bclo8jx8wgqge" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_crack_2.tscn" id="8_xi1wb"]
+[ext_resource type="PackedScene" uid="uid://cm1df4s3fmk1b" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_crack_3.tscn" id="9_i4ufc"]
+[ext_resource type="PackedScene" uid="uid://dib7fd5l3bevl" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_footprint_1.tscn" id="10_ai7fe"]
+[ext_resource type="Texture2D" uid="uid://b01163xmgmypi" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_crack_3.png" id="10_es42e"]
+[ext_resource type="PackedScene" uid="uid://h40e5cfvfvm6" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_footprint_2.tscn" id="11_k8531"]
+[ext_resource type="PackedScene" uid="uid://u3usa4ad6vc2" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_handprint_1.tscn" id="12_7vani"]
+[ext_resource type="PackedScene" uid="uid://blvjmr8ukygq" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_handprint_2.tscn" id="13_gwpbd"]
+[ext_resource type="PackedScene" uid="uid://cqjsxh6tso3kr" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_slime_1.tscn" id="14_boele"]
+[ext_resource type="PackedScene" uid="uid://cphn5yxatclv7" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_slime_2.tscn" id="15_xqe4l"]
+[ext_resource type="PackedScene" uid="uid://c5yvwoogqcfrt" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_tire_skid_1.tscn" id="16_diu4m"]
+[ext_resource type="PackedScene" uid="uid://dh7xkomlxfesv" path="res://addons/PolyBlocks/EffectBlocks/assets/decals/decal_crack_4.tscn" id="18_thchv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnxjk"]
+albedo_color = Color(0.108486, 0.141958, 0.15585, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_afw8e"]
+material = SubResource("StandardMaterial3D_cnxjk")
+size = Vector3(2, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pa3x"]
+albedo_color = Color(0.198144, 0.193487, 0.176256, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_t2k1o"]
+material = SubResource("StandardMaterial3D_2pa3x")
+size = Vector3(1, 1, 10)
+
+[node name="DecalShowcase" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.505471, 0.0234389, -0.258301, 1.18136)
+mesh = SubResource("BoxMesh_afw8e")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.603845, 0.073023, 1.18136)
+texture_filter = 4
+text = "DECALS"
+
+[node name="Ground2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 0.437151, -0.344124, -0.0519519, 1.18136)
+mesh = SubResource("BoxMesh_t2k1o")
+
+[node name="Decals" type="Node3D" parent="Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.28754, 0.0875611, 0.258301, -2.70242)
+
+[node name="Decal_BloodSpalsh_1" parent="Ground2/Decals" instance=ExtResource("1_sjijg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.296597, 2.38419e-07, 1.17046)
+
+[node name="Decal_BloodSplash_2" parent="Ground2/Decals" instance=ExtResource("2_deeqn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0990646, 0, 0.94713)
+
+[node name="Decal_BulletHole_1" parent="Ground2/Decals" instance=ExtResource("3_618rs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00131479, 0, 0.679477)
+
+[node name="Decal_BulletHole_2" parent="Ground2/Decals" instance=ExtResource("4_34nja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106862, 0, 0.673401)
+
+[node name="Decal_BulletHole_3" parent="Ground2/Decals" instance=ExtResource("5_g75ie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0886696, 0, 0.472167)
+
+[node name="Decal_ClawMark_3" parent="Ground2/Decals" instance=ExtResource("6_4j32c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0837592, 0, 0.0657773)
+
+[node name="Decal_Crack_1" parent="Ground2/Decals" instance=ExtResource("7_sptx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0318871, 0, 2.74392)
+
+[node name="Decal_Crack_2" parent="Ground2/Decals" instance=ExtResource("8_xi1wb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295742, 0, 2.13608)
+modulate = Color(0.524473, 0.20506, 0, 1)
+
+[node name="Decal_Crack_3" parent="Ground2/Decals" instance=ExtResource("9_i4ufc")]
+transform = Transform3D(0.969783, 0, 0.24397, 0, 1, 0, -0.24397, 0, 0.969783, 0.302088, 0, 2.2065)
+emission_energy = 2.0
+modulate = Color(0.335127, 0.110658, 0.455009, 1)
+
+[node name="Decal_Crack_4" parent="Ground2/Decals" instance=ExtResource("9_i4ufc")]
+transform = Transform3D(0.185033, 0, 0.982733, 0, 1, 0, -0.982733, 0, 0.185033, -0.167062, -1.00583e-07, 3.138)
+texture_emission = ExtResource("10_es42e")
+emission_energy = 2.32
+modulate = Color(0, 2, 1, 1)
+
+[node name="Decal_Footprint_1" parent="Ground2/Decals" instance=ExtResource("10_ai7fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.207454, 0, 1.52654)
+
+[node name="Decal_Footprint_7" parent="Ground2/Decals" instance=ExtResource("10_ai7fe")]
+transform = Transform3D(-4.37114e-08, -0.765315, 0.643656, 0, 0.643656, 0.765315, -1, 3.3453e-08, -2.81351e-08, 0.347865, 0.313036, 1.57669)
+modulate = Color(0.66211, 0.501982, 0.0635898, 1)
+
+[node name="Decal_Footprint_8" parent="Ground2/Decals" instance=ExtResource("10_ai7fe")]
+transform = Transform3D(0.13849, -0.765315, 0.628581, 0.164666, 0.643656, 0.74739, -0.976578, 4.012e-08, 0.215161, 0.459652, 0.445953, 1.62933)
+modulate = Color(0.66211, 0.501982, 0.0635898, 1)
+
+[node name="Decal_Footprint_9" parent="Ground2/Decals" instance=ExtResource("10_ai7fe")]
+transform = Transform3D(-0.028536, -0.765315, 0.643023, -0.0339297, 0.643656, 0.764562, -0.999017, 3.87591e-08, -0.0443343, 0.581775, 0.591158, 1.67576)
+modulate = Color(0.66211, 0.501982, 0.0635898, 1)
+
+[node name="Decal_Footprint_2" parent="Ground2/Decals" instance=ExtResource("10_ai7fe")]
+transform = Transform3D(0.405493, 0, 0.914098, 0, 1, 0, -0.914098, 0, 0.405493, 0.040022, 0, 1.48012)
+
+[node name="Decal_Footprint_3" parent="Ground2/Decals" instance=ExtResource("10_ai7fe")]
+transform = Transform3D(0.735754, 0, 0.677248, 0, 1, 0, -0.677248, 0, 0.735754, -0.122797, 0, 1.37214)
+
+[node name="Decal_Footprint_4" parent="Ground2/Decals" instance=ExtResource("11_k8531")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37659, 0, 0.941703)
+
+[node name="Decal_Footprint_5" parent="Ground2/Decals" instance=ExtResource("11_k8531")]
+transform = Transform3D(0.930424, 0, 0.366485, 0, 1, 0, -0.366485, 0, 0.930424, -0.400932, 0, 0.732857)
+
+[node name="Decal_Footprint_6" parent="Ground2/Decals" instance=ExtResource("11_k8531")]
+transform = Transform3D(0.652892, 0, 0.757451, 0, 1, 0, -0.757451, 0, 0.652892, -0.461304, -5.58794e-08, 0.57129)
+
+[node name="Decal_Handprint_1" parent="Ground2/Decals" instance=ExtResource("12_7vani")]
+transform = Transform3D(-0.159881, 0, 0.987136, 0, 1, 0, -0.987136, 0, -0.159881, -0.289446, 0, 0.452253)
+
+[node name="Decal_Handprint_2" parent="Ground2/Decals" instance=ExtResource("13_gwpbd")]
+transform = Transform3D(-0.110064, 0, 0.993924, 0, 1, 0, -0.993924, 0, -0.110064, -0.181768, 0, 0.358921)
+
+[node name="Decal_Slime_1" parent="Ground2/Decals" instance=ExtResource("14_boele")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.210672, 0, -0.302441)
+
+[node name="Decal_Slime_2" parent="Ground2/Decals" instance=ExtResource("15_xqe4l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0672217, 0, -0.221066)
+
+[node name="Decal_TireSkid_1" parent="Ground2/Decals" instance=ExtResource("16_diu4m")]
+transform = Transform3D(0.268298, 0, 0.963336, 0, 1, 0, -0.963336, 0, 0.268298, 0.113835, 0, -0.658854)
+
+[node name="Decal_TireSkid_2" parent="Ground2/Decals" instance=ExtResource("16_diu4m")]
+transform = Transform3D(0.145789, 0, 0.989316, 0, 1, 0, -0.989316, 0, 0.145789, -0.0721418, 0, -0.700683)
+
+[node name="Decal_TireSkid_3" parent="Ground2/Decals" instance=ExtResource("16_diu4m")]
+transform = Transform3D(-0.048937, 0, 0.998802, 0, 1, 0, -0.998802, 0, -0.048937, -0.252173, 5.96046e-08, -0.707138)
+
+[node name="Decal_TireSkid_4" parent="Ground2/Decals" instance=ExtResource("16_diu4m")]
+transform = Transform3D(-0.183866, 0.433378, 0.882257, 1.49012e-08, 0.897559, -0.440895, -0.982951, -0.0810654, -0.16503, -0.343086, 0.466843, -0.7002)
+size = Vector3(0.2, 0.515137, 0.2)
+
+[node name="Decal_TireSkid_5" parent="Ground2/Decals" instance=ExtResource("16_diu4m")]
+transform = Transform3D(-0.345511, -0.413742, -0.842282, 9.42154e-09, 0.897559, -0.440895, 0.938415, -0.152334, -0.310116, 0.200331, 0.466843, -0.628007)
+size = Vector3(0.2, 0.515137, 0.2)
+
+[node name="Text" type="Node3D" parent="Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.28754, 0, 0, 0)
+
+[node name="Label3D2" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.0338517, 0.510655, -0.145662)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "blood splash"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D9" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -8.9407e-08, 0, -8.9407e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.431928, 0.510655, -1.7573)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "tire skid"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.365814, 0.510655, -0.645922)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "bullet holes"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D4" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.383969, 0.510655, -1.17693)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "claw marks"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D5" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.305965, 0.510655, -1.31648)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "slime"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D6" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.205085, 0.510655, -0.973306)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "hand prints"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D7" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.135166, 0.510655, 0.436458)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "foot prints"
+font_size = 12
+outline_size = 0
+
+[node name="Label3D8" type="Label3D" parent="Ground2/Text"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.144836, 0.510655, 1.01614)
+texture_filter = 4
+outline_render_priority = 0
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+text = "cracks"
+font_size = 12
+outline_size = 0
+
+[node name="Decal_Crack_Glow" parent="." instance=ExtResource("18_thchv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.657139, 0, 0.517113)

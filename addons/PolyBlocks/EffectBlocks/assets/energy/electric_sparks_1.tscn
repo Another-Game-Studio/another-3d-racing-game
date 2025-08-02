@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=4 uid="uid://ca0xt7tqp4c1g"]
+
+[sub_resource type="Curve" id="Curve_7227o"]
+_data = [Vector2(0.102612, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_48gr2"]
+curve = SubResource("Curve_7227o")
+
+[sub_resource type="Curve" id="Curve_cbibj"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.164179, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cdlk0"]
+curve = SubResource("Curve_cbibj")
+
+[sub_resource type="Curve" id="Curve_6h23u"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.141791, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ada02"]
+curve = SubResource("Curve_6h23u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_coeu5"]
+lifetime_randomness = 0.4
+particle_flag_align_y = true
+angle_max = 180.0
+velocity_pivot = Vector3(1, 1, 1)
+direction = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+scale_min = 0.2
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_ada02")
+alpha_curve = SubResource("CurveTexture_48gr2")
+emission_curve = SubResource("CurveTexture_cdlk0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0isau"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_53upp"]
+_surfaces = [{
+"aabb": AABB(-0.0402224, -0.702579, -0.0464448, 0.0804447, 0.739765, 0.0696672),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AgADAAEAAwAEAAEABAACAAEAAAACAAQAAAAEAAMAAAADAAIA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("/38AAKmqAAD/f///qaoAAP9/o+sAAAAA//+j6///AAAAAKPr//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0hkbl"]
+resource_name = "cylinder_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.0402224, -0.702579, -0.0464448, 0.0804447, 0.739765, 0.0696672),
+"attribute_data": PackedByteArray("qar//1TV////////qar/f1TV/3//f/9///+2jv9/to5U1baOqaq2jg=="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("BgAIAAQACAAJAAMACQAHAAUAAAAHAAkAAQAJAAgAAgAIAAYA"),
+"material": SubResource("StandardMaterial3D_0isau"),
+"primitive": 3,
+"uv_scale": Vector4(2, 1, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("/38AAKmqjOL/fwAAqar/v/9/AACpqozi/3///6mq/7//f///qaqM4v9///+pqozi/3+j6wAA5P3/f6PrAADk/f//o+v//3uwAACj6///mKypMVLjAAD/f1NjVU7///9/Vc6sHKucqbEsoPET8ZPS33SpEgFvtADe")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_53upp")
+
+[node name="ElectricSparks_1" type="GPUParticles3D"]
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_coeu5")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")

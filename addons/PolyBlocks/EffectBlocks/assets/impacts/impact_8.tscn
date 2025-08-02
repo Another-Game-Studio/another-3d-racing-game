@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://7frx18ejffbl"]
+
+[ext_resource type="Texture2D" uid="uid://ljdwjppfnunq" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/icons/skull.png" id="1_tha0r"]
+[ext_resource type="Script" uid="uid://c11e4qx3wjoni" path="res://addons/PolyBlocks/EffectBlocks/source_files/scripts/impact_single.gd" id="2_dpviy"]
+
+[sub_resource type="Curve" id="Curve_lt6q4"]
+_data = [Vector2(0.190298, 1), 0.0, 0.0, 0, 0, Vector2(0.783582, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xhjx3"]
+curve = SubResource("Curve_lt6q4")
+
+[sub_resource type="Curve" id="Curve_dldii"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.235075, 4.98572), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jghbt"]
+curve = SubResource("Curve_dldii")
+
+[sub_resource type="Curve" id="Curve_7aw0e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vpvq1"]
+curve = SubResource("Curve_7aw0e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lmgju"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_vpvq1")
+color = Color(26.619, 0, 11.871, 1)
+alpha_curve = SubResource("CurveTexture_xhjx3")
+emission_curve = SubResource("CurveTexture_jghbt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jvnr"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.152941, 0.356863, 0.431373, 0.188235)
+albedo_texture = ExtResource("1_tha0r")
+emission_enabled = true
+emission = Color(0.988235, 0.329412, 0.109804, 1)
+emission_energy_multiplier = 2.72
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_n1062"]
+material = SubResource("StandardMaterial3D_0jvnr")
+size = Vector2(0.6, 0.6)
+
+[node name="Impact_8" type="GPUParticles3D"]
+emitting = false
+amount = 4
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.38
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_lmgju")
+draw_pass_1 = SubResource("QuadMesh_n1062")
+script = ExtResource("2_dpviy")

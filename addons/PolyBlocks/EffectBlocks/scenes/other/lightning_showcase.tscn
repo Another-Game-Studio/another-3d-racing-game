@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://defb1ygbic6qe"]
+
+[ext_resource type="PackedScene" uid="uid://b465dgbgga41q" path="res://addons/PolyBlocks/EffectBlocks/assets/energy/lightning.tscn" id="1_iiqnw"]
+[ext_resource type="PackedScene" uid="uid://b2mxxtc218bmu" path="res://addons/PolyBlocks/EffectBlocks/assets/energy/lightning_ball.tscn" id="2_ecppq"]
+[ext_resource type="PackedScene" uid="uid://ca0xt7tqp4c1g" path="res://addons/PolyBlocks/EffectBlocks/assets/energy/electric_sparks_1.tscn" id="3_ulrgb"]
+[ext_resource type="PackedScene" uid="uid://cfa73whw1rlnd" path="res://addons/PolyBlocks/EffectBlocks/assets/energy/electric_sparks_2.tscn" id="4_kwgj6"]
+[ext_resource type="PackedScene" uid="uid://d32gtjkub4byi" path="res://addons/PolyBlocks/EffectBlocks/assets/other/portal.tscn" id="5_wia60"]
+
+[node name="LightningShowcase" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.361118, 0.3, -4.94963)
+
+[node name="lightning" parent="." instance=ExtResource("1_iiqnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479475, 15, 1.96777)
+auto_animate = true
+
+[node name="LightningBall" parent="." instance=ExtResource("2_ecppq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479475, 0.8, 4.96777)
+
+[node name="Labels" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52053, 0, 2.96777)
+
+[node name="Label3D6" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, -0.0871558, 0.996195, 0, -0.996195, -0.0871558, 5, 0.1, 1)
+text = "lightning"
+font_size = 64
+
+[node name="Label3D9" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, -0.0871558, 0.996195, 0, -0.996195, -0.0871558, 5, 0.1, -0.5)
+text = "portal"
+font_size = 64
+
+[node name="Label3D7" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, -0.0871558, 0.996195, 0, -0.996195, -0.0871558, 5, 0.1, 3)
+text = "lightning ball"
+font_size = 64
+
+[node name="Label3D8" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, -0.0871558, 0.996195, 0, -0.996195, -0.0871558, 1.98055, 0.1, 2.40768)
+text = "electric sparks"
+font_size = 64
+
+[node name="ElectricSparks_1" parent="." instance=ExtResource("3_ulrgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03998, 0, 4.37545)
+
+[node name="ElectricSparks_2" parent="." instance=ExtResource("4_kwgj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13997, 0, 4.37545)
+
+[node name="Portal" parent="." instance=ExtResource("5_wia60")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.479475, 1, 1.96777)

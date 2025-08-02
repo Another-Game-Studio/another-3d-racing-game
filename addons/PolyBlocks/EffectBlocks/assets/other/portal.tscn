@@ -1,0 +1,199 @@
+[gd_scene load_steps=14 format=4 uid="uid://d32gtjkub4byi"]
+
+[ext_resource type="Material" uid="uid://b7frshhg5cqxq" path="res://addons/PolyBlocks/EffectBlocks/source_files/materials/portal.material" id="1_b8oll"]
+
+[sub_resource type="Curve" id="Curve_7227o"]
+_data = [Vector2(0.102612, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_48gr2"]
+curve = SubResource("Curve_7227o")
+
+[sub_resource type="Curve" id="Curve_cbibj"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.164179, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cdlk0"]
+curve = SubResource("Curve_cbibj")
+
+[sub_resource type="Curve" id="Curve_6h23u"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.141791, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ada02"]
+curve = SubResource("Curve_6h23u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qee6a"]
+lifetime_randomness = 0.4
+particle_flag_align_y = true
+angle_max = 180.0
+velocity_pivot = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_ada02")
+color = Color(0, 0.380392, 0.92549, 1)
+alpha_curve = SubResource("CurveTexture_48gr2")
+emission_curve = SubResource("CurveTexture_cdlk0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0isau"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_53upp"]
+_surfaces = [{
+"aabb": AABB(-0.0402224, -0.702579, -0.0464448, 0.0804447, 0.739765, 0.0696672),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AgADAAEAAwAEAAEABAACAAEAAAACAAQAAAAEAAMAAAADAAIA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("/38AAKmqAAD/f///qaoAAP9/o+sAAAAA//+j6///AAAAAKPr//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0hkbl"]
+resource_name = "cylinder_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.0402224, -0.702579, -0.0464448, 0.0804447, 0.739765, 0.0696672),
+"attribute_data": PackedByteArray("qar//1TV////////qar/f1TV/3//f/9///+2jv9/to5U1baOqaq2jg=="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("BgAIAAQACAAJAAMACQAHAAUAAAAHAAkAAQAJAAgAAgAIAAYA"),
+"material": SubResource("StandardMaterial3D_0isau"),
+"primitive": 3,
+"uv_scale": Vector4(2, 1, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("/38AAKmqjOL/fwAAqar/v/9/AACpqozi/3///6mq/7//f///qaqM4v9///+pqozi/3+j6wAA5P3/f6PrAADk/f//o+v//3uwAACj6///mKypMVLjAAD/f1NjVU7///9/Vc6sHKucqbEsoPET8ZPS33SpEgFvtADe")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_53upp")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yu6pw"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -4.37114e-08, 2, 2.00001, 1.00874e-05),
+"format": 34896613377,
+"index_count": 66,
+"index_data": PackedByteArray("AAACAAEAAgAEAAMABAAGAAUABgAIAAcACAAKAAkACgAMAAsADAAOAA0ADgAQAA8AEAASABEAEgAUABMAFAAWABUAFgAAABcAAAAEAAIABAAIAAYACAAMAAoADAAQAA4AEAAUABIAFAAAABYAAAAIAAQACAAQAAwAEAAAABQACAAAABAA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/3/+/zcCAADeXqL7LgIAAP8/2O4RAgAAfSWB2uQBAAAmEf+/qQEAAFwEIKFlAQAAAAD/fxsBAABcBN5e0gAAACYR/z+NAAAAfSV9JVMAAAD/PyURJgAAAN5eXAQJAAAA/38AAAAAAAAgoVwECQAAAP+/JREmAAAAgdp9JVMAAADY7v8/jQAAAKL73l7SAAAA////fxsBAACi+yChZQEAANju/7+pAQAAgdqB2uQBAAD/v9juEQIAACChovsuAgAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5bw8n"]
+resource_name = "Untitled_Circle_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -4.37114e-08, 2, 2.00001, 1.00874e-05),
+"attribute_data": PackedByteArray("mk6/CGsxmBmYGWsxvwiaTgYAJm8GANiQvwhksZgZk85rMWbmmk4/9yZv+P/YkPj/ZLE/95POZuZm5pPOP/dksfj/2JD4/yZvP/eaTmbmazGTzpgZZLG/CNiQBgAmbwYA"),
+"format": 34896613399,
+"index_count": 66,
+"index_data": PackedByteArray("AAACAAEAAgAEAAMABAAGAAUABgAIAAcACAAKAAkACgAMAAsADAAOAA0ADgAQAA8AEAASABEAEgAUABMAFAAWABUAFgAAABcAAAAEAAIABAAIAAYACAAMAAoADAAQAA4AEAAUABIAFAAAABYAAAAIAAQACAAQAAwAEAAAABQACAAAABAA"),
+"material": ExtResource("1_b8oll"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/3/+/zcC/4/eXqL7LgL/j/8/2O4RAv+PfSWB2uQB/48mEf+/qQH/j1wEIKFlAf+PAAD/fxsB/49cBN5e0gD/jyYR/z+NAP+PfSV9JVMA/4//PyURJgD/j95eXAQJAP+P/38AAAAA/48goVwECQD/j/+/JREmAP+Pgdp9JVMA/4/Y7v8/jQD/j6L73l7SAP+P////fxsB/4+i+yChZQH/j9ju/7+pAf+PgdqB2uQB/4//v9juEQL/jyChovsuAv+P/3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yu6pw")
+
+[node name="Portal" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="sparks" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.965926, 1.13133e-08, 0.258819, -1.13133e-08, 1, -1.48943e-09, -0.258819, -1.48943e-09, 0.965926, 0.8, 0, 0)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks2" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.707107, 3.09086e-08, 0.707107, -3.09086e-08, 1, -1.28028e-08, -0.707107, -1.28028e-08, 0.707107, 0.6, -2.62268e-08, -0.6)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks3" type="GPUParticles3D" parent="."]
+transform = Transform3D(0, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 1.91069e-15, 0, -3.49691e-08, -0.8)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks4" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.819152, 2.50718e-08, 0.573576, -2.50718e-08, 1, -7.95177e-08, -0.573576, -7.95177e-08, -0.819152, -0.6, -2.18557e-08, -0.5)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks5" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.965926, -1.13133e-08, -0.258819, 1.13133e-08, 1, -8.59334e-08, 0.258819, -8.59333e-08, -0.965926, -0.8, 0, 0)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks6" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.573576, -3.58063e-08, -0.819152, 3.58063e-08, 1, -6.87832e-08, 0.819152, -6.87832e-08, -0.573576, -0.6, 2.62268e-08, 0.6)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks7" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.34202, -4.10753e-08, -0.939693, 4.10753e-08, 1, -2.87612e-08, 0.939693, -2.87612e-08, 0.34202, 0, 3.49691e-08, 0.8)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="sparks8" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.819152, -2.50718e-08, -0.573576, 2.50718e-08, 1, -7.90511e-09, 0.573576, -7.90513e-09, 0.819152, 0.6, 2.62268e-08, 0.6)
+sorting_offset = -1.0
+amount = 16
+lifetime = 0.8
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_qee6a")
+draw_pass_1 = SubResource("ArrayMesh_0hkbl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.150917, 0.5)
+light_color = Color(0, 0.690196, 1, 1)
+light_energy = 3.089
+omni_range = 1.3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 7.64274e-15, 8.74228e-08, 8.74228e-08, 1.31134e-07, 1, -3.82137e-15, 1, -1.31134e-07, 0, 0, 0)
+mesh = SubResource("ArrayMesh_5bw8n")

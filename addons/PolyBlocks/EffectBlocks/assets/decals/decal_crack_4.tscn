@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh7xkomlxfesv"]
+
+[ext_resource type="Texture2D" uid="uid://bridv3whv2mwc" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_crack_1.png" id="1_5q1wx"]
+[ext_resource type="Script" uid="uid://bpr4wom64qm70" path="res://addons/PolyBlocks/EffectBlocks/source_files/scripts/decal_crack_glow.gd" id="2_bb305"]
+
+[node name="Decal_Crack_Glow" type="Decal"]
+size = Vector3(0.8, 1, 0.8)
+texture_albedo = ExtResource("1_5q1wx")
+texture_emission = ExtResource("1_5q1wx")
+modulate = Color(0.0156863, 0.780392, 0.584314, 1)
+script = ExtResource("2_bb305")
+glow_speed = 1.0
+max_emission = 5.0

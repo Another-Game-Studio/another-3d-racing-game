@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yvwoogqcfrt"]
+
+[ext_resource type="Texture2D" uid="uid://cglh6nu7c0r4c" path="res://addons/PolyBlocks/EffectBlocks/source_files/textures/decals/decal_tireskid_1.png" id="1_rsvnr"]
+
+[node name="Decal_TireSkid_1" type="Decal"]
+size = Vector3(0.2, 1, 0.2)
+texture_albedo = ExtResource("1_rsvnr")
+modulate = Color(0.0807833, 0.0807833, 0.0807833, 1)
