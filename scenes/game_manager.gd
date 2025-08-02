@@ -14,7 +14,6 @@ func _ready() -> void:
 
 func _on_coin_collected() -> void:
 	coin_count += 1
-	lose_life()
 	_update_label()
 
 func lose_life() -> void:

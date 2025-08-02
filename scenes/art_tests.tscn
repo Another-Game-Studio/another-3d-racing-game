@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=24 format=4 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -12,9 +12,8 @@
 [ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
 [ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
 [ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
-[ext_resource type="PackedScene" uid="uid://bx8fhhfwam6q0" path="res://addons/gevp/scenes/monster_truck.tscn" id="12_gun71"]
 [ext_resource type="PackedScene" uid="uid://bvgwkkh5srraj" path="res://scenes/environment/road_turn.glb" id="13_25v2h"]
-[ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="13_xbung"]
+[ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="13_f0sam"]
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
@@ -143,7 +142,7 @@ current = true
 script = ExtResource("10_ao6v7")
 follow_distance = 10
 camera_y_offset = 4.0
-follow_this = NodePath("../VehicleController/VehicleRigidBody")
+follow_this = NodePath("../VehicleController/VehicleRigidBody2")
 
 [node name="Coin" parent="." instance=ExtResource("9_28rqt")]
 transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, 181.6, 22.8, 5.4)
@@ -227,7 +226,7 @@ heart_empty = ExtResource("11_f0sam")
 
 [node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("6_oftd3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 564, 20.2465, -2.00001)
-vehicle_node = NodePath("VehicleRigidBody")
+vehicle_node = NodePath("VehicleRigidBody2")
 string_brake_input = "brake"
 string_steer_left = "left"
 string_steer_right = "right"
@@ -239,32 +238,7 @@ string_shift_up = "shift-up"
 string_shift_down = "shift-down"
 metadata/_edit_group_ = true
 
-[node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("12_gun71")]
-continuous_cd = true
-jump_force = 50000.0
-steering_speed = 7.0
-countersteer_speed = 7.0
-max_steering_angle = 0.523599
-throttle_steering_adjust = 0.0
-stability_yaw_strength = 50.0
-stability_yaw_ground_multiplier = 6.0
-stability_upright_spring = 5.0
-stability_upright_damping = 5000.0
-motor_brake = 50.0
-wheel_to_body_torque_multiplier = 0.5
-coefficient_of_friction = {
-"Dirt": 2.2,
-"Grass": 2.0,
-"Road": 2.5
-}
-lateral_grip_assist = {
-"Dirt": 0.0,
-"Grass": 0.0,
-"Road": 0.05
-}
-
-[node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("13_xbung")]
-vehicle = NodePath("..")
+[node name="VehicleRigidBody2" parent="VehicleController" instance=ExtResource("13_f0sam")]
 
 [node name="road_droit2" parent="." instance=ExtResource("14_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
