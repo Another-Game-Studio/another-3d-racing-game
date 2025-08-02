@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bvgwkkh5srraj"
-path="res://.godot/imported/road_turn.glb-d3b4c7f8f1a678577778eee1bdc4a5bc.scn"
+path="res://.godot/imported/road_turn.glb-f6066cf5505e56889bf7035dc9984857.scn"
 
 [deps]
 
-source_file="res://scenes/to_transfer/environment/road_turn.glb"
-dest_files=["res://.godot/imported/road_turn.glb-d3b4c7f8f1a678577778eee1bdc4a5bc.scn"]
+source_file="res://scenes/environment/road_turn.glb"
+dest_files=["res://.godot/imported/road_turn.glb-f6066cf5505e56889bf7035dc9984857.scn"]
 
 [params]
 

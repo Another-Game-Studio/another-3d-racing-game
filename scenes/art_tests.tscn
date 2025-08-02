@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=33 format=4 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -15,14 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="11_pud53"]
 [ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
 [ext_resource type="AudioStream" uid="uid://co50njnn1clyh" path="res://assets/sounds/degat.wav" id="13_0ijw1"]
-
-[ext_resource type="PackedScene" uid="uid://bvgwkkh5srraj" path="res://scenes/environment/road_turn.glb" id="13_25v2h"]
-[ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
 [ext_resource type="PackedScene" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
-[ext_resource type="Script" path="res://scenes/troncon_manager.gd" id="17_oew8k"]
-[ext_resource type="PackedScene" uid="uid://bhspdl0qhqg0g" path="res://scenes/environment/troncon_1.tscn" id="18_t0ww0"]
-[ext_resource type="Script" path="res://scenes/trigger.gd" id="19_s25y7"]
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -407,23 +400,31 @@ transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -126.84, 8.324, 0.4)
 
 [node name="Obstacles" type="Node" parent="."]
 
-[node name="Obstacle" parent="Obstacles" instance=ExtResource("17_oew8k")]
+[node name="Obstacle" parent="Obstacles"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -9.2, 8, -4)
+script = null
 
-[node name="Obstacle2" parent="Obstacles" instance=ExtResource("17_oew8k")]
+[node name="Obstacle2" parent="Obstacles"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.4, 0, 0, 0, 1.848, 0, 0, 0, 0.12, -31.6, 9.476, -4)
-
-[node name="CollisionShape3D" parent="Obstacles/Obstacle2/Area3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.0999985, -1.5)
-
-[node name="end" parent="Obstacles/Obstacle2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 73.6)
-
-[node name="ramp2" parent="Obstacles" instance=ExtResource("18_t0ww0")]
-transform = Transform3D(1.352, 0, 0, 0, 0.48, 0, 0, 0, 4.28, -0.8, 7.6, -2.8)
-
-[node name="ExplosiveBarrel" parent="Obstacles" instance=ExtResource("16_f0sam")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 22.4, 7.90692, 0)
+script = null
 
 [node name="Decoration" type="Node" parent="."]
 
@@ -463,12 +464,4 @@ transform = Transform3D(-1.04539, 0, 1.04539, 0, 1.4784, 0, -1.04539, 0, -1.0453
 transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
-[node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
-
-[node name="Dreamchaser" parent="." instance=ExtResource("20_47cvh")]
-
 [editable path="VehicleController"]
-
-[editable path="Decorations/Birds"]
-

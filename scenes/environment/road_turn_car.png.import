@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8oevywkv4n2m"
-path.s3tc="res://.godot/imported/road_turn_car.png-2fb85683b8b4f87afaaadb5ad12efb7c.s3tc.ctex"
+path.s3tc="res://.godot/imported/road_turn_car.png-577fb0dbdef40c6329b0e94df5469d4a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://scenes/to_transfer/environment/road_turn_car.png"
-dest_files=["res://.godot/imported/road_turn_car.png-2fb85683b8b4f87afaaadb5ad12efb7c.s3tc.ctex"]
+source_file="res://scenes/environment/road_turn_car.png"
+dest_files=["res://.godot/imported/road_turn_car.png-577fb0dbdef40c6329b0e94df5469d4a.s3tc.ctex"]
 
 [params]
 

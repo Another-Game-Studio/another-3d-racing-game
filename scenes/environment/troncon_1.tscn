@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhspdl0qhqg0g"]
+[gd_scene load_steps=3 format=3 uid="uid://bhspdl0qhqg0g"]
 
 [ext_resource type="PackedScene" uid="uid://dcmig0wmlgi73" path="res://scenes/obstacles/ramp.glb" id="1_sdedg"]
 [ext_resource type="PackedScene" uid="uid://bcxj4kh4dvprq" path="res://scenes/collectibles/coin/Coin.tscn" id="2_4qk1l"]
-[ext_resource type="PackedScene" uid="uid://be20iuksu23mo" path="res://scenes/obstacles/obstacle.tscn" id="3_4qk1l"]
 
 [node name="Troncon_1" type="Node3D"]
 
@@ -11,18 +10,3 @@ transform = Transform3D(3.38, 0, 0, 0, 1.2, 0, 0, 0, 10.7, 4.76, 19, -7)
 
 [node name="Coin" parent="." instance=ExtResource("2_4qk1l")]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 36.6, 20.81, 11.8)
-
-[node name="Coin2" parent="." instance=ExtResource("2_4qk1l")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -44.4, 20.81, 11.8)
-
-[node name="Coin3" parent="." instance=ExtResource("2_4qk1l")]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -103.8, 20.81, 1)
-
-[node name="Obstacle" parent="." instance=ExtResource("3_4qk1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 20, -8)
-
-[node name="Obstacle2" parent="." instance=ExtResource("3_4qk1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 20, -8)
-
-[node name="Obstacle3" parent="." instance=ExtResource("3_4qk1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146, 20, -8)
