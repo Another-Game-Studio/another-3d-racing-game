@@ -23,7 +23,7 @@ env:
   GODOT_PROJECT_LOCATION: ./project.godot
   EXPORT_FOLDER_LINUX: bin/linux
   EXPORT_FOLDER_WINDOWS: bin/windows
-  APPLICATION_NAME: another-3d-racing_game
+  APPLICATION_NAME: another-3d-racing-game
 
 jobs:
   build:
