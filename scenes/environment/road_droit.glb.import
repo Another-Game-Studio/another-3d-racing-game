@@ -1,0 +1,51 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dd6xth3u8wssg"
+path="res://.godot/imported/road_droit.glb-b1e81ad5d371268a414ce4b83da8dc3c.scn"
+
+[deps]
+
+source_file="res://scenes/environment/road_droit.glb"
+dest_files=["res://.godot/imported/road_droit.glb-b1e81ad5d371268a414ce4b83da8dc3c.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"color": {
+"use_external/enabled": true,
+"use_external/path": "uid://n8qc6u3e3loy"
+}
+},
+"nodes": {
+"PATH:Cube_024": {
+"generate/physics": true,
+"physics/layer": 3,
+"physics/mask": 3
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
