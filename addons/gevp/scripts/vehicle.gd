@@ -4,6 +4,9 @@
 class_name Vehicle
 extends RigidBody3D
 
+@export_group("Jump")
+@export var jump_force : float = 9000.0
+
 @export_group("Wheel Nodes")
 ## Assign this to the Wheel [RayCast3D] that is this vehicle's front left wheel.
 @export var front_left_wheel : Wheel
@@ -422,6 +425,7 @@ class Axle:
 		return slip
 
 func _ready():
+	set_deferred("continuous_cd", true)
 	initialize()
 	SignalBus.coin_collected.connect(_on_coin_collected)
 
@@ -648,7 +652,7 @@ func jump()-> void:
 		can_jump = can_jump and wheel.is_colliding()
 	print(can_jump)
 	if can_jump:
-		apply_central_impulse(global_transform.basis.y*9000)
+		apply_central_impulse(global_transform.basis.y*jump_force)
 
 func process_drag() -> void:
 	var drag := 0.5 * air_density * pow(speed, 2.0) * frontal_area * coefficient_of_drag
