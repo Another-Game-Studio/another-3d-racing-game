@@ -135,3 +135,5 @@ fabric.properties
 .idea/*
 .gitattributes
 .editorconfig
+.DS_Store
+scenes/.DS_Store
