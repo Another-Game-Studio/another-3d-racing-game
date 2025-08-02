@@ -6,7 +6,7 @@ var bob_speed : float = 5.0
 var time : float = 0.0
 
 @onready var start_y : float = global_position.y
-
+@export var whole_coin: RigidBody3D
 func _process(delta : float) -> void:
 	rotate(Vector3.UP, spin*delta)
 	time+=delta
@@ -17,4 +17,4 @@ func _on_body_entered(body : Node) -> void:
 	if body is PhysicsBody3D:
 		if body.get_collision_layer_value(1):
 			SignalBus.coin_collected.emit()
-			queue_free()
+			whole_coin.queue_free()
