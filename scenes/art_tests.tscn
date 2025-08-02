@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvwuclqun7hbs" path="res://assets/ui/life_full.png" id="8_25v2h"]
 [ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
 [ext_resource type="Texture2D" uid="uid://b4uwwa61g05fl" path="res://assets/ui/coin.png" id="10_cw1k8"]
-[ext_resource type="Script" path="res://scenes/fps.gd" id="11_cg5j4"]
+[ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
 [ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
 [ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
 [ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
@@ -18,7 +18,6 @@
 [ext_resource type="Script" path="res://scenes/troncon_manager.gd" id="17_oew8k"]
 [ext_resource type="PackedScene" uid="uid://bhspdl0qhqg0g" path="res://scenes/environment/troncon_1.tscn" id="18_t0ww0"]
 [ext_resource type="Script" path="res://scenes/trigger.gd" id="19_s25y7"]
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -93,6 +92,7 @@ emission = Color(0.656989, 0.338815, 0.413919, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s25y7"]
 size = Vector3(148, 8, 122)
 
+[node name="ArtTests" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.711514, -0.129409, -0.690653, -0.0669867, -0.965926, 0.249998, -0.699472, 0.224141, 0.678601, 0, 0, 0)
@@ -240,7 +240,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -597, 1, 5)
 
 [node name="road_turn3" parent="Circuit" instance=ExtResource("13_25v2h")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2, 1, 328)
-
 
 [node name="Triggers" type="Node" parent="."]
 
