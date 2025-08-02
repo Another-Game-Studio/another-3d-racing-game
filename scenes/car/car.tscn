@@ -1,8 +1,11 @@
+
 [gd_scene load_steps=17 format=4 uid="uid://bvguu1katamg7"]
+
 
 [ext_resource type="Script" uid="uid://bivxyc3f6r7b8" path="res://scenes/car/car.gd" id="1_yhfra"]
 [ext_resource type="Texture2D" uid="uid://chxrhanhk661j" path="res://assets/meshes/Textures/colormap.png" id="1_yr3gr"]
 [ext_resource type="Script" uid="uid://bhacn2rp1y0dv" path="res://scenes/carcontroller/player_controller.gd" id="3_rytg7"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4shf"]
 resource_name = "colormap"
@@ -44,12 +47,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2f7rl")
 
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x7uf8"]
 points = PackedVector3Array(0.65, 0.249961, 1.27491, 0.620605, 0.249961, 1.34549, 0.65, 0.0499364, 1.27491, 0.65, 0.425715, 1.1106, 0.620605, 0.0499364, 1.34549, 0.54998, 0.449985, 1.32485, 0.54998, 0.249961, 1.37478, 0.124961, 0, 1.42472, 0.65, 0.0499364, -0.485136, 0.65, 0.48774, 1.02997, 0.54998, 0.0499364, 1.37478, -0.550108, 0.449985, 1.32485, 0.124961, 0.174917, 1.42472, 0.65, 0.526703, 0.93568, 0.449961, 0.949907, 0.197793, 0.174971, 0.12498, 1.42472, -0.125088, 0, 1.42472, 0.124961, 0, 1.37478, 0.174971, 0.0499364, 1.42472, 0.399951, 0.0499364, -1.08521, 0.620605, 0.149995, -1.34577, 0.65, 0.149995, -1.27519, -0.65, 0.526703, 0.93568, -0.65, 0.48774, 1.02997, -0.65, 0.425715, 1.1106, -0.620732, 0.249961, 1.34549, -0.550108, 0.249961, 1.37478, -0.125088, 0.174917, 1.42472, -0.450088, 0.949907, 0.197793, 0.65, 0.649917, 0.597842, 0.449961, 0.949907, -0.907782, -0.175098, 0.0499364, 1.42472, -0.550108, 0.0499364, 1.37478, -0.620732, 0.0499364, 1.34549, -0.65, 0.0499364, 1.27491, -0.125088, 0, 1.37478, -0.400078, 0.0499364, -1.08521, 0.124961, 0.0999657, -1.425, 0.54998, 0.149995, -1.37506, 0.620605, 0.249961, -1.34577, 0.65, 0.249961, -1.27519, -0.65, 0.649917, 0.597842, -0.65, 0.249961, 1.27491, -0.175098, 0.12498, 1.42472, -0.450088, 0.949907, -0.907782, 0.65, 0.649917, 0.49769, 0.65, 0.539908, -0.785033, 0.65, 0.526703, -0.886022, 0.54998, 0.649917, -1.27519, -0.65, 0.0499364, -0.485136, -0.620732, 0.149995, -1.34577, -0.125088, 0.0999657, -1.425, 0.174971, 0.149995, -1.425, 0.54998, 0.249961, -1.37506, 0.65, 0.425715, -1.06094, -0.65, 0.649917, 0.49769, -0.65, 0.526703, -0.886022, -0.65, 0.539908, -0.785033, -0.550108, 0.649917, -1.27519, 0.65, 0.48774, -0.980036, 0.124961, 0.274976, -1.425, -0.65, 0.149995, -1.27519, -0.620732, 0.249961, -1.34577, -0.550108, 0.149995, -1.37506, -0.175098, 0.149995, -1.425, 0.174971, 0.224946, -1.425, -0.65, 0.48774, -0.980036, -0.125088, 0.274976, -1.425, -0.550108, 0.249961, -1.37506, -0.65, 0.249961, -1.27519, -0.65, 0.425715, -1.06094, -0.175098, 0.224946, -1.425)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x7uf8"]
 height = 0.331494
 radius = 0.28
+
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qp5c4"]
 _surfaces = [{
@@ -187,10 +192,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_586en")
 
+
 [node name="Car" type="VehicleBody3D" node_paths=PackedStringArray("controls", "camera_controller")]
 script = ExtResource("1_yhfra")
 controls = NodePath("PlayerController")
 camera_controller = NodePath("CameraController")
+
 
 [node name="CarBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
@@ -257,6 +264,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
 mesh = SubResource("ArrayMesh_nckhn")
 skeleton = NodePath("")
 
+
 [node name="PlayerController" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_rytg7")
@@ -272,3 +280,4 @@ transform = Transform3D(1, 0, 0, 0, 0.984823, -0.173562, 0, 0.173562, 0.984823, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 current = true
 fov = 37.8493
+

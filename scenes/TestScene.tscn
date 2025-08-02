@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=13 format=3 uid="uid://dcfa0gy8knvwp"]
 
 [ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
@@ -12,6 +13,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
 albedo_color = Color(0, 0.341176, 0, 1)
 
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n77mx"]
 sky_horizon_color = Color(0.895706, 0.556711, 0.412507, 1)
 ground_horizon_color = Color(0.895706, 0.556711, 0.412507, 1)
@@ -23,8 +25,10 @@ sky_material = SubResource("ProceduralSkyMaterial_n77mx")
 background_mode = 2
 sky = SubResource("Sky_nb1wl")
 
+
 [sub_resource type="PrismMesh" id="PrismMesh_rlkm5"]
 size = Vector3(1, 0.2, 1)
+
 
 [node name="TestScene" type="Node3D"]
 
@@ -44,9 +48,11 @@ offset_bottom = 23.0
 transform = Transform3D(0.912357, 0.40939, 0.00220324, 0.000732022, -0.00701299, 0.999975, 0.409395, -0.912333, -0.00669804, 2.75838, 1.32126, 0)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+
 transform = Transform3D(8.25052, 0, 0, 0, 8.25052, 0, 0, 0, 8.25052, -31.9974, 0, 0)
 use_collision = true
 collision_layer = 2
+
 radius = 40.0
 sides = 20
 
@@ -62,6 +68,7 @@ collision_layer = 2
 collision_mask = 13
 size = Vector3(1000, 1, 1000)
 material = SubResource("StandardMaterial3D_rlkm5")
+
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m5dm6")
@@ -175,3 +182,4 @@ size = Vector3(7.72412, 42.2435, 4.98207)
 [node name="CSGBox3D15" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.356, 28.6092, -189.849)
 size = Vector3(7.72412, 42.2435, 4.98207)
+
