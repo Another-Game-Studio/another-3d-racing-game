@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcfa0gy8knvwp"]
+[gd_scene load_steps=13 format=3 uid="uid://dcfa0gy8knvwp"]
 
 [ext_resource type="Script" uid="uid://d4nj1ysissjg4" path="res://scenes/gui.gd" id="2_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://addons/gevp/scenes/vehicle_controller.tscn" id="3_m5dm6"]
 [ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="3_n77mx"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="4_fws1a"]
 [ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="5_xpysu"]
+
 [ext_resource type="Script" uid="uid://bri3gu3sjj2r5" path="res://addons/gevp/scripts/camera.gd" id="6_fws1a"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlkm5"]
 albedo_color = Color(0, 0.341176, 0, 1)
@@ -101,8 +103,10 @@ countersteer_speed = 30.0
 steering_speed_decay = 0.0
 steering_slip_assist = 1.0
 countersteer_assist = 1.0
+
 throttle_steering_adjust = 4.0
 max_torque = 1000.0
+
 motor_brake = 1000.0
 
 [node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("5_xpysu")]

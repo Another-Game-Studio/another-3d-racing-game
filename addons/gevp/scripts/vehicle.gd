@@ -423,6 +423,10 @@ class Axle:
 
 func _ready():
 	initialize()
+	SignalBus.coin_collected.connect(_on_coin_collected)
+
+func _on_coin_collected() -> void:
+	print("J'ai ramassé une coin!")
 
 func _integrate_forces(state : PhysicsDirectBodyState3D):
 	current_gravity = state.total_gravity
