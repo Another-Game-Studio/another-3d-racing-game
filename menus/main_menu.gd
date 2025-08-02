@@ -5,7 +5,7 @@ extends Control
 @onready var credits_button: Button = %CreditsButton
 @onready var exit_button: Button = %ExitButton
 
-@onready var credits_scene: PackedScene = preload("res://menus/credits/credits_scene.tscn")
+@onready var credits_scene: PackedScene = preload("res://scenes/credits/scenes/credits/scrolling_credits.tscn")
 @onready var options_scene: PackedScene = preload("res://menus/options/options_scene.tscn")
 
 func _ready() -> void:
