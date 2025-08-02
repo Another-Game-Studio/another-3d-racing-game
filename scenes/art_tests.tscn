@@ -15,13 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="11_pud53"]
 [ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
 [ext_resource type="AudioStream" uid="uid://co50njnn1clyh" path="res://assets/sounds/degat.wav" id="13_0ijw1"]
-
 [ext_resource type="PackedScene" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
 [ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="16_f0sam"]
 [ext_resource type="PackedScene" uid="uid://be20iuksu23mo" path="res://scenes/obstacles/obstacle.tscn" id="17_oew8k"]
 [ext_resource type="PackedScene" uid="uid://dcmig0wmlgi73" path="res://scenes/obstacles/ramp.glb" id="18_t0ww0"]
 [ext_resource type="PackedScene" uid="uid://dnk7i87lhkkq4" path="res://scenes/birb/dreamchaser.tscn" id="20_47cvh"]
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -468,8 +466,6 @@ transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0
 [node name="Dreamchaser" parent="." instance=ExtResource("20_47cvh")]
 
 [editable path="VehicleController"]
-
 [editable path="Obstacles/Obstacle"]
 [editable path="Obstacles/Obstacle2"]
 [editable path="Decoration/Birds"]
-
