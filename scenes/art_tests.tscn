@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bvgwkkh5srraj" path="res://scenes/environment/road_turn.glb" id="13_25v2h"]
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
 [ext_resource type="PackedScene" uid="uid://ecv31aag7yq6" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
-[ext_resource type="Script" path="res://scenes/troncon_manager.gd" id="17_oew8k"]
+[ext_resource type="Script" uid="uid://y8g4s0tygy56" path="res://scenes/troncon_manager.gd" id="17_oew8k"]
 [ext_resource type="PackedScene" uid="uid://bhspdl0qhqg0g" path="res://scenes/environment/troncon_1.tscn" id="18_t0ww0"]
-[ext_resource type="Script" path="res://scenes/trigger.gd" id="19_s25y7"]
+[ext_resource type="Script" uid="uid://cc8p1dcftppxp" path="res://scenes/trigger.gd" id="19_s25y7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
