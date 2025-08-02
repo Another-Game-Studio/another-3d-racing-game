@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dd6xth3u8wssg"
-path="res://.godot/imported/road_droit.glb-b1e81ad5d371268a414ce4b83da8dc3c.scn"
+path="res://.godot/imported/road_droit.glb-b1b54c9554e5eca50b40b7f52dd2b3f5.scn"
 
 [deps]
 
-source_file="res://scenes/environment/road_droit.glb"
-dest_files=["res://.godot/imported/road_droit.glb-b1e81ad5d371268a414ce4b83da8dc3c.scn"]
+source_file="res://scenes/to_transfer/environment/road_droit.glb"
+dest_files=["res://.godot/imported/road_droit.glb-b1b54c9554e5eca50b40b7f52dd2b3f5.scn"]
 
 [params]
 
