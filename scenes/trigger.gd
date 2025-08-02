@@ -1,11 +1,11 @@
 extends Area3D
 
-@export var game_manager: Node
+@export var troncon_manager: Node3D
 
 func _on_body_entered(body: Node) -> void:
 	if not (body is PhysicsBody3D):
 		return
-
 	if body.get_collision_layer_value(1):
-		if game_manager:
-			game_manager.lose_life()
+		print("TRIGGER")
+		if troncon_manager:
+			troncon_manager.change_scene()
