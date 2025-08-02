@@ -143,11 +143,13 @@ shift-down={
 3d_physics/layer_2="Race"
 3d_physics/layer_3="Obstacle"
 
+
 [maaacks_credits_scene]
 
 disable_update_check=false
 disable_install_wizard=true
 copy_path="res://scenes/credits"
+
 
 [rendering]
 
