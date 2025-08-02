@@ -1,11 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcxj4kh4dvprq"]
+[gd_scene load_steps=7 format=3 uid="uid://bcxj4kh4dvprq"]
 
 [ext_resource type="Script" uid="uid://ceecm62hbxk46" path="res://scenes/collectibles/coin/coin.gd" id="1_go634"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_go634"]
-rough = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r1cy1"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_go634"]
 height = 0.1
@@ -42,31 +37,22 @@ _data = {
 &"turn": SubResource("Animation_go634")
 }
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="Coin" type="Area3D"]
 collision_layer = 8
-collision_mask = 2
-physics_material_override = SubResource("PhysicsMaterial_go634")
-
-[node name="CoinDropCollisionShape" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_r1cy1")
-
-[node name="Coin" type="Area3D" parent="." node_paths=PackedStringArray("whole_coin")]
-collision_layer = 4
 script = ExtResource("1_go634")
-whole_coin = NodePath("..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Coin"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_go634")
 surface_material_override/0 = SubResource("StandardMaterial3D_go634")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_go634")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Coin"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_r1cy1")
 }
 autoplay = "turn"
 
-[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
