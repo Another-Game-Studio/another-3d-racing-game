@@ -242,11 +242,10 @@ metadata/_edit_group_ = true
 [node name="VehicleRigidBody" parent="VehicleController" instance=ExtResource("12_gun71")]
 continuous_cd = true
 jump_force = 50000.0
-steering_speed = 5.0
-countersteer_speed = 5.0
-rear_steering_ratio = -1.0
-throttle_speed = 50.0
-braking_speed = 50.0
+steering_speed = 7.0
+countersteer_speed = 7.0
+max_steering_angle = 0.523599
+throttle_steering_adjust = 0.0
 stability_yaw_strength = 50.0
 stability_yaw_ground_multiplier = 6.0
 stability_upright_spring = 5.0
@@ -257,6 +256,11 @@ coefficient_of_friction = {
 "Dirt": 2.2,
 "Grass": 2.0,
 "Road": 2.5
+}
+lateral_grip_assist = {
+"Dirt": 0.0,
+"Grass": 0.0,
+"Road": 0.05
 }
 
 [node name="EngineSound" parent="VehicleController/VehicleRigidBody" node_paths=PackedStringArray("vehicle") instance=ExtResource("13_xbung")]
