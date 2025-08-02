@@ -1,6 +1,9 @@
 extends Area3D
 
-@export var game_manager: Node
+var game_manager: Node = null
+
+func _ready() -> void:
+	game_manager = get_tree().get_root().find_child("GameManager", true, false)
 
 func _on_body_entered(body: Node) -> void:
 	if not (body is PhysicsBody3D):

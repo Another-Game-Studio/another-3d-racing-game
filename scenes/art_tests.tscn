@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=27 format=4 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://addons/gevp/scenes/arcade_car.tscn" id="13_f0sam"]
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
 [ext_resource type="PackedScene" uid="uid://dfgyet2b0uept" path="res://scenes/obstacles/ExplosiveBarrel.tscn" id="16_f0sam"]
-[ext_resource type="Script" uid="uid://bseox5j1sgbf8" path="res://scenes/obstacle_floor.gd" id="17_oew8k"]
+[ext_resource type="PackedScene" uid="uid://be20iuksu23mo" path="res://scenes/obstacles/obstacle.tscn" id="17_oew8k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -88,12 +88,7 @@ albedo_color = Color(0.796936, 0.377167, 0.133551, 1)
 emission_enabled = true
 emission = Color(0.656989, 0.338815, 0.413919, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_t0ww0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s25y7"]
-albedo_color = Color(1, 0.106883, 0.405223, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_47cvh"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_oew8k"]
 size = Vector3(15, 2.6, 21.8)
 
 [node name="ArtTests" type="Node3D"]
@@ -301,18 +296,19 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2
 [node name="ExplosiveBarrel" parent="." instance=ExtResource("16_f0sam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.1873, 0)
 
-[node name="Lave" type="Area3D" parent="." node_paths=PackedStringArray("game_manager")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 18, -1)
-script = ExtResource("17_oew8k")
-game_manager = NodePath("../GameManager")
+[node name="Obstacle" parent="." instance=ExtResource("17_oew8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 20, -10)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Lave"]
-transform = Transform3D(13.72, 0, 0, 0, 2.744, 0, 0, 0, 22.2264, 0, 0, 0)
-mesh = SubResource("BoxMesh_t0ww0")
-surface_material_override/0 = SubResource("StandardMaterial3D_s25y7")
+[node name="CollisionShape3D" parent="Obstacle" index="1"]
+shape = SubResource("BoxShape3D_oew8k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799999, 0.2)
-shape = SubResource("BoxShape3D_47cvh")
+[node name="Obstacle2" parent="." instance=ExtResource("17_oew8k")]
+transform = Transform3D(1, 0, 0, 0, 4.62, 0, 0, 0, 0.3, -79, 26, -10)
+
+[node name="CollisionShape3D" parent="Obstacle2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -9.98378e-07, 0.2)
+shape = SubResource("BoxShape3D_oew8k")
 
 [editable path="Birds"]
+[editable path="Obstacle"]
+[editable path="Obstacle2"]

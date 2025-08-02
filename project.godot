@@ -39,7 +39,7 @@ project/assembly_name="Menu template"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gwj_countdown/plugin.cfg", "res://addons/maaacks_credits_scene/plugin.cfg")
+enabled=PackedStringArray("res://addons/maaacks_credits_scene/plugin.cfg")
 
 [input]
 
