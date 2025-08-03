@@ -8,7 +8,7 @@ var grace_period_ended : bool = false
 var spawn_cooldown : bool = false
 # Called when the node enters the scene tree for the first time.
 
-var min_speed: float = 5.0
+var min_speed: float = 3.0
 
 
 var rng : RandomNumberGenerator
