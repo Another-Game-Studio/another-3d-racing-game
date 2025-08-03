@@ -8,6 +8,9 @@ var grace_period_ended : bool = false
 var spawn_cooldown : bool = false
 # Called when the node enters the scene tree for the first time.
 
+var min_speed: float = 5.0
+
+
 var rng : RandomNumberGenerator
 
 const pieges : Dictionary[String, PackedScene] = {
@@ -43,7 +46,6 @@ func _physics_process(delta: float) -> void:
 	if player_vehicle:
 		global_position = global_position.lerp(player_vehicle.global_position, delta * move_speed)
 
-		var min_speed: float = 3.0
 		var current_speed: float = player_vehicle.linear_velocity.length()
 
 		if grace_period_ended and spawn_cooldown and current_speed > min_speed:
