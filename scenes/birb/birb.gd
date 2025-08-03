@@ -3,6 +3,7 @@ class_name Birb
 
 @onready var droppoints : Array[Marker3D] = []
 
+
 const coin_class : PackedScene = preload("res://scenes/collectibles/coin/Coin.tscn")
 
 var can_drop : bool = false :
@@ -22,6 +23,7 @@ func _ready() -> void:
 	for droppoint_node : Node in droppoints_nodes:
 		if droppoint_node is Marker3D:
 			droppoints.append(droppoint_node as Marker3D)
+
 	$CoinDropTimer.timeout.connect(_on_drop_timer_timeout)
 
 func _on_drop_timer_timeout() -> void:
@@ -32,6 +34,7 @@ func drop_coin() -> void:
 	var coin : RigidBody3D = coin_class.instantiate()
 	coin.global_position = $Droppoints.get_random_droppoint()
 	world_3D.add_child(coin)
+
 
 func _physics_process(delta: float) -> void:
 	pass

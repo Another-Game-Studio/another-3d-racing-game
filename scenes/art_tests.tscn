@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=34 format=4 uid="uid://drpbxmnfxylel"]
+
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -16,7 +18,9 @@
 [ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
 [ext_resource type="AudioStream" uid="uid://co50njnn1clyh" path="res://assets/sounds/degat.wav" id="13_0ijw1"]
 [ext_resource type="PackedScene" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
+
 [ext_resource type="PackedScene" uid="uid://dnk7i87lhkkq4" path="res://scenes/birb/dreamchaser.tscn" id="17_oew8k"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -250,11 +254,14 @@ coin_sound = ExtResource("12_pud53")
 damage_sound = ExtResource("13_0ijw1")
 
 [node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("14_s25y7")]
+
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.524, 8.2465, -1.99999)
+
 vehicle_node = NodePath("MyVehicleRigidBody")
 
 [node name="MyVehicleRigidBody" parent="VehicleController" index="0"]
 collision_mask = 6
+
 
 [node name="Circuit" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
@@ -449,3 +456,4 @@ world_3D = NodePath("..")
 
 [editable path="VehicleController"]
 [editable path="Decoration/Birds"]
+
