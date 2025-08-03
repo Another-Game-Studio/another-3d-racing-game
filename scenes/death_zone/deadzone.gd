@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var game_over_scene: PackedScene = preload("res://menus/gameover/GameOverMenu.tscn")
+@onready var game_over_scene: PackedScene = preload("res://scenes/gameover.tscn")
 
 
 func _on_body_entered(body: Node3D) -> void:
