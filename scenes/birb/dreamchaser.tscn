@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=6 format=3 uid="uid://dnk7i87lhkkq4"]
 
 [ext_resource type="PackedScene" uid="uid://di6rq2k5rmx4x" path="res://scenes/birb/birb.tscn" id="1_kmfuc"]
@@ -16,7 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
-
 
 [sub_resource type="Curve3D" id="Curve3D_pud53"]
 closed = true
@@ -74,9 +72,8 @@ script = SubResource("GDScript_kmfuc")
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 15.975, 0)
 curve = SubResource("Curve3D_pud53")
 script = SubResource("GDScript_47cvh")
-birb_speed_multiplier = 1.6
+birb_speed_multiplier = 1.55
 birb = NodePath("PathFollow3D/Birb")
-
 
 [node name="PathFollow3D" type="PathFollow3D" parent="BirdPath3D"]
 transform = Transform3D(0.0112987, 0, 0.999933, 0, 1, 0, -0.999933, 0, 0.0112987, -59.9618, 0, -0.151494)
@@ -84,7 +81,6 @@ transform = Transform3D(0.0112987, 0, 0.999933, 0, 1, 0, -0.999933, 0, 0.0112987
 [node name="Birb" parent="BirdPath3D/PathFollow3D" instance=ExtResource("1_kmfuc")]
 transform = Transform3D(-2.49984, 0, -0.0282469, 0, 2.5, 0, 0.0282469, 0, -2.49984, 0, 0, 0)
 motion_mode = 1
-
 
 [node name="CoinDropArea" type="Area3D" parent="BirdPath3D/PathFollow3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314122, 0, 27.7997)
@@ -96,4 +92,3 @@ shape = SubResource("SphereShape3D_kmfuc")
 
 [connection signal="body_entered" from="BirdPath3D/PathFollow3D/CoinDropArea" to="BirdPath3D" method="_on_coin_drop_area_body_entered"]
 [connection signal="body_exited" from="BirdPath3D/PathFollow3D/CoinDropArea" to="BirdPath3D" method="_on_coin_drop_area_body_exited"]
-

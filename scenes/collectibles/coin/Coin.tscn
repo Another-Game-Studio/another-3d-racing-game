@@ -5,11 +5,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1cy1"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_go634"]
-rough = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r1cy1"]
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_go634"]
 height = 0.1
 
@@ -48,9 +43,7 @@ _data = {
 [node name="RigidBody3D" type="RigidBody3D"]
 collision_layer = 8
 collision_mask = 2
-
 script = ExtResource("1_r1cy1")
-
 
 [node name="CoinDropCollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_r1cy1")
@@ -74,11 +67,9 @@ libraries = {
 }
 autoplay = "turn"
 
-
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 2.0
 autostart = true
-
 
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
