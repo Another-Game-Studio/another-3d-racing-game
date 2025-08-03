@@ -11,8 +11,8 @@ albedo_color = Color(0.85098, 0.356863, 0.356863, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mr7jy"]
 margin = 0.1
-height = 4.5
-radius = 1.5
+height = 4.75
+radius = 1.6
 
 [node name="ExplosiveBarrel" type="RigidBody3D"]
 collision_layer = 4
@@ -28,7 +28,7 @@ mesh = SubResource("CylinderMesh_5cq6a")
 surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.8125, 0)
 shape = SubResource("CylinderShape3D_mr7jy")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
@@ -37,7 +37,7 @@ mesh = SubResource("CylinderMesh_5cq6a")
 surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, -0.5)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, -1.5)
 shape = SubResource("CylinderShape3D_mr7jy")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
@@ -46,7 +46,7 @@ mesh = SubResource("CylinderMesh_5cq6a")
 surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, 0.5)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, 1.5)
 shape = SubResource("CylinderShape3D_mr7jy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	if player_vehicle:
 		global_position = global_position.lerp(player_vehicle.global_position, delta * move_speed)
 
-		var min_speed: float = 2.0
+		var min_speed: float = 3.0
 		var current_speed: float = player_vehicle.linear_velocity.length()
 
 		if grace_period_ended and spawn_cooldown and current_speed > min_speed:
@@ -62,6 +62,8 @@ func choose_point() -> Marker3D:
 			marker.global_position + Vector3.UP,
 			marker.global_position + Vector3.DOWN * 5.0
 		)
+		ray_params.collision_mask = 2
+
 		var result: Dictionary = space_state.intersect_ray(ray_params)
 
 		if result.size() > 0:
@@ -72,10 +74,8 @@ func choose_point() -> Marker3D:
 
 	return valid_markers[rng.randi_range(0, valid_markers.size() - 1)]
 
-	return markers[0]
-
 func get_spawn_chances() -> float:
-	return 0.3
+	return 0.5
 
 func spawn_piege(spawn_pos: Marker3D) -> void:
 	if not is_inside_tree():
