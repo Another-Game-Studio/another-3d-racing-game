@@ -40,6 +40,7 @@ func lose_life() -> void:
 		
 	if life == 0:	
 		SignalBus.lose_life.emit(life, coin_count)
+		await get_tree().process_frame
 		get_tree().change_scene_to_packed(game_over_scene)
 
 func _update_label() -> void:

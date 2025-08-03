@@ -5,4 +5,6 @@
 [node name="Deadzone" type="Area3D"]
 script = ExtResource("1_8vsil")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

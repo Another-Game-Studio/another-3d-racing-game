@@ -49,9 +49,10 @@ bind/4/bone = -1
 bind/4/pose = Transform3D(0.00802024, 0.012093, 0.999895, -0.833376, 0.552707, -7.45059e-08, -0.552648, -0.833289, 0.014511, 0.00332567, -0.576293, -0.229156)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f43j4"]
-albedo_color = Color(0.372549, 1, 0.592157, 1)
+albedo_color = Color(0.99762, 0.786938, 0.914349, 1)
 emission_enabled = true
-emission = Color(3.60981e-07, 0.456201, 0.220265, 1)
+emission = Color(0.555748, 0.283621, 0.37862, 1)
+emission_energy_multiplier = 0.5
 
 [sub_resource type="Animation" id="Animation_y2prg"]
 resource_name = "fly"
