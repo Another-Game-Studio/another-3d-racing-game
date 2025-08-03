@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbgm666i4tx1n"]
+
+[ext_resource type="Theme" uid="uid://bdssu6ufbrowi" path="res://assets/themes/menu_theme.tres" id="1_81jfo"]
+[ext_resource type="Script" uid="uid://d18a2jixup3w6" path="res://menus/gameover/score_label.gd" id="2_27kha"]
+[ext_resource type="Script" uid="uid://dwa83x44eqywy" path="res://menus/gameover/retry_button.gd" id="3_vdfka"]
+[ext_resource type="Script" uid="uid://mj78unprix8k" path="res://menus/gameover/return_main_menu_button.gd" id="4_k2evi"]
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_81jfo")
+theme_override_font_sizes/font_size = 80
+text = "Score: "
+script = ExtResource("2_27kha")
+
+[node name="GameOverLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 239.0
+offset_right = 1199.0
+offset_bottom = 359.0
+theme = ExtResource("1_81jfo")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 629.0
+offset_right = 1370.0
+offset_bottom = 686.0
+scale = Vector2(1.52362, 1.52362)
+theme_override_constants/separation = 100
+
+[node name="RetryButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_81jfo")
+text = "Retry"
+script = ExtResource("3_vdfka")
+
+[node name="MainMenuButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_81jfo")
+text = "Menu
+"
+script = ExtResource("4_k2evi")

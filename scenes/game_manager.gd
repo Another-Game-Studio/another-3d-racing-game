@@ -36,6 +36,9 @@ func lose_life() -> void:
 	if damage_sound:
 		damage_player.stream = damage_sound
 		damage_player.play()
+		
+	if life == 0:	
+		SignalBus.lose_life.emit(life, coin_count)
 
 func _update_label() -> void:
 	if coin_label:

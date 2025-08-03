@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 MenuMusic="*res://autoloads/menu_music.tscn"
 SignalBus="*res://autoloads/SignalBus.gd"
+GameData="*res://autoloads/GameData.gd"
 
 [debug]
 
