@@ -41,19 +41,41 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if player_vehicle:
-		global_position = global_position.lerp(player_vehicle.global_position, delta*move_speed)
-		if grace_period_ended and spawn_cooldown:
-			var marker : Marker3D = choose_point()
-			var collision_area : Area3D = marker.find_child("Area3D", false)
-			if collision_area.get_overlapping_bodies().size()==0 and spawn_cooldown:
-				spawn_piege(marker)
-		spawn_cooldown = false
+		global_position = global_position.lerp(player_vehicle.global_position, delta * move_speed)
 
-func choose_point() -> Node3D:
-	return get_child(rng.randi_range(0, get_child_count()-3))
+		var min_speed: float = 2.0
+		var current_speed: float = player_vehicle.linear_velocity.length()
+
+		if grace_period_ended and spawn_cooldown and current_speed > min_speed:
+			var marker: Marker3D = choose_point()
+			var collision_area: Area3D = marker.find_child("Area3D", false)
+			if collision_area.get_overlapping_bodies().size() == 0:
+				spawn_piege(marker)
+			spawn_cooldown = false
+
+func choose_point() -> Marker3D:
+	var valid_markers: Array[Marker3D] = []
+	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+
+	for marker: Marker3D in markers:
+		var ray_params: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
+			marker.global_position + Vector3.UP,
+			marker.global_position + Vector3.DOWN * 5.0
+		)
+		var result: Dictionary = space_state.intersect_ray(ray_params)
+
+		if result.size() > 0:
+			valid_markers.append(marker)
+
+	if valid_markers.is_empty():
+		return markers[0]
+
+	return valid_markers[rng.randi_range(0, valid_markers.size() - 1)]
+
+	return markers[0]
 
 func get_spawn_chances() -> float:
-	return 0.5
+	return 0.3
 
 func spawn_piege(spawn_pos: Marker3D) -> void:
 	if not is_inside_tree():

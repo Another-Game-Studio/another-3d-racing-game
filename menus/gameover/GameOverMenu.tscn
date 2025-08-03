@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_81jfo")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
@@ -43,16 +44,16 @@ theme_override_constants/separation = 100
 alignment = 1
 
 [node name="RetryButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("1_81jfo")
-theme_type_variation = &"FlatButton"
 text = "Retry"
 script = ExtResource("3_vdfka")
 
 [node name="MainMenuButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = ExtResource("1_81jfo")
-theme_type_variation = &"FlatButton"
 text = "Menu
 "
 script = ExtResource("4_k2evi")

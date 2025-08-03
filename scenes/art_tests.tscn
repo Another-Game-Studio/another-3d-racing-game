@@ -190,7 +190,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ao6v7")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
-transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 545.053, 1.58316, 5.80061)
+transform = Transform3D(-0.707107, -0.183013, 0.683013, -0.100854, 0.982153, 0.158755, -0.699878, 0.0433725, -0.712945, 37.053, 23.3582, 2.66277)
 current = true
 script = ExtResource("10_ao6v7")
 follow_height = 1
@@ -265,7 +265,7 @@ vehicle_node = NodePath("MyVehicleRigidBody")
 collision_mask = 6
 
 [node name="TrapSpawner" parent="." node_paths=PackedStringArray("player_vehicle", "world") instance=ExtResource("10_t0ww0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54696, 8.86595, -2.28911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54696, 8.86595, -1.28911)
 player_vehicle = NodePath("../VehicleController/MyVehicleRigidBody")
 move_speed = 0.5
 world = NodePath("..")
@@ -274,7 +274,7 @@ world = NodePath("..")
 world_3D = NodePath("..")
 
 [node name="PathFollow3D" parent="Dreamchaser/BirdPath3D" index="0"]
-transform = Transform3D(-0.0290572, 0.0273091, 0.999201, -9.3132e-10, 0.999621, -0.0273207, -0.999575, -0.000793864, -0.0290463, -59.9618, 0, -0.151494)
+transform = Transform3D(-0.0290572, 0.0273091, 0.999201, -9.3132e-10, 0.99962, -0.0273207, -0.999575, -0.000793863, -0.0290463, -59.9618, 0, -0.151494)
 
 [node name="Circuit" type="Node3D" parent="."]
 transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, -346.4, 0, 0)
@@ -385,7 +385,7 @@ transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
+transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
 
 [node name="Deadzone" parent="." instance=ExtResource("18_t0ww0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -7, 51)

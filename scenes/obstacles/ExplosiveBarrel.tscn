@@ -7,7 +7,7 @@ height = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c56j"]
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.505882, 0, 0, 1)
+albedo_color = Color(0.85098, 0.356863, 0.356863, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mr7jy"]
 margin = 0.1

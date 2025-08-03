@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c0nxj8ey6xiui"]
+[gd_scene load_steps=25 format=4 uid="uid://c0nxj8ey6xiui"]
 
 [ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="5_qv4t0"]
 [ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="6_kfspf"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="9_a4e3a"]
 [ext_resource type="PackedScene" uid="uid://dbgm666i4tx1n" path="res://menus/gameover/GameOverMenu.tscn" id="9_r8puk"]
 [ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="10_ggc4p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke020"]
+bg_color = Color(0, 0, 0, 0.396078)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -170,10 +177,13 @@ custom_minimum_size = Vector2(200, 300)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 408.0
-offset_right = -408.0
+offset_left = 271.0
+offset_top = 138.0
+offset_right = -271.0
+offset_bottom = -210.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ke020")
 
 [node name="GameOverMenu" parent="." instance=ExtResource("9_r8puk")]
 
@@ -347,7 +357,7 @@ transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
+transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 60.8045, 29, 19.7412)
