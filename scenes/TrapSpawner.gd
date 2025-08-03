@@ -53,7 +53,7 @@ func choose_point() -> Node3D:
 	return get_child(rng.randi_range(0, get_child_count()-3))
 
 func get_spawn_chances() -> float:
-	return 0.7
+	return 0.5
 
 func spawn_piege(spawn_pos: Marker3D) -> void:
 	if not is_inside_tree():

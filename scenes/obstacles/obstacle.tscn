@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://be20iuksu23mo"]
+[gd_scene load_steps=6 format=3 uid="uid://be20iuksu23mo"]
 
 [ext_resource type="Script" uid="uid://c3iyujtsc1t5h" path="res://scenes/obstacles/obstacle.gd" id="1_hof70"]
+[ext_resource type="PackedScene" uid="uid://h5q6pfesjtok" path="res://assets/meshes/environments/pics.glb" id="2_fmab6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t0ww0"]
 
@@ -18,12 +19,16 @@ speed = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 transform = Transform3D(13.72, 0, 0, 0, 0.8232, 0, 0, 0, 8.89056, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_t0ww0")
 surface_material_override/0 = SubResource("StandardMaterial3D_s25y7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, -0.0500009, -0.0499994)
 shape = SubResource("BoxShape3D_hof70")
+
+[node name="pics" parent="Area3D" instance=ExtResource("2_fmab6")]
+transform = Transform3D(0.8892, 0, 0, 0, 1, 0, 0, 0, 0.616, 0, -0.5, -1.6448)
 
 [node name="end" type="Node3D" parent="."]
 
