@@ -8,7 +8,7 @@ extends Node
 @export var damage_sound: AudioStream
 
 var coin_count: int = 0
-var life: int = 1
+var life: int = 4
 
 @onready var coin_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var damage_player: AudioStreamPlayer = AudioStreamPlayer.new()
