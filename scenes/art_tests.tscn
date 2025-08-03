@@ -263,44 +263,20 @@ collision_mask = 6
 [node name="TrapSpawner" parent="." node_paths=PackedStringArray("player_vehicle", "world") instance=ExtResource("10_t0ww0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54696, 8.86595, -2.28911)
 player_vehicle = NodePath("../VehicleController/MyVehicleRigidBody")
-move_speed = 4.0
+move_speed = 0.5
 world = NodePath("..")
 
+[node name="Dreamchaser" parent="." node_paths=PackedStringArray("world_3D") instance=ExtResource("17_oew8k")]
+world_3D = NodePath("..")
+
+[node name="PathFollow3D" parent="Dreamchaser/BirdPath3D" index="0"]
+transform = Transform3D(-0.0290573, 0.0273092, 0.999201, -9.3132e-10, 0.999622, -0.0273208, -0.999575, -0.000793869, -0.0290464, -59.9618, 0, -0.151494)
+
 [node name="Circuit" type="Node3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-
-[node name="road_droit2" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
-
-[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
-mesh = SubResource("ArrayMesh_pb4ko")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit2/Cube_024"]
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit2/Cube_024/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ortc8")
-
-[node name="road_droit6" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -598, 1, 4)
-
-[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
-mesh = SubResource("ArrayMesh_pb4ko")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit6/Cube_024"]
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit6/Cube_024/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ortc8")
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, -346.4, 0, 0)
 
 [node name="road_droit4" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, 4)
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1, 788.9, 1, 4)
 
 [node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
@@ -314,38 +290,9 @@ collision_mask = 13
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit4/Cube_024/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ortc8")
 
-[node name="road_droit3" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -335)
-
-[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
-mesh = SubResource("ArrayMesh_pb4ko")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit3/Cube_024"]
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit3/Cube_024/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ortc8")
-
-[node name="road_droit7" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -598, 1, -335)
-
-[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
-mesh = SubResource("ArrayMesh_pb4ko")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit7/Cube_024"]
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit7/Cube_024/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ortc8")
-
 [node name="road_droit5" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, -335)
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1, 788.9, 1, -335)
+metadata/_edit_group_ = true
 
 [node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
@@ -360,9 +307,11 @@ collision_mask = 13
 shape = SubResource("ConcavePolygonShape3D_ortc8")
 
 [node name="road_turn2" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -597, 1, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -418, 1, 5)
+metadata/_edit_group_ = true
 
 [node name="Cube_025" type="MeshInstance3D" parent="Circuit/road_turn2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1200, 0, 0)
 mesh = SubResource("ArrayMesh_ngfj5")
 skeleton = NodePath("")
 
@@ -375,6 +324,7 @@ shape = SubResource("ConcavePolygonShape3D_n6882")
 
 [node name="road_turn3" type="Node3D" parent="Circuit"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2, 1, 328)
+metadata/_edit_group_ = true
 
 [node name="Cube_025" type="MeshInstance3D" parent="Circuit/road_turn3"]
 mesh = SubResource("ArrayMesh_ngfj5")
@@ -433,9 +383,6 @@ bird_count = 20
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
 transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
 
-[node name="Dreamchaser" parent="." node_paths=PackedStringArray("world_3D") instance=ExtResource("17_oew8k")]
-world_3D = NodePath("..")
-
 [node name="Deadzone" parent="." instance=ExtResource("18_t0ww0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -7, 51)
 
@@ -444,5 +391,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, -48, 26)
 shape = SubResource("BoxShape3D_s25y7")
 
 [editable path="VehicleController"]
+[editable path="Dreamchaser"]
 [editable path="Decoration/Birds"]
 [editable path="Deadzone"]

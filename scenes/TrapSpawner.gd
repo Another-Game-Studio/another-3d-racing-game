@@ -12,7 +12,7 @@ var rng : RandomNumberGenerator
 
 const pieges : Dictionary[String, PackedScene] = {
 	"barrel" : preload("res://scenes/obstacles/ExplosiveBarrel.tscn"),
-	"ramp" : preload("res://scenes/obstacles/ramp.glb"),
+	"obstacle_moving" : preload("res://scenes/obstacles/obstacle_moving.tscn"),
 	"obstacle" : preload("res://scenes/obstacles/obstacle.tscn")
 }
 
@@ -53,15 +53,20 @@ func choose_point() -> Node3D:
 	return get_child(rng.randi_range(0, get_child_count()-3))
 
 func get_spawn_chances() -> float:
-	return 0.3
+	return 0.7
 
-func spawn_piege(spawn_pos : Marker3D) -> void:
-	if !is_inside_tree():
-		pass
+func spawn_piege(spawn_pos: Marker3D) -> void:
+	if not is_inside_tree():
+		return
+	
 	if rng.randf() < get_spawn_chances():
-		var new_barrel : RigidBody3D = pieges["barrel"].instantiate()
-		world.add_child(new_barrel)
-		new_barrel.global_position = spawn_pos.global_position
+		var keys: Array[String] = pieges.keys()
+		var chosen_key: String = keys[rng.randi_range(0, keys.size() - 1)]
+		var scene: PackedScene = pieges[chosen_key]
+		
+		var instance: Node3D = scene.instantiate()
+		world.add_child(instance)
+		instance.global_position = spawn_pos.global_position
 
 func _on_vehicle_controller_ready() -> void:
 	player_vehicle = $"../VehicleController/MyVehicleRigidBody"

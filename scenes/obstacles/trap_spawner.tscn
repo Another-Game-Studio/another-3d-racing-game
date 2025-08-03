@@ -24,7 +24,7 @@ collision_layer = 16
 shape = SubResource("SphereShape3D_t0ww0")
 
 [node name="Marker3D2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.72897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.27103)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Marker3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.870919)

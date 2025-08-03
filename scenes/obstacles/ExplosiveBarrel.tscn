@@ -31,4 +31,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, 0)
 shape = SubResource("CylinderShape3D_mr7jy")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.75, -1.5)
+mesh = SubResource("CylinderMesh_5cq6a")
+surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, -0.5)
+shape = SubResource("CylinderShape3D_mr7jy")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.75, 1.5)
+mesh = SubResource("CylinderMesh_5cq6a")
+surface_material_override/0 = SubResource("StandardMaterial3D_6c56j")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.75, 0.5)
+shape = SubResource("CylinderShape3D_mr7jy")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
