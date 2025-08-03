@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://gymy61x7wc70"]
+
+[ext_resource type="Script" uid="uid://bct24r5ptpvht" path="res://scenes/TrapSpawner.gd" id="1_p2yq3"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_t0ww0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t0ww0"]
+radius = 2.0
+
+[node name="TrapSpawner" type="Marker3D" node_paths=PackedStringArray("player_vehicle")]
+script = ExtResource("1_p2yq3")
+player_vehicle = NodePath("")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D"]
+mesh = SubResource("SphereMesh_t0ww0")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Marker3D"]
+collision_layer = 16
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Marker3D/Area3D"]
+shape = SubResource("SphereShape3D_t0ww0")
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.72897)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Marker3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.870919)
+mesh = SubResource("SphereMesh_t0ww0")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Marker3D2"]
+collision_layer = 16
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Marker3D2/Area3D"]
+shape = SubResource("SphereShape3D_t0ww0")
+
+[node name="Marker3D3" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0853)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Marker3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.21192)
+mesh = SubResource("SphereMesh_t0ww0")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Marker3D3"]
+collision_layer = 16
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Marker3D3/Area3D"]
+shape = SubResource("SphereShape3D_t0ww0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
