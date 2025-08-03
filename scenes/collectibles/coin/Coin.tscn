@@ -1,9 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bcxj4kh4dvprq"]
 
 [ext_resource type="Script" uid="uid://ceecm62hbxk46" path="res://scenes/collectibles/coin/coin.gd" id="1_go634"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_go634"]
-rough = true
+[ext_resource type="Script" uid="uid://cgaunxpvcsgbt" path="res://scenes/collectibles/coin/coin_rigid.gd" id="1_r1cy1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1cy1"]
 
@@ -45,7 +43,7 @@ _data = {
 [node name="RigidBody3D" type="RigidBody3D"]
 collision_layer = 8
 collision_mask = 2
-physics_material_override = SubResource("PhysicsMaterial_go634")
+script = ExtResource("1_r1cy1")
 
 [node name="CoinDropCollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_r1cy1")
@@ -68,5 +66,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_r1cy1")
 }
 autoplay = "turn"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+autostart = true
 
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
