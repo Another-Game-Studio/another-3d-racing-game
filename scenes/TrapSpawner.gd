@@ -65,4 +65,3 @@ func spawn_piege(spawn_pos : Marker3D) -> void:
 
 func _on_vehicle_controller_ready() -> void:
 	player_vehicle = $"../VehicleController/MyVehicleRigidBody"
-	print(player_vehicle)
