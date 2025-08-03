@@ -271,7 +271,7 @@ world = NodePath("..")
 world_3D = NodePath("..")
 
 [node name="PathFollow3D" parent="Dreamchaser/BirdPath3D" index="0"]
-transform = Transform3D(-0.0290573, 0.0273091, 0.999201, -9.3132e-10, 0.999621, -0.0273208, -0.999575, -0.000793869, -0.0290464, -59.9618, 0, -0.151494)
+transform = Transform3D(-0.0290572, 0.0273091, 0.999201, -9.3132e-10, 0.999621, -0.0273207, -0.999575, -0.000793864, -0.0290463, -59.9618, 0, -0.151494)
 
 [node name="Circuit" type="Node3D" parent="."]
 transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, -346.4, 0, 0)

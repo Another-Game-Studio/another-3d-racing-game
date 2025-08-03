@@ -7,3 +7,4 @@ stream = ExtResource("1_fyry3")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true
