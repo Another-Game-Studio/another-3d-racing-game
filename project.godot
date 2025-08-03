@@ -12,7 +12,7 @@ config_version=5
 
 config/name="KartingJam"
 config/tags=PackedStringArray("template")
-run/main_scene="uid://dfkbo2qg82rgl"
+run/main_scene="uid://bsp71gctu3rgd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -143,9 +143,7 @@ shift-down={
 3d_physics/layer_2="Race"
 3d_physics/layer_3="Obstacle"
 3d_physics/layer_4="Coin_Fall"
-
 3d_physics/layer_5="PlayerCoinDropArea"
-
 
 [maaacks_credits_scene]
 

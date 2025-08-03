@@ -1,22 +1,13 @@
-[gd_scene load_steps=34 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=25 format=4 uid="uid://cciyae7aaemx1"]
 
-[ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
-[ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
-[ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="5_1xm3q"]
-[ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="6_ggja7"]
-[ext_resource type="Texture2D" uid="uid://cvwuclqun7hbs" path="res://assets/ui/life_full.png" id="8_25v2h"]
-[ext_resource type="PackedScene" uid="uid://bcxj4kh4dvprq" path="res://scenes/collectibles/coin/Coin.tscn" id="9_28rqt"]
-[ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="10_47cvh"]
-[ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
-[ext_resource type="Texture2D" uid="uid://b4uwwa61g05fl" path="res://assets/ui/coin.png" id="10_cw1k8"]
-[ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
-[ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
-[ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
-[ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="11_pud53"]
-[ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
-[ext_resource type="AudioStream" uid="uid://co50njnn1clyh" path="res://assets/sounds/degat.wav" id="13_0ijw1"]
-[ext_resource type="PackedScene" uid="uid://ecv31aag7yq6" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
-[ext_resource type="PackedScene" uid="uid://dnk7i87lhkkq4" path="res://scenes/birb/dreamchaser.tscn" id="17_oew8k"]
+[ext_resource type="PackedScene" uid="uid://c5i6ye1qefd5g" path="res://menus/options/options_scene.tscn" id="1_o7i7e"]
+[ext_resource type="Theme" uid="uid://bdssu6ufbrowi" path="res://assets/themes/menu_theme.tres" id="2_gyu1t"]
+[ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="5_0un6s"]
+[ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="6_kywri"]
+[ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="7_apvty"]
+[ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="8_vhp3b"]
+[ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="9_tvlg4"]
+[ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="10_ojp2k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -47,7 +38,7 @@ adjustment_saturation = 1.1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1n0m6"]
 resource_name = "color"
 cull_mode = 2
-albedo_texture = ExtResource("10_47cvh")
+albedo_texture = ExtResource("5_0un6s")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hwjm2"]
 _surfaces = [{
@@ -89,7 +80,7 @@ data = PackedVector3Array(-29.952, -17.9712, -32.5606, -29.952, 17.9712, -37.952
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb7i3"]
 resource_name = "color"
 cull_mode = 2
-albedo_texture = ExtResource("11_pud53")
+albedo_texture = ExtResource("6_kywri")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dakdp"]
 _surfaces = [{
@@ -174,6 +165,92 @@ emission = Color(0.656989, 0.338815, 0.413919, 1)
 
 [node name="ArtTests" type="Node3D"]
 
+[node name="OptionScene" parent="." instance=ExtResource("1_o7i7e")]
+
+[node name="Background" parent="OptionScene" index="0"]
+custom_minimum_size = Vector2(1010, 730)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="GameLogo" parent="OptionScene/Background/LogoContainer" index="0"]
+visible = false
+
+[node name="OptionsContainer" parent="OptionScene/Background" index="1"]
+offset_left = -584.0
+offset_top = -116.0
+offset_right = 440.0
+offset_bottom = 459.0
+
+[node name="MasterSlider" parent="OptionScene/Background/OptionsContainer/Sound/MasterContainer" index="0"]
+offset_top = -335.0
+offset_bottom = -319.0
+
+[node name="MasterLabel" parent="OptionScene/Background/OptionsContainer/Sound/MasterContainer" index="1"]
+offset_top = -359.0
+offset_right = 406.0
+offset_bottom = -309.0
+
+[node name="MusicSlider" parent="OptionScene/Background/OptionsContainer/Sound/MusicContainer" index="0"]
+offset_top = -279.0
+offset_bottom = -263.0
+
+[node name="MusicLabel" parent="OptionScene/Background/OptionsContainer/Sound/MusicContainer" index="1"]
+offset_top = -303.0
+offset_bottom = -253.0
+
+[node name="SFXSlider" parent="OptionScene/Background/OptionsContainer/Sound/SFXContainer" index="0"]
+offset_top = -215.0
+offset_bottom = -199.0
+
+[node name="SFXLabel" parent="OptionScene/Background/OptionsContainer/Sound/SFXContainer" index="1"]
+offset_top = -239.0
+offset_bottom = -189.0
+
+[node name="ScreenModeButton" parent="OptionScene/Background/OptionsContainer/Screen/ScreenModeContainer" index="0"]
+offset_top = -32.0
+offset_bottom = 25.0
+
+[node name="ScreenSizeLabel" parent="OptionScene/Background/OptionsContainer/Screen/ScreenModeContainer" index="1"]
+offset_top = -32.0
+offset_bottom = 18.0
+
+[node name="StudioInfoContainer" parent="OptionScene/Background" index="2"]
+visible = false
+
+[node name="BackButton" parent="OptionScene/Background" index="3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -333.0
+offset_right = -341.0
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "<"
+
+[node name="madeby" type="Label" parent="OptionScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 910.0
+offset_right = -1434.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gyu1t")
+theme_override_font_sizes/font_size = 32
+text = "made by
+another game studio"
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.711514, -0.129409, -0.690653, -0.0669867, -0.965926, 0.249998, -0.699472, 0.224141, 0.678601, 0, 0, 0)
 light_color = Color(0.917647, 0.423529, 0.298039, 1)
@@ -181,80 +258,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ao6v7")
-
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
-transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 545.053, 1.58316, 5.80061)
-current = true
-script = ExtResource("10_ao6v7")
-follow_height = 1
-camera_y_offset = 2.0
-follow_this = NodePath("../VehicleController/MyVehicleRigidBody")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="UI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 930.0
-offset_top = 68.0
-offset_right = -838.0
-offset_bottom = -676.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "8
-
-"
-horizontal_alignment = 1
-
-[node name="Coin" type="Sprite2D" parent="UI"]
-position = Vector2(899, 141)
-texture = ExtResource("10_cw1k8")
-
-[node name="1" type="Sprite2D" parent="UI"]
-position = Vector2(1178, 120)
-texture = ExtResource("8_25v2h")
-
-[node name="2" type="Sprite2D" parent="UI"]
-position = Vector2(1242, 119)
-texture = ExtResource("8_25v2h")
-
-[node name="3" type="Sprite2D" parent="UI"]
-position = Vector2(1304, 120)
-texture = ExtResource("8_25v2h")
-
-[node name="4" type="Sprite2D" parent="UI"]
-position = Vector2(1365, 120)
-texture = ExtResource("8_25v2h")
-
-[node name="FPS" type="Label" parent="UI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1682.0
-offset_top = 95.0
-offset_right = -136.0
-offset_bottom = -902.0
-theme_override_font_sizes/font_size = 60
-text = "FPS"
-script = ExtResource("11_cg5j4")
-
-[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("coin_label", "heart_sprites")]
-script = ExtResource("11_cw1k8")
-coin_label = NodePath("../UI/Label")
-heart_sprites = [NodePath("../UI/1"), NodePath("../UI/2"), NodePath("../UI/3"), NodePath("../UI/4")]
-heart_full = ExtResource("8_25v2h")
-heart_empty = ExtResource("11_f0sam")
-coin_sound = ExtResource("12_pud53")
-damage_sound = ExtResource("13_0ijw1")
-
-[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("14_s25y7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.524, 8.2465, -1.99999)
-vehicle_node = NodePath("MyVehicleRigidBody")
-
-[node name="MyVehicleRigidBody" parent="VehicleController" index="0"]
-collision_mask = 6
 
 [node name="Circuit" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
@@ -379,36 +382,12 @@ shape = SubResource("ConcavePolygonShape3D_n6882")
 
 [node name="Collisions" type="Node" parent="Circuit"]
 
-[node name="Coins" type="Node" parent="."]
-unique_name_in_owner = true
-
-[node name="Coin" parent="Coins" instance=ExtResource("9_28rqt")]
-transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 14.64, 8.324, 4.72)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("9_28rqt")]
-transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -17.76, 8.324, 4.72)
-
-[node name="Coin3" parent="Coins" instance=ExtResource("9_28rqt")]
-transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -41.52, 8.324, 0.4)
-
-[node name="Coin4" parent="Coins" instance=ExtResource("9_28rqt")]
-transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -73.92, 8.324, 3.64)
-
-[node name="Coin5" parent="Coins" instance=ExtResource("9_28rqt")]
-transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -98.76, 8.324, -7.16)
-
-[node name="Coin6" parent="Coins" instance=ExtResource("9_28rqt")]
-transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -126.84, 8.324, 0.4)
-
-[node name="Obstacles" type="Node" parent="."]
-unique_name_in_owner = true
-
 [node name="Decoration" type="Node" parent="."]
 
-[node name="cloud" parent="Decoration" instance=ExtResource("1_rfc7w")]
+[node name="cloud" parent="Decoration" instance=ExtResource("7_apvty")]
 transform = Transform3D(17.4865, 0, 0, 0, 17.4865, 0, 0, 0, 17.4865, -175.364, -0.937232, -286.194)
 
-[node name="cloud3" parent="Decoration" instance=ExtResource("1_rfc7w")]
+[node name="cloud3" parent="Decoration" instance=ExtResource("7_apvty")]
 transform = Transform3D(8.74324, 0, -15.1437, 0, 17.4865, 0, 15.1437, 0, 8.74324, 296.771, -0.937232, 238.401)
 
 [node name="cloud2" type="Node3D" parent="Decoration"]
@@ -419,13 +398,13 @@ transform = Transform3D(1.76962, 0, 0, 0, 1.76962, 0, 0, 0, 1.76962, -0.0734029,
 mesh = SubResource("ArrayMesh_xtctt")
 skeleton = NodePath("")
 
-[node name="cloud22" parent="Decoration" instance=ExtResource("2_1xm3q")]
+[node name="cloud22" parent="Decoration" instance=ExtResource("8_vhp3b")]
 transform = Transform3D(-9.61216, 0, 22.5912, 0, 31.8673, 0, -22.5912, 0, -9.61216, -443.404, -0.548404, 91.674)
 
-[node name="cloud23" parent="Decoration" instance=ExtResource("2_1xm3q")]
+[node name="cloud23" parent="Decoration" instance=ExtResource("8_vhp3b")]
 transform = Transform3D(30.3616, 0, -12.2367, 0, 42.4896, 0, 12.2367, 0, 30.3616, -196.344, -0.548404, 336.658)
 
-[node name="cloud24" parent="Decoration" instance=ExtResource("2_1xm3q")]
+[node name="cloud24" parent="Decoration" instance=ExtResource("8_vhp3b")]
 transform = Transform3D(-32.4941, -2.57106, -3.43082, 0, -36.7972, 16.3674, -3.96157, 21.0887, 28.1407, 502.336, -23.1278, -401.616)
 
 [node name="sun" type="MeshInstance3D" parent="Decoration"]
@@ -434,18 +413,18 @@ mesh = SubResource("SphereMesh_cw1k8")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_cg5j4")
 
-[node name="island" parent="Decoration" instance=ExtResource("5_1xm3q")]
-transform = Transform3D(-1.04539, 0, 1.04539, 0, 1.4784, 0, -1.04539, 0, -1.04539, 22.5825, 0, 56.132)
+[node name="island" parent="Decoration" instance=ExtResource("9_tvlg4")]
+transform = Transform3D(-1.04539, 0, 1.04539, 0, 1.4784, 0, -1.04539, 0, -1.04539, 5.5825, -2, 56.132)
 
-[node name="Birds" parent="Decoration" instance=ExtResource("6_ggja7")]
+[node name="Birds" parent="Decoration" instance=ExtResource("10_ojp2k")]
 transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
 transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
-[node name="Dreamchaser" parent="." node_paths=PackedStringArray("world_3D") instance=ExtResource("17_oew8k")]
-world_3D = NodePath("..")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 60.8045, 29, 19.7412)
 
-[editable path="VehicleController"]
+[editable path="OptionScene"]
 [editable path="Decoration/Birds"]
