@@ -308,6 +308,8 @@ offset_left = 80.0
 offset_top = 910.0
 offset_right = -1434.0
 offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_u26n3")
 theme_override_font_sizes/font_size = 32
 text = "made by
@@ -483,7 +485,7 @@ transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
+transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 60.8045, 29, 19.7412)
