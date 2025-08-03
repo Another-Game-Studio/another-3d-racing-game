@@ -29,9 +29,11 @@ func _on_drop_timer_timeout() -> void:
 	$CoinDropTimer.start()
 
 func drop_coin() -> void:
+	if !is_inside_tree():
+		pass
 	var coin : RigidBody3D = coin_class.instantiate()
-	coin.global_position = $Droppoints.get_random_droppoint()
 	world_3D.add_child(coin)
+	coin.global_position = $Droppoints.get_random_droppoint()
 
 func _physics_process(delta: float) -> void:
 	pass
