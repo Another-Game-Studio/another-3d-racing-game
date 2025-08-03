@@ -9,10 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="10_47cvh"]
 [ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
 [ext_resource type="Texture2D" uid="uid://b4uwwa61g05fl" path="res://assets/ui/coin.png" id="10_cw1k8"]
-
 [ext_resource type="PackedScene" uid="uid://gymy61x7wc70" path="res://scenes/obstacles/trap_spawner.tscn" id="10_t0ww0"]
-[ext_resource type="Script" path="res://scenes/fps.gd" id="11_cg5j4"]
-
+[ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
 [ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
 [ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
 [ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="11_pud53"]

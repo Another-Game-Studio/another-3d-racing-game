@@ -7,6 +7,11 @@
 [node name="MainMenu" instance=ExtResource("1_ij7vn")]
 script = ExtResource("1_yjgyn")
 
+[node name="Background" parent="." index="0"]
+anchors_preset = -1
+anchor_top = -0.000925926
+anchor_bottom = 0.999074
+
 [node name="ButtonContainer" type="VBoxContainer" parent="Background" index="1"]
 layout_mode = 1
 anchors_preset = -1

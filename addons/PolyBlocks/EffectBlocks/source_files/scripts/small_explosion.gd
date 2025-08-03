@@ -20,8 +20,9 @@ func _process(delta):
 			explosion()
 
 func explosion():
-	fire.emitting = true
-	sparks.emitting = true
-	smoke.emitting = true
-	audio.play()
-	time_since_last_explosion = 0.0
+	pass
+#	fire.emitting = true
+#	sparks.emitting = true
+#	smoke.emitting = true
+	#audio.play()
+	#time_since_last_explosion = 0.0
