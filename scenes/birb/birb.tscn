@@ -1,4 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://di6rq2k5rmx4x"]
+
+[gd_scene load_steps=10 format=4 uid="uid://di6rq2k5rmx4x"]
+
 
 [ext_resource type="Script" uid="uid://b5asruwewoml7" path="res://scenes/birb/birb.gd" id="1_f43j4"]
 
@@ -77,6 +79,26 @@ _data = {
 &"fly": SubResource("Animation_y2prg")
 }
 
+
+[sub_resource type="GDScript" id="GDScript_f43j4"]
+resource_name = "droppoints"
+script/source = "extends Node3D
+
+var rng : RandomNumberGenerator
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	rng = RandomNumberGenerator.new()
+
+
+func get_random_droppoint() -> Vector3:
+	return get_child(rng.randi_range(0, get_child_count()-1)).global_position
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_f43j4"]
 size = Vector3(10, 6.979, 1)
 
@@ -138,6 +160,10 @@ autoplay = "fly"
 
 [node name="Droppoints" type="Node3D" parent="."]
 
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.32534e-07, -2.68229, 4.18908)
+script = SubResource("GDScript_f43j4")
+
+
 [node name="Marker3D" type="Marker3D" parent="Droppoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14641, -0.62509, -2.60965)
 
@@ -156,3 +182,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57051, -0.62509, -2.60965)
 [node name="BirdCaughtYa" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0147e-07, -2.9895, 5.97016)
 shape = SubResource("BoxShape3D_f43j4")
+
+
+[node name="CoinDropTimer" type="Timer" parent="."]
+process_callback = 0
+

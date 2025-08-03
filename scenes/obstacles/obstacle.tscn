@@ -14,7 +14,7 @@ size = Vector3(15, 2.6, 21.8)
 
 [node name="Obstacle" type="Node3D"]
 
-script = ExtResource("1_7ukg5")
+script = ExtResource("1_hof70")
 
 
 [node name="Area3D" type="Area3D" parent="."]

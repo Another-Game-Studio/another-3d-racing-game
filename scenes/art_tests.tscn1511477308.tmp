@@ -250,7 +250,7 @@ coin_sound = ExtResource("12_pud53")
 damage_sound = ExtResource("13_0ijw1")
 
 [node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("14_s25y7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.524, 8.2465, -1.99999)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 109, 8.2465, -1.99999)
 vehicle_node = NodePath("MyVehicleRigidBody")
 
 [node name="MyVehicleRigidBody" parent="VehicleController" index="0"]
@@ -444,8 +444,7 @@ bird_count = 20
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
 transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
-[node name="Dreamchaser" parent="." node_paths=PackedStringArray("world_3D") instance=ExtResource("17_oew8k")]
-world_3D = NodePath("..")
+[node name="Dreamchaser" parent="." instance=ExtResource("17_oew8k")]
 
 [editable path="VehicleController"]
 [editable path="Decoration/Birds"]
