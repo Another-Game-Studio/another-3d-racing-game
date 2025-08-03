@@ -3,6 +3,8 @@ class_name Birb
 
 @onready var droppoints : Array[Marker3D] = []
 
+var can_drop : bool = false
+
 func _ready() -> void:
 	var droppoints_nodes : Array[Node] = $Droppoints.get_children()
 	for droppoint_node : Node in droppoints_nodes:
