@@ -16,6 +16,7 @@ radius = 1.5
 
 [node name="ExplosiveBarrel" type="RigidBody3D"]
 collision_layer = 4
+gravity_scale = 0.0
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 3

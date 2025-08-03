@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=35 format=4 uid="uid://drpbxmnfxylel"]
 
 [ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
 [ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="10_47cvh"]
 [ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
 [ext_resource type="Texture2D" uid="uid://b4uwwa61g05fl" path="res://assets/ui/coin.png" id="10_cw1k8"]
-[ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
+
+[ext_resource type="PackedScene" uid="uid://gymy61x7wc70" path="res://scenes/obstacles/trap_spawner.tscn" id="10_t0ww0"]
+[ext_resource type="Script" path="res://scenes/fps.gd" id="11_cg5j4"]
+
 [ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
 [ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
 [ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="11_pud53"]
@@ -256,6 +259,12 @@ vehicle_node = NodePath("MyVehicleRigidBody")
 [node name="MyVehicleRigidBody" parent="VehicleController" index="0"]
 collision_mask = 6
 
+[node name="TrapSpawner" parent="." node_paths=PackedStringArray("player_vehicle", "world") instance=ExtResource("10_t0ww0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54696, 8.86595, -2.28911)
+player_vehicle = NodePath("../VehicleController/MyVehicleRigidBody")
+move_speed = 4.0
+world = NodePath("..")
+
 [node name="Circuit" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
@@ -442,7 +451,7 @@ transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
-transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
+transform = Transform3D(0.335873, 0.0890059, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317385, 0.33437, 23.2, -6.6, -7.6)
 
 [node name="Dreamchaser" parent="." node_paths=PackedStringArray("world_3D") instance=ExtResource("17_oew8k")]
 world_3D = NodePath("..")
