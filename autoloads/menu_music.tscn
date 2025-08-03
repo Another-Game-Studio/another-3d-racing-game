@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://dubyuldkiw5ai"]
+[gd_scene load_steps=2 format=3 uid="uid://dubyuldkiw5ai"]
+
+[ext_resource type="AudioStream" uid="uid://dfasus385dmgn" path="res://assets/sounds/Dnb_mastering.mp3" id="1_fyry3"]
 
 [node name="MenuMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_fyry3")
+volume_db = -8.0
 autoplay = true
 bus = &"Music"

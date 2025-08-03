@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqfuq5y2glbs8" path="res://addons/gevp/scripts/vehicle.gd" id="1_4info"]
 [ext_resource type="Script" uid="uid://doy35l2qlpvno" path="res://addons/gevp/scripts/wheel.gd" id="2_ga0q6"]
-[ext_resource type="ArrayMesh" uid="uid://djdqt5t67ak6j" path="res://assets/meshes/ca_noroues.res" id="2_p3haf"]
+[ext_resource type="ArrayMesh" uid="uid://cyns4lg47kovu" path="res://assets/meshes/ca_noroues.res" id="2_p3haf"]
 [ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="3_p3haf"]
 
 [sub_resource type="Curve" id="Curve_bt7kc"]
@@ -179,5 +179,5 @@ mesh = SubResource("ArrayMesh_0m480")
 skeleton = NodePath("")
 
 [node name="EngineSound" parent="." node_paths=PackedStringArray("vehicle") instance=ExtResource("3_p3haf")]
-max_db = -24.0
+max_db = -17.288
 vehicle = NodePath("..")

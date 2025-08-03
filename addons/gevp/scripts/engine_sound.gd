@@ -5,4 +5,3 @@ extends AudioStreamPlayer3D
 
 func _physics_process(delta):
 	pitch_scale = vehicle.motor_rpm / sample_rpm
-	volume_db = linear_to_db((vehicle.throttle_amount * 0.5) + 0.5)
