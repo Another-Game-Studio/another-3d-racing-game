@@ -1,6 +1,6 @@
 extends Button
 
-@onready var main_menu_scene: PackedScene = preload("res://menus/main_menu.tscn")
+@onready var main_menu_scene: PackedScene = preload("res://scenes/title_screen.tscn")
 
 func _ready() -> void:
 	button_down.connect(_on_return_to_main_menu)
