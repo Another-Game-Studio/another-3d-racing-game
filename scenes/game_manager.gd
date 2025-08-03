@@ -8,10 +8,11 @@ extends Node
 @export var damage_sound: AudioStream
 
 var coin_count: int = 0
-var life: int = 4
+var life: int = 1
 
 @onready var coin_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var damage_player: AudioStreamPlayer = AudioStreamPlayer.new()
+@onready var game_over_scene: PackedScene = preload("res://menus/gameover/GameOverMenu.tscn")
 
 func _ready() -> void:
 	coin_player.volume_db = linear_to_db(0.5)
@@ -39,6 +40,7 @@ func lose_life() -> void:
 		
 	if life == 0:	
 		SignalBus.lose_life.emit(life, coin_count)
+		get_tree().change_scene_to_packed(game_over_scene)
 
 func _update_label() -> void:
 	if coin_label:
@@ -50,3 +52,5 @@ func _update_hearts() -> void:
 			heart_sprites[i].texture = heart_full
 		else:
 			heart_sprites[i].texture = heart_empty
+
+			

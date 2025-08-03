@@ -1,6 +1,6 @@
 extends Button
 
-@onready var level_scene: PackedScene = preload("res://scenes/art_tests.tscn")
+@onready var level_scene: PackedScene = load("res://scenes/art_tests.tscn")
 
 func _ready() -> void:
 	button_down.connect(_on_retry_game)
