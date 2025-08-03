@@ -7,13 +7,13 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_t0ww0"]
 radius = 2.0
 
-[node name="TrapSpawner" type="Marker3D" node_paths=PackedStringArray("player_vehicle")]
+[node name="TrapSpawner" type="Marker3D"]
 script = ExtResource("1_p2yq3")
-player_vehicle = NodePath("")
 
 [node name="Marker3D" type="Marker3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D"]
+visible = false
 mesh = SubResource("SphereMesh_t0ww0")
 skeleton = NodePath("../..")
 
@@ -28,6 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.72897)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Marker3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.870919)
+visible = false
 mesh = SubResource("SphereMesh_t0ww0")
 skeleton = NodePath("../..")
 
@@ -42,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0853)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Marker3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.21192)
+visible = false
 mesh = SubResource("SphereMesh_t0ww0")
 skeleton = NodePath("../..")
 
