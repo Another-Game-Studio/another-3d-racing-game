@@ -144,6 +144,7 @@ offset_bottom = -39.0
 text = "Screen mode"
 
 [node name="BackButton" type="Button" parent="Background" index="3"]
+layout_mode = 0
 offset_left = 1576.0
 offset_top = 968.0
 offset_right = 1804.0

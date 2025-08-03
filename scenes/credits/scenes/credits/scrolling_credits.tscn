@@ -11,52 +11,52 @@ custom_minimum_size = Vector2(0, 1080)
 
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(1920, 0)
-text = "[center][font_size=48]Another Karting Game[/font_size]
+text = "[center][font_size=48]DREAM CHASER[/font_size]
 
-[font_size=48]by Another Gamedev Studio[/font_size]
-[font_size=32][url=https://jack-kaller.itch.io/]Jack Kaller[/url][/font_size]
+[font_size=48]by Another Gamedev Studio[/font_size]
+[font_size=32][url=https://jack-kaller.itch.io/]Jack Kaller[/url][/font_size]
 Development
 Game Design
 Git management
 
-[font_size=32][url=https://whymel.itch.io/]Mel[/url][/font_size]
-Sound Design
-Graphic Design
+[font_size=32][url=https://whymel.itch.io/]Mel[/url][/font_size]
+Music Composition, Sound Design
+Graphic Design, 3D modeling
 Game Design
 Development
 
-[font_size=32][url=https://gromnax.itch.io/]Grom[/url][/font_size]
+[font_size=32][url=https://gromnax.itch.io/]Grom[/url][/font_size]
 Development
 Game Design
 
-[font_size=32]With the participation of [url=https://efilheim.itch.io/]Efilheim[/url][/font_size]
+[font_size=32]With the participation of [url=https://efilheim.itch.io/]Efilheim[/url][/font_size]
 
-[font_size=48]Assets and codes[/font_size]
-[font_size=32]Godot-Easy-Vehicle-Physics[/font_size]
-[font_size=24]Vehicle Physics[/font_size]
+[font_size=48]Assets and codes[/font_size]
+[font_size=32]Godot-Easy-Vehicle-Physics[/font_size]
+[font_size=24]Vehicle Physics[/font_size]
 Author: [url=https://dashoe1.itch.io/]DAShoe1[/url]  
 Source: [url=https://github.com/DAShoe1/Godot-Easy-Vehicle-Physics]Github.com[/url]  
 License: [url=https://github.com/DAShoe1/Godot-Easy-Vehicle-Physics/blob/main/LICENSE]MIT License[/url]
 
-[font_size=32]Kenney Car Kit[/font_size]
+[font_size=32]Kenney Car Kit[/font_size]
 Author: [url=https://kenney.nl/]Kenney[/url]
 Source : [url=https://kenney.nl/assets/car-kit]Kenney.nl[/url]
 License : [url=https://creativecommons.org/publicdomain/zero/1.0/deed]CC0[/url]
 
-[font_size=48]Tools[/font_size]
-[font_size=24]Godot[/font_size]
+[font_size=48]Tools[/font_size]
+[font_size=24]Godot[/font_size]
 [img=80]res:///scenes/credits/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
 Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
 Source: [url=https://godotengine.org/]godotengine.org[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
 
-[font_size=24]Godot Credits Scene[/font_size]
+[font_size=24]Godot Credits Scene[/font_size]
 [img=80]res:///scenes/credits/assets/plugin_logo/logo.png[/img]  
 Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
 License: [url=LICENSE.txt]MIT License[/url]  
 
-[font_size=24]Git[/font_size]
+[font_size=24]Git[/font_size]
 [img=80]res:///scenes/credits/assets/git_logo/Git-Logo-2Color.png[/img]  
 Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  

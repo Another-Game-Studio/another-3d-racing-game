@@ -17,7 +17,7 @@ var scroll_paused : bool = false
 func _end_reached() -> void:
 	scroll_paused = true
 	emit_signal("end_reached")
-	get_tree().change_scene_to_file("res://menus/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 func is_end_reached() -> bool:
 	var _end_of_credits_vertical = credits_label.size.y + header_space.size.y

@@ -1,5 +1,5 @@
 # Credits & Attributions
-## Another Karting Game
+## DREAM CHASER
 
 ## by Another Gamedev Studio
 ### [Jack Kaller](https://jack-kaller.itch.io/)
@@ -8,8 +8,8 @@ Game Design
 Git management
 
 ### [Mel](https://whymel.itch.io/)
-Sound Design
-Graphic Design
+Music Composition, Sound Design
+Graphic Design, 3D modeling
 Game Design
 Development
 
