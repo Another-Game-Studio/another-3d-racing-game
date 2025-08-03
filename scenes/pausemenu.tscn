@@ -1,25 +1,12 @@
-[gd_scene load_steps=38 format=4 uid="uid://drpbxmnfxylel"]
+[gd_scene load_steps=24 format=4 uid="uid://cqkm6uuettw4i"]
 
-[ext_resource type="Script" uid="uid://c1lawqfbr6qot" path="res://scenes/art_tests.gd" id="1_47cvh"]
-[ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="1_rfc7w"]
-[ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="2_1xm3q"]
-[ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="5_1xm3q"]
-[ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="6_ggja7"]
-[ext_resource type="Texture2D" uid="uid://cvwuclqun7hbs" path="res://assets/ui/life_full.png" id="8_25v2h"]
-[ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="10_47cvh"]
-[ext_resource type="Script" uid="uid://c3nxh0p0i6kka" path="res://addons/gevp/scripts/camera.gd" id="10_ao6v7"]
-[ext_resource type="Texture2D" uid="uid://b4uwwa61g05fl" path="res://assets/ui/coin.png" id="10_cw1k8"]
-[ext_resource type="PackedScene" uid="uid://gymy61x7wc70" path="res://scenes/obstacles/trap_spawner.tscn" id="10_t0ww0"]
-[ext_resource type="Script" uid="uid://csk846od7yrlb" path="res://scenes/fps.gd" id="11_cg5j4"]
-[ext_resource type="Script" uid="uid://cwiymfcoy0txf" path="res://scenes/game_manager.gd" id="11_cw1k8"]
-[ext_resource type="Texture2D" uid="uid://dn1ow1375mayd" path="res://assets/ui/life_vide.png" id="11_f0sam"]
-[ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="11_pud53"]
-[ext_resource type="AudioStream" uid="uid://b7u4mnkwp8i0s" path="res://assets/sounds/coin.ogg" id="12_pud53"]
-[ext_resource type="AudioStream" uid="uid://co50njnn1clyh" path="res://assets/sounds/degat.wav" id="13_0ijw1"]
-[ext_resource type="PackedScene" uid="uid://ecv31aag7yq6" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
-[ext_resource type="PackedScene" uid="uid://dnk7i87lhkkq4" path="res://scenes/birb/dreamchaser.tscn" id="17_oew8k"]
-[ext_resource type="PackedScene" uid="uid://bs1v1yn5xxe25" path="res://scenes/death_zone/deadzone.tscn" id="18_t0ww0"]
-[ext_resource type="PackedScene" uid="uid://bu1nya34m5idp" path="res://menus/pause/PauseMenu.tscn" id="19_s25y7"]
+[ext_resource type="PackedScene" uid="uid://dbgm666i4tx1n" path="res://menus/gameover/GameOverMenu.tscn" id="1_3gyci"]
+[ext_resource type="Texture2D" uid="uid://vepg17cuhr3n" path="res://scenes/environment/road_droit_car.png" id="2_e0wba"]
+[ext_resource type="Texture2D" uid="uid://c8oevywkv4n2m" path="res://scenes/environment/road_turn_car.png" id="3_klbn3"]
+[ext_resource type="PackedScene" uid="uid://bmru4df6ale3c" path="res://assets/meshes/environments/cloud.glb" id="4_g5jmi"]
+[ext_resource type="PackedScene" uid="uid://cx63gfbyst8eq" path="res://assets/meshes/environments/cloud2.glb" id="5_v4mab"]
+[ext_resource type="PackedScene" uid="uid://eyseqnkqt4ha" path="res://assets/meshes/environments/island.glb" id="6_lkswt"]
+[ext_resource type="PackedScene" uid="uid://ynllwhwvflbf" path="res://scenes/environment/birds.tscn" id="7_kv823"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
 sky_top_color = Color(0.639216, 0.470588, 0.74902, 1)
@@ -50,7 +37,7 @@ adjustment_saturation = 1.1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1n0m6"]
 resource_name = "color"
 cull_mode = 2
-albedo_texture = ExtResource("10_47cvh")
+albedo_texture = ExtResource("2_e0wba")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hwjm2"]
 _surfaces = [{
@@ -92,7 +79,7 @@ data = PackedVector3Array(-29.952, -17.9712, -32.5606, -29.952, 17.9712, -37.952
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb7i3"]
 resource_name = "color"
 cull_mode = 2
-albedo_texture = ExtResource("11_pud53")
+albedo_texture = ExtResource("3_klbn3")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dakdp"]
 _surfaces = [{
@@ -175,11 +162,20 @@ albedo_color = Color(0.796936, 0.377167, 0.133551, 1)
 emission_enabled = true
 emission = Color(0.656989, 0.338815, 0.413919, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_s25y7"]
-size = Vector3(1622, 97, 1079)
+[node name="GameOverScene" type="Node3D"]
 
-[node name="ArtTests" type="Node3D"]
-script = ExtResource("1_47cvh")
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 408.0
+offset_right = -408.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverMenu" parent="." instance=ExtResource("1_3gyci")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.711514, -0.129409, -0.690653, -0.0669867, -0.965926, 0.249998, -0.699472, 0.224141, 0.678601, 0, 0, 0)
@@ -189,98 +185,41 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ao6v7")
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_this")]
-transform = Transform3D(1, 0, 0, 0, 0.989776, 0.142629, 0, -0.142629, 0.989776, 545.053, 1.58316, 5.80061)
-current = true
-script = ExtResource("10_ao6v7")
-follow_height = 1
-camera_y_offset = 2.0
-follow_this = NodePath("../VehicleController/MyVehicleRigidBody")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="UI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 930.0
-offset_top = 68.0
-offset_right = -838.0
-offset_bottom = -676.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "8
-
-"
-horizontal_alignment = 1
-
-[node name="Coin" type="Sprite2D" parent="UI"]
-position = Vector2(899, 141)
-texture = ExtResource("10_cw1k8")
-
-[node name="1" type="Sprite2D" parent="UI"]
-position = Vector2(1178, 120)
-texture = ExtResource("8_25v2h")
-
-[node name="2" type="Sprite2D" parent="UI"]
-position = Vector2(1242, 119)
-texture = ExtResource("8_25v2h")
-
-[node name="3" type="Sprite2D" parent="UI"]
-position = Vector2(1304, 120)
-texture = ExtResource("8_25v2h")
-
-[node name="4" type="Sprite2D" parent="UI"]
-position = Vector2(1365, 120)
-texture = ExtResource("8_25v2h")
-
-[node name="FPS" type="Label" parent="UI"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1682.0
-offset_top = 95.0
-offset_right = -136.0
-offset_bottom = -902.0
-theme_override_font_sizes/font_size = 60
-text = "FPS"
-script = ExtResource("11_cg5j4")
-
-[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("coin_label", "heart_sprites")]
-script = ExtResource("11_cw1k8")
-coin_label = NodePath("../UI/Label")
-heart_sprites = [NodePath("../UI/1"), NodePath("../UI/2"), NodePath("../UI/3"), NodePath("../UI/4")]
-heart_full = ExtResource("8_25v2h")
-heart_empty = ExtResource("11_f0sam")
-coin_sound = ExtResource("12_pud53")
-damage_sound = ExtResource("13_0ijw1")
-
-[node name="VehicleController" parent="." node_paths=PackedStringArray("vehicle_node") instance=ExtResource("14_s25y7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.476, 8.2465, -1.99999)
-vehicle_node = NodePath("MyVehicleRigidBody")
-
-[node name="MyVehicleRigidBody" parent="VehicleController" index="0"]
-collision_mask = 6
-
-[node name="TrapSpawner" parent="." node_paths=PackedStringArray("player_vehicle", "world") instance=ExtResource("10_t0ww0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54696, 8.86595, -2.28911)
-player_vehicle = NodePath("../VehicleController/MyVehicleRigidBody")
-move_speed = 0.5
-world = NodePath("..")
-
-[node name="Dreamchaser" parent="." node_paths=PackedStringArray("world_3D") instance=ExtResource("17_oew8k")]
-world_3D = NodePath("..")
-
-[node name="PathFollow3D" parent="Dreamchaser/BirdPath3D" index="0"]
-transform = Transform3D(-0.0290572, 0.0273091, 0.999201, -9.3132e-10, 0.999621, -0.0273207, -0.999575, -0.000793864, -0.0290463, -59.9618, 0, -0.151494)
-
 [node name="Circuit" type="Node3D" parent="."]
-transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, -346.4, 0, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="road_droit2" type="Node3D" parent="Circuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
+
+[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
+mesh = SubResource("ArrayMesh_pb4ko")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit2/Cube_024"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit2/Cube_024/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ortc8")
+
+[node name="road_droit6" type="Node3D" parent="Circuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -598, 1, 4)
+
+[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
+mesh = SubResource("ArrayMesh_pb4ko")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit6/Cube_024"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit6/Cube_024/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ortc8")
 
 [node name="road_droit4" type="Node3D" parent="Circuit"]
-transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1, 788.9, 1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, 4)
 
 [node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
@@ -294,9 +233,38 @@ collision_mask = 13
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit4/Cube_024/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ortc8")
 
+[node name="road_droit3" type="Node3D" parent="Circuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -335)
+
+[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
+mesh = SubResource("ArrayMesh_pb4ko")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit3/Cube_024"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit3/Cube_024/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ortc8")
+
+[node name="road_droit7" type="Node3D" parent="Circuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -598, 1, -335)
+
+[node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
+mesh = SubResource("ArrayMesh_pb4ko")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Circuit/road_droit7/Cube_024"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Circuit/road_droit7/Cube_024/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ortc8")
+
 [node name="road_droit5" type="Node3D" parent="Circuit"]
-transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1, 788.9, 1, -335)
-metadata/_edit_group_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 602, 1, -335)
 
 [node name="Cube_024" type="MeshInstance3D" parent="Circuit/road_droit5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 340)
@@ -311,11 +279,9 @@ collision_mask = 13
 shape = SubResource("ConcavePolygonShape3D_ortc8")
 
 [node name="road_turn2" type="Node3D" parent="Circuit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -418, 1, 5)
-metadata/_edit_group_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -597, 1, 5)
 
 [node name="Cube_025" type="MeshInstance3D" parent="Circuit/road_turn2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1200, 0, 0)
 mesh = SubResource("ArrayMesh_ngfj5")
 skeleton = NodePath("")
 
@@ -328,7 +294,6 @@ shape = SubResource("ConcavePolygonShape3D_n6882")
 
 [node name="road_turn3" type="Node3D" parent="Circuit"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1260.2, 1, 328)
-metadata/_edit_group_ = true
 
 [node name="Cube_025" type="MeshInstance3D" parent="Circuit/road_turn3"]
 mesh = SubResource("ArrayMesh_ngfj5")
@@ -343,15 +308,12 @@ shape = SubResource("ConcavePolygonShape3D_n6882")
 
 [node name="Collisions" type="Node" parent="Circuit"]
 
-[node name="Obstacles" type="Node" parent="."]
-unique_name_in_owner = true
-
 [node name="Decoration" type="Node" parent="."]
 
-[node name="cloud" parent="Decoration" instance=ExtResource("1_rfc7w")]
+[node name="cloud" parent="Decoration" instance=ExtResource("4_g5jmi")]
 transform = Transform3D(17.4865, 0, 0, 0, 17.4865, 0, 0, 0, 17.4865, -175.364, -0.937232, -286.194)
 
-[node name="cloud3" parent="Decoration" instance=ExtResource("1_rfc7w")]
+[node name="cloud3" parent="Decoration" instance=ExtResource("4_g5jmi")]
 transform = Transform3D(8.74324, 0, -15.1437, 0, 17.4865, 0, 15.1437, 0, 8.74324, 296.771, -0.937232, 238.401)
 
 [node name="cloud2" type="Node3D" parent="Decoration"]
@@ -362,13 +324,13 @@ transform = Transform3D(1.76962, 0, 0, 0, 1.76962, 0, 0, 0, 1.76962, -0.0734029,
 mesh = SubResource("ArrayMesh_xtctt")
 skeleton = NodePath("")
 
-[node name="cloud22" parent="Decoration" instance=ExtResource("2_1xm3q")]
+[node name="cloud22" parent="Decoration" instance=ExtResource("5_v4mab")]
 transform = Transform3D(-9.61216, 0, 22.5912, 0, 31.8673, 0, -22.5912, 0, -9.61216, -443.404, -0.548404, 91.674)
 
-[node name="cloud23" parent="Decoration" instance=ExtResource("2_1xm3q")]
+[node name="cloud23" parent="Decoration" instance=ExtResource("5_v4mab")]
 transform = Transform3D(30.3616, 0, -12.2367, 0, 42.4896, 0, 12.2367, 0, 30.3616, -196.344, -0.548404, 336.658)
 
-[node name="cloud24" parent="Decoration" instance=ExtResource("2_1xm3q")]
+[node name="cloud24" parent="Decoration" instance=ExtResource("5_v4mab")]
 transform = Transform3D(-32.4941, -2.57106, -3.43082, 0, -36.7972, 16.3674, -3.96157, 21.0887, 28.1407, 502.336, -23.1278, -401.616)
 
 [node name="sun" type="MeshInstance3D" parent="Decoration"]
@@ -377,28 +339,17 @@ mesh = SubResource("SphereMesh_cw1k8")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_cg5j4")
 
-[node name="island" parent="Decoration" instance=ExtResource("5_1xm3q")]
-transform = Transform3D(-1.04539, 0, 1.04539, 0, 1.4784, 0, -1.04539, 0, -1.04539, 22.5825, 0, 56.132)
+[node name="island" parent="Decoration" instance=ExtResource("6_lkswt")]
+transform = Transform3D(-1.04539, 0, 1.04539, 0, 1.4784, 0, -1.04539, 0, -1.04539, 5.5825, -2, 56.132)
 
-[node name="Birds" parent="Decoration" instance=ExtResource("6_ggja7")]
+[node name="Birds" parent="Decoration" instance=ExtResource("7_kv823")]
 transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 24.4, 36.32, 22.4)
 bird_count = 20
 
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
 transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
-[node name="Deadzone" parent="." instance=ExtResource("18_t0ww0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -7, 51)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 60.8045, 29, 19.7412)
 
-[node name="CollisionShape3D" parent="Deadzone" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, -48, 26)
-shape = SubResource("BoxShape3D_s25y7")
-
-[node name="PauseMenu" parent="." instance=ExtResource("19_s25y7")]
-unique_name_in_owner = true
-visible = false
-
-[editable path="VehicleController"]
-[editable path="Dreamchaser"]
 [editable path="Decoration/Birds"]
-[editable path="Deadzone"]

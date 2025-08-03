@@ -59,5 +59,4 @@ func _on_car_fell() -> void:
 	SignalBus.lose_life.emit(0, coin_count)
 	await get_tree().process_frame
 	get_tree().change_scene_to_packed(game_over_scene)
-
-			
+	
