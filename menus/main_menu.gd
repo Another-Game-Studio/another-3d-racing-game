@@ -5,8 +5,8 @@ extends Control
 @onready var credits_button: Button = %CreditsButton
 @onready var exit_button: Button = %ExitButton
 
-@onready var credits_scene: PackedScene = preload("res://scenes/credits/scenes/credits/scrolling_credits.tscn")
-@onready var options_scene: PackedScene = preload("res://menus/options/options_scene.tscn")
+@onready var credits_scene: PackedScene = preload("res://scenes/credits.tscn")
+@onready var options_scene: PackedScene = preload("res://scenes/options.tscn")
 
 func _ready() -> void:
 	new_game_button.button_down.connect(_on_new_game_button_down)
