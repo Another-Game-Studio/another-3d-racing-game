@@ -19,9 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bvgwkkh5srraj" path="res://scenes/environment/road_turn.glb" id="13_25v2h"]
 [ext_resource type="PackedScene" uid="uid://dd6xth3u8wssg" path="res://scenes/environment/road_droit.glb" id="14_f0sam"]
 [ext_resource type="PackedScene" path="res://scenes/controller_new/vehicle_controller_new.tscn" id="14_s25y7"]
-[ext_resource type="Script" path="res://scenes/troncon_manager.gd" id="17_oew8k"]
-[ext_resource type="PackedScene" uid="uid://bhspdl0qhqg0g" path="res://scenes/environment/troncon_1.tscn" id="18_t0ww0"]
-[ext_resource type="Script" path="res://scenes/trigger.gd" id="19_s25y7"]
+
 
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oftd3"]
@@ -407,11 +405,7 @@ transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -126.84, 8.324, 0.4)
 
 [node name="Obstacles" type="Node" parent="."]
 
-[node name="Obstacle" parent="Obstacles" instance=ExtResource("17_oew8k")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -9.2, 8, -4)
 
-[node name="Obstacle2" parent="Obstacles" instance=ExtResource("17_oew8k")]
-transform = Transform3D(0.4, 0, 0, 0, 1.848, 0, 0, 0, 0.12, -31.6, 9.476, -4)
 
 [node name="CollisionShape3D" parent="Obstacles/Obstacle2/Area3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.0999985, -1.5)
@@ -419,11 +413,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.0999985, -1.5)
 [node name="end" parent="Obstacles/Obstacle2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 73.6)
 
-[node name="ramp2" parent="Obstacles" instance=ExtResource("18_t0ww0")]
-transform = Transform3D(1.352, 0, 0, 0, 0.48, 0, 0, 0, 4.28, -0.8, 7.6, -2.8)
 
-[node name="ExplosiveBarrel" parent="Obstacles" instance=ExtResource("16_f0sam")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 22.4, 7.90692, 0)
+
 
 [node name="Decoration" type="Node" parent="."]
 
@@ -466,7 +457,7 @@ bird_count = 20
 [node name="PathFollow3D" parent="Decoration/Birds/Path3D" index="0"]
 transform = Transform3D(0.335873, 0.089006, -0.937689, 0, 0.995519, 0.0944958, 0.941906, -0.0317386, 0.33437, 23.2, -6.6, -7.6)
 
-[node name="Dreamchaser" parent="." instance=ExtResource("20_47cvh")]
+
 
 [editable path="VehicleController"]
 
