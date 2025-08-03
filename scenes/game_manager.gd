@@ -12,7 +12,7 @@ var life: int = 4
 
 @onready var coin_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var damage_player: AudioStreamPlayer = AudioStreamPlayer.new()
-@onready var game_over_scene: PackedScene = preload("res://menus/gameover/GameOverMenu.tscn")
+@onready var game_over_scene: PackedScene = preload("res://scenes/gameover.tscn")
 
 func _ready() -> void:
 	coin_player.volume_db = linear_to_db(0.5)
