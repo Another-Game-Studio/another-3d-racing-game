@@ -20,6 +20,7 @@ func _ready() -> void:
 	add_child(coin_player)
 	add_child(damage_player)
 	SignalBus.coin_collected.connect(_on_coin_collected)
+	SignalBus.car_fell.connect(_on_car_fell)
 	_update_label()
 	_update_hearts()
 
@@ -53,5 +54,10 @@ func _update_hearts() -> void:
 			heart_sprites[i].texture = heart_full
 		else:
 			heart_sprites[i].texture = heart_empty
+			
+func _on_car_fell() -> void:
+	SignalBus.lose_life.emit(0, coin_count)
+	await get_tree().process_frame
+	get_tree().change_scene_to_packed(game_over_scene)
 
 			
