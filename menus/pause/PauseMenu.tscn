@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu1nya34m5idp"]
+
+[ext_resource type="Script" uid="uid://ccq1hvl3jdfl8" path="res://menus/pause/pause_menu.gd" id="1_mykkb"]
+[ext_resource type="Theme" uid="uid://bdssu6ufbrowi" path="res://assets/themes/menu_theme.tres" id="1_s30b7"]
+[ext_resource type="Script" uid="uid://mj78unprix8k" path="res://menus/gameover/return_main_menu_button.gd" id="4_43spa"]
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mykkb")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 635.0
+offset_top = 286.0
+offset_right = -571.0
+offset_bottom = -396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s30b7")
+
+[node name="PauseLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 45.0
+offset_right = 655.0
+offset_bottom = 170.0
+theme = ExtResource("1_s30b7")
+theme_override_font_sizes/font_size = 100
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = -178.0
+offset_top = 249.0
+offset_right = 523.0
+offset_bottom = 307.0
+scale = Vector2(1.52362, 1.52362)
+theme = ExtResource("1_s30b7")
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ReturnToGameButton" type="Button" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_s30b7")
+theme_type_variation = &"FlatButton"
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s30b7")
+theme_type_variation = &"FlatButton"
+text = "Menu
+"
+script = ExtResource("4_43spa")
