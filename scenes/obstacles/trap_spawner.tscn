@@ -5,7 +5,7 @@
 [sub_resource type="SphereMesh" id="SphereMesh_t0ww0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t0ww0"]
-radius = 2.0
+radius = 3.0
 
 [node name="TrapSpawner" type="Marker3D"]
 script = ExtResource("1_p2yq3")
@@ -53,7 +53,10 @@ collision_layer = 16
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Marker3D3/Area3D"]
 shape = SubResource("SphereShape3D_t0ww0")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="GracePeriod" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+autostart = true
+
+[node name="SpawnCooldown" type="Timer" parent="."]
 autostart = true
